@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSD Class Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="paper-grain" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="brand" href="#top">
+        <span class="brand-mark" aria-hidden="true">CSD</span>
+        <span class="brand-text">Class Hub</span>
+      </a>
+      <nav class="nav">
+        <a href="#pulse">Pulse</a>
+        <a href="#wishlist">Wishlist</a>
+        <a href="#prizes">Prizes</a>
+        <a href="#classmates">Classmates</a>
+        <a href="#match">Find a classmate</a>
+      </nav>
+      <span id="points-tools" class="points-tools" hidden>
+        <button class="btn btn-tiny btn-ghost" type="button" data-points-export>
+          Export points
+        </button>
+        <button class="btn btn-tiny btn-ghost" type="button" data-points-import>
+          Import points
+        </button>
+      </span>
+      <button class="btn btn-tiny teacher-btn" type="button" data-teacher id="teacher-btn">
+        Teacher
+      </button>
+      <button class="btn btn-tiny" type="button" data-spotlight>Spin a spotlight</button>
+      <input id="points-import" type="file" accept="application/json" hidden />
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="kicker">Computer Science · Class of 2026</p>
+          <h1>Meet the room.</h1>
+          <p class="lede">
+            A yearbook for CSD — 31 classmates, a snack-fueled prize board, and the games, music and
+            ideas that make this class click.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#classmates">Browse classmates</a>
+            <button class="btn btn-ghost" type="button" data-spotlight>Random icebreaker</button>
+          </div>
+          <ul class="hero-stats">
+            <li><strong id="stat-count">31</strong> students</li>
+            <li><strong id="stat-roblox">0</strong> Roblox fans</li>
+            <li><strong id="stat-first">0</strong> first-time coders</li>
+            <li><strong id="stat-points">0</strong> top score</li>
+          </ul>
+        </div>
+
+        <article class="spotlight" id="spotlight" aria-live="polite">
+          <p class="spotlight-label">Now playing</p>
+          <div class="spotlight-avatar" id="spotlight-avatar">??</div>
+          <h2 id="spotlight-name">Loading…</h2>
+          <p class="spotlight-meta" id="spotlight-meta"></p>
+          <p class="spotlight-points" id="spotlight-points"></p>
+          <p class="spotlight-blurb" id="spotlight-blurb"></p>
+          <div class="chip-row" id="spotlight-chips"></div>
+          <button class="btn btn-small" type="button" id="spotlight-open">Open card</button>
+        </article>
+      </section>
+
+      <section class="section" id="pulse">
+        <div class="section-head">
+          <p class="kicker">Class pulse</p>
+          <h2>What this room is made of</h2>
+        </div>
+        <div class="pulse-grid" id="pulse-grid"></div>
+      </section>
+
+      <section class="section wishlist-section" id="wishlist">
+        <div class="section-head invert">
+          <p class="kicker">Room drop</p>
+          <h2>The class wishlist</h2>
+          <p>Poster votes, snack attacks, and prizes for game winners.</p>
+        </div>
+        <div class="wishlist-grid" id="wishlist-grid"></div>
+      </section>
+
+      <section class="section" id="prizes">
+        <div class="section-head">
+          <p class="kicker">Prize board</p>
+          <h2>What your points can buy</h2>
+          <p>Earn points through the year, then redeem them with Mr Wallis.</p>
+        </div>
+        <div id="prize-grid"></div>
+      </section>
+
+      <section class="section" id="classmates">
+        <div class="section-head">
+          <p class="kicker">The roster</p>
+          <h2>Classmates</h2>
+          <p>
+            Earn points through the year, then redeem them on the
+            <a href="#prizes">prize board</a>.
+          </p>
+        </div>
+        <div class="toolbar">
+          <label class="search">
+            <span class="sr-only">Search classmates</span>
+            <input
+              id="search"
+              type="search"
+              placeholder="Search names, games, music, hobbies…"
+              autocomplete="off"
+            />
+          </label>
+          <button class="filter-btn" type="button" data-sort="points" id="sort-points">
+            Highest points
+          </button>
+          <p class="result-count" id="result-count"></p>
+        </div>
+        <div class="filters" id="filters" role="tablist" aria-label="Filters"></div>
+        <div class="card-grid" id="card-grid"></div>
+      </section>
+
+      <section class="section match-section" id="match">
+        <div class="section-head">
+          <p class="kicker">Wavelength</p>
+          <h2>Find a classmate</h2>
+          <p>Pick someone and see who shares their games, music, or hobbies.</p>
+        </div>
+        <div class="match-controls">
+          <label>
+            <span>Classmate</span>
+            <select id="match-select">
+              <option value="">Choose a student…</option>
+            </select>
+          </label>
+        </div>
+        <div id="match-results" class="match-results"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>CSD Class Hub · Built from the classroom survey · First names + last initials</p>
+    </footer>
+
+    <dialog class="modal" id="modal">
+      <div class="modal-inner">
+        <button class="modal-close" type="button" id="modal-close" aria-label="Close">×</button>
+        <div id="modal-body"></div>
+      </div>
+    </dialog>
+
+    <dialog class="modal" id="teacher-dialog">
+      <div class="modal-inner">
+        <button class="modal-close" type="button" id="teacher-dialog-close" aria-label="Close">
+          ×
+        </button>
+        <form id="teacher-form">
+          <p class="kicker">Scorekeeper</p>
+          <h2 id="teacher-dialog-title">Teacher unlock</h2>
+          <p class="lede" id="teacher-dialog-copy">Enter your PIN to award and redeem points.</p>
+          <label class="teacher-pin-field">
+            <span class="sr-only">PIN</span>
+            <input
+              id="teacher-pin"
+              type="password"
+              inputmode="numeric"
+              autocomplete="off"
+              minlength="4"
+              required
+            />
+          </label>
+          <button class="btn btn-primary" type="submit" id="teacher-submit">Unlock</button>
+        </form>
+      </div>
+    </dialog>
+
+    <script src="data.js"></script>
+    <script src="points.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
