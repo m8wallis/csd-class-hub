@@ -128,16 +128,24 @@ function applyFileAwards() {
   const store = loadPointsStore()
   let changed = false
   for (const award of awards) {
-    if (!award || !award.id || store.appliedAwardIds.includes(award.id)) continue
+    if (!award || !award.id) continue
     const student = studentFromAward(award)
     const delta = Number(award.delta)
     if (!student || !Number.isFinite(delta) || !delta) continue
+    const applyKey = `${award.id}:${student.id}`
+    const firstWithId = awards.find((row) => row && row.id === award.id)
+    if (
+      store.appliedAwardIds.includes(applyKey) ||
+      (firstWithId === award && store.appliedAwardIds.includes(award.id))
+    ) {
+      continue
+    }
     const current = Number(store.balances[student.id] || 0)
     const next = Math.max(0, current + delta)
     const applied = next - current
     store.balances[student.id] = next
-    store.appliedAwardIds.push(award.id)
-    if (applied) {
+    store.appliedAwardIds.push(applyKey)
+    if (applied && !award.silent) {
       store.ledger.push({
         studentId: student.id,
         delta: applied,
@@ -514,7 +522,10 @@ function matchesFilters(student) {
     student.shows,
     student.apps,
     student.snacks,
-    student.hopes
+    student.hopes,
+    student.mbti,
+    student.mbtiType,
+    student.enneagram
   ]
     .join(' ')
     .toLowerCase()
@@ -542,6 +553,7 @@ function cardHtml(student, delay = 0) {
       <h3>${escapeHtml(student.displayName)}</h3>
       <p class='meta'>${escapeHtml(student.games || student.hobbies || 'Profile coming soon')}</p>
       <div class='chip-row'>
+        ${student.mbti ? `<span class='chip'>${escapeHtml(student.mbti)}</span>` : ''}
         ${student.coding ? `<span class='chip'>${escapeHtml(student.coding)}</span>` : ''}
         ${tags.map((tag) => `<span class='chip'>${escapeHtml(tag.replaceAll('-', ' '))}</span>`).join('')}
       </div>
@@ -575,6 +587,12 @@ function overlap(a, b) {
     for (const token of a.tokens[kind] || []) {
       if (setB.has(token)) shared.push(token)
     }
+  }
+  const mbtiA = (a.mbti || '').replace(/-[AT]$/i, '')
+  const mbtiB = (b.mbti || '').replace(/-[AT]$/i, '')
+  if (mbtiA && mbtiA === mbtiB) shared.push(mbtiA)
+  if (a.enneagram && a.enneagram === b.enneagram) {
+    shared.push(`Enneagram ${a.enneagram}`)
   }
   return [...new Set(shared)]
 }
@@ -628,6 +646,14 @@ function field(label, value) {
   return `<div><dt>${label}</dt><dd>${escapeHtml(value)}</dd></div>`
 }
 
+function personalityLabel(student) {
+  const bits = []
+  if (student.mbti) bits.push(student.mbti)
+  if (student.mbtiType) bits.push(student.mbtiType)
+  if (student.enneagram) bits.push(`Enneagram ${student.enneagram}`)
+  return bits.join(' · ')
+}
+
 function profileBits(student) {
   const bits = []
   if (student.coding) bits.push(student.coding)
@@ -653,6 +679,7 @@ function renderModal(id) {
     ${student.hopes ? `<p class='hope-quote'>${escapeHtml(student.hopes)}</p>` : ''}
     ${pointsPanelHtml(student)}
     <dl class='modal-grid'>
+      ${field('Personality', personalityLabel(student))}
       ${field('Games', student.games)}
       ${field('Music', student.music)}
       ${field('Shows', student.shows)}

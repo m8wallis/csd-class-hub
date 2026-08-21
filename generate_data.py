@@ -8,6 +8,9 @@ from collections import Counter
 from pathlib import Path
 
 CSV_PATH = Path("/Users/marcwallis/Downloads/Classroom Survey: CSD.csv")
+QUIZ_CSV_PATH = Path(
+    "/Users/marcwallis/Downloads/(New) Personality Quiz Answers (Responses) - Form Responses 1.csv"
+)
 OUT_PATH = Path(__file__).parent / "data.js"
 
 EMPTYISH = {
@@ -235,6 +238,54 @@ def tokens_for(row: dict) -> dict:
     }
 
 
+QUIZ_TYPE_FIX = {
+    "virtouso": "Virtuoso",
+    "logistican": "Logistician",
+    "logistician": "Logistician",
+    "the advocate": "Advocate",
+    "the improver": "Improver",
+    "myers briggs test": "",
+}
+
+QUIZ_NAME_ALIASES = {
+    ("yana", "i"): "Zayan I."
+}
+
+
+def merge_personality_quiz(students: list[dict]) -> None:
+    if not QUIZ_CSV_PATH.exists():
+        return
+    by_display = {s["displayName"].lower(): s for s in students}
+    with QUIZ_CSV_PATH.open(newline="", encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            first = clean(row["What's your First Name?"])
+            last = clean(row["What's your Last Name?"])
+            initial = last[0].upper() if last else "?"
+            display = f"{first.title()} {initial}."
+            alias = QUIZ_NAME_ALIASES.get((first.lower(), initial.lower()))
+            student = by_display.get((alias or display).lower())
+            if not student:
+                matches = [
+                    s
+                    for s in students
+                    if s["displayName"].split()[0].lower() == first.lower()
+                ]
+                if len(matches) == 1:
+                    student = matches[0]
+            if not student:
+                continue
+            mbti_type = " ".join(clean(row["Type/Name from the First Quiz"]).lower().split())
+            student["mbti"] = "".join(clean(row["Letters from the First Quiz"]).split()).upper()
+            student["mbtiType"] = QUIZ_TYPE_FIX.get(
+                mbti_type,
+                " ".join(
+                    part.capitalize()
+                    for part in clean(row["Type/Name from the First Quiz"]).split()
+                ),
+            )
+            student["enneagram"] = clean(row["Type from the Second Quiz (enneagram)"])
+
+
 def wishlist_items(values, kind: str) -> list[dict]:
     # Hand-grouped popular asks so the board feels designed, not raw.
     groups = {
@@ -324,6 +375,8 @@ def main() -> None:
                 "tokens": tokens_for(row),
             }
             students.append(student)
+
+    merge_personality_quiz(students)
 
     data = {
         "className": "CSD Class Hub",

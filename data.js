@@ -1,6 +1,6 @@
 window.CSD_DATA = {
   "className": "CSD Class Hub",
-  "tagline": "31 classmates. One room. Chips, Roblox, and a whole lot of curiosity.",
+  "tagline": "32 classmates. One room. Chips, Roblox, and a whole lot of curiosity.",
   "students": [
     {
       "id": "s01",
@@ -43,7 +43,10 @@ window.CSD_DATA = {
           "chips",
           "drinks"
         ]
-      }
+      },
+      "mbti": "ENFP",
+      "mbtiType": "Campaigner",
+      "enneagram": "2"
     },
     {
       "id": "s02",
@@ -88,7 +91,10 @@ window.CSD_DATA = {
         "snacks": [
           "chips"
         ]
-      }
+      },
+      "mbti": "ENTJ-T",
+      "mbtiType": "Commander",
+      "enneagram": "1"
     },
     {
       "id": "s03",
@@ -127,7 +133,10 @@ window.CSD_DATA = {
           "cookies",
           "chocolate"
         ]
-      }
+      },
+      "mbti": "ENFP-A",
+      "mbtiType": "Campaigner",
+      "enneagram": "3"
     },
     {
       "id": "s04",
@@ -171,7 +180,10 @@ window.CSD_DATA = {
           "chips",
           "candy"
         ]
-      }
+      },
+      "mbti": "ENFP",
+      "mbtiType": "Campaigner",
+      "enneagram": "2"
     },
     {
       "id": "s05",
@@ -283,7 +295,10 @@ window.CSD_DATA = {
           "soccer"
         ],
         "snacks": []
-      }
+      },
+      "mbti": "INFP-T",
+      "mbtiType": "Mediator",
+      "enneagram": "9"
     },
     {
       "id": "s08",
@@ -323,7 +338,10 @@ window.CSD_DATA = {
           "candy",
           "drinks"
         ]
-      }
+      },
+      "mbti": "ISTJ-T",
+      "mbtiType": "Logistician",
+      "enneagram": "9"
     },
     {
       "id": "s09",
@@ -358,7 +376,10 @@ window.CSD_DATA = {
         "snacks": [
           "chips"
         ]
-      }
+      },
+      "mbti": "ESFP-T",
+      "mbtiType": "Entertainer",
+      "enneagram": "5"
     },
     {
       "id": "s10",
@@ -401,7 +422,10 @@ window.CSD_DATA = {
           "cookies",
           "chocolate"
         ]
-      }
+      },
+      "mbti": "INFJ-A",
+      "mbtiType": "Advocate",
+      "enneagram": "5"
     },
     {
       "id": "s11",
@@ -445,7 +469,10 @@ window.CSD_DATA = {
         "snacks": [
           "candy"
         ]
-      }
+      },
+      "mbti": "INFJ-T",
+      "mbtiType": "Advocate",
+      "enneagram": "9"
     },
     {
       "id": "s12",
@@ -492,7 +519,10 @@ window.CSD_DATA = {
         "snacks": [
           "chips"
         ]
-      }
+      },
+      "mbti": "INFP",
+      "mbtiType": "",
+      "enneagram": "1"
     },
     {
       "id": "s13",
@@ -533,7 +563,10 @@ window.CSD_DATA = {
         "snacks": [
           "chips"
         ]
-      }
+      },
+      "mbti": "ESFP-T",
+      "mbtiType": "Entertainer",
+      "enneagram": "3"
     },
     {
       "id": "s14",
@@ -575,7 +608,10 @@ window.CSD_DATA = {
           "candy",
           "chocolate"
         ]
-      }
+      },
+      "mbti": "ENFP",
+      "mbtiType": "Campaigner",
+      "enneagram": "3"
     },
     {
       "id": "s15",
@@ -620,7 +656,10 @@ window.CSD_DATA = {
           "chips",
           "drinks"
         ]
-      }
+      },
+      "mbti": "ESFJ-T",
+      "mbtiType": "Improver",
+      "enneagram": "1"
     },
     {
       "id": "s16",
@@ -662,7 +701,10 @@ window.CSD_DATA = {
           "chips",
           "candy"
         ]
-      }
+      },
+      "mbti": "ENTJ",
+      "mbtiType": "Commander",
+      "enneagram": "8"
     },
     {
       "id": "s17",
@@ -748,7 +790,10 @@ window.CSD_DATA = {
         "snacks": [
           "chips"
         ]
-      }
+      },
+      "mbti": "ISTJ-T",
+      "mbtiType": "Logistician",
+      "enneagram": "5"
     },
     {
       "id": "s19",
@@ -836,7 +881,10 @@ window.CSD_DATA = {
         "snacks": [
           "chips"
         ]
-      }
+      },
+      "mbti": "ESFP-T",
+      "mbtiType": "Entertainer",
+      "enneagram": "1"
     },
     {
       "id": "s21",
@@ -873,7 +921,10 @@ window.CSD_DATA = {
           "sports"
         ],
         "snacks": []
-      }
+      },
+      "mbti": "ISTJ-T",
+      "mbtiType": "Logistician",
+      "enneagram": "3"
     },
     {
       "id": "s22",
@@ -923,7 +974,10 @@ window.CSD_DATA = {
         "snacks": [
           "chips"
         ]
-      }
+      },
+      "mbti": "ENFJ",
+      "mbtiType": "Protagonist",
+      "enneagram": "4"
     },
     {
       "id": "s23",
@@ -965,7 +1019,10 @@ window.CSD_DATA = {
           "chips",
           "cookies"
         ]
-      }
+      },
+      "mbti": "ESFJ-T",
+      "mbtiType": "Consul",
+      "enneagram": "1"
     },
     {
       "id": "s24",
@@ -1005,7 +1062,10 @@ window.CSD_DATA = {
           "chips",
           "drinks"
         ]
-      }
+      },
+      "mbti": "ENTJ-T",
+      "mbtiType": "Protagonist",
+      "enneagram": "1"
     },
     {
       "id": "s25",
@@ -1044,7 +1104,10 @@ window.CSD_DATA = {
         "snacks": [
           "chips"
         ]
-      }
+      },
+      "mbti": "ISFP-T",
+      "mbtiType": "Adventurer",
+      "enneagram": "1"
     },
     {
       "id": "s26",
@@ -1168,7 +1231,10 @@ window.CSD_DATA = {
           "chips",
           "candy"
         ]
-      }
+      },
+      "mbti": "INFP",
+      "mbtiType": "Mediator",
+      "enneagram": "9"
     },
     {
       "id": "s29",
@@ -1196,7 +1262,10 @@ window.CSD_DATA = {
         "music": [],
         "hobbies": [],
         "snacks": []
-      }
+      },
+      "mbti": "ISFJ-A",
+      "mbtiType": "Defender",
+      "enneagram": "6"
     },
     {
       "id": "s30",
@@ -1224,7 +1293,10 @@ window.CSD_DATA = {
         "music": [],
         "hobbies": [],
         "snacks": []
-      }
+      },
+      "mbti": "ISTP",
+      "mbtiType": "Virtuoso",
+      "enneagram": "4"
     },
     {
       "id": "s31",
@@ -1252,7 +1324,41 @@ window.CSD_DATA = {
         "music": [],
         "hobbies": [],
         "snacks": []
-      }
+      },
+      "mbti": "INFP-T",
+      "mbtiType": "Mediator",
+      "enneagram": "1"
+    },
+    {
+      "id": "s32",
+      "displayName": "Dana M.",
+      "initials": "DM",
+      "posters": "",
+      "snacks": "",
+      "prizes": "",
+      "techLove": "",
+      "coding": "",
+      "codingRaw": "",
+      "apps": "",
+      "websites": "",
+      "screenTime": "",
+      "shows": "",
+      "music": "",
+      "games": "",
+      "reads": "",
+      "book": "",
+      "hobbies": "",
+      "hopes": "",
+      "tags": [],
+      "tokens": {
+        "games": [],
+        "music": [],
+        "hobbies": [],
+        "snacks": []
+      },
+      "mbti": "INFP-T",
+      "mbtiType": "Mediator",
+      "enneagram": "9"
     }
   ],
   "wishlist": {

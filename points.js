@@ -57,6 +57,25 @@ window.CSD_POINTS = {
     { id: '2026-08-20-bonus-dania', name: 'Dania C.', delta: 1, note: 'Bonus point' },
     { id: '2026-08-20-bonus-zayan', name: 'Zayan I.', delta: 2, note: 'Bonus point' },
     { id: '2026-08-20-bonus-danyela', name: 'Danyela C.', delta: 1, note: 'Bonus point' },
-    { id: '2026-08-20-bonus-iszael', name: 'Iszael M.', delta: 1, note: 'Bonus point' }
+    { id: '2026-08-20-bonus-iszael', name: 'Iszael M.', delta: 1, note: 'Bonus point' },
+    { id: '2026-08-21-game-qwe', name: 'Savannah A.', delta: -3, note: 'Game point' },
+    { id: '2026-08-21-game-asd', name: 'Naia B.', delta: 3, note: 'Game point' },
+    { id: '2026-08-21-fri-game', name: 'Trinity T.', delta: 3, note: 'Game point' },
+    { id: '2026-08-21-fri-game-danyela', name: 'Danyela C.', delta: 3, note: 'Game point' },
+    { id: '2026-08-21-fri-game-dania', name: 'Dania C.', delta: 3, note: 'Game point' },
+    { id: '2026-08-21-fri-game-nghia', name: 'Nghia T.', delta: 3, note: 'Game point' },
+    { id: '2026-08-21-fri-game-logan', name: 'Logan M.', delta: 1, note: 'Game point' },
+    { id: '2026-08-21-fri-game-jackson', name: 'Jackson R.', delta: 1, note: 'Game point' },
+    { id: '2026-08-21-fri-game-charlize', name: 'Charlize P.', delta: 1, note: 'Game point' },
+    { id: '2026-08-21-fri-game-isaac', name: 'Isaac L.', delta: 1, note: 'Game point' },
+    { id: '2026-08-21-fri-game-javier', name: 'Javier A.', delta: 1, note: 'Game point' },
+    { id: '2026-08-21-fri-game-sophia', name: 'Sophia L.', delta: 1, note: 'Game point' },
+    { id: '2026-08-21-fri-game-lucas', name: 'Lucas D.', delta: 1, note: 'Game point' },
+    { id: '2026-08-21-fri-game-oswa', name: 'Oswa N.', delta: 1, note: 'Game point' },
+    { id: '2026-08-21-fri-game-thanh', name: 'Thanh B.', delta: 1, note: 'Game point' },
+    { id: '2026-08-21-fri-game-kiaraliz', name: 'Kiaraliz O.', delta: 1, note: 'Game point' },
+    { id: '2026-08-21-fri-game-tyran', name: 'Tyran C.', delta: 1, note: 'Game point' },
+    { id: '2026-08-21-adjust-dania', name: 'Dania C.', delta: -2, silent: true },
+    { id: '2026-08-21-adjust-naia', name: 'Naia B.', delta: -1, silent: true }
   ]
 }
