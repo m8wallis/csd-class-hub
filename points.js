@@ -76,6 +76,18 @@ window.CSD_POINTS = {
     { id: '2026-08-21-fri-game-kiaraliz', name: 'Kiaraliz O.', delta: 1, note: 'Game point' },
     { id: '2026-08-21-fri-game-tyran', name: 'Tyran C.', delta: 1, note: 'Game point' },
     { id: '2026-08-21-adjust-dania', name: 'Dania C.', delta: -2, silent: true },
-    { id: '2026-08-21-adjust-naia', name: 'Naia B.', delta: -1, silent: true }
+    { id: '2026-08-21-adjust-naia', name: 'Naia B.', delta: -1, silent: true },
+    { id: '2026-08-24-extra-savannah', name: 'Savannah A.', delta: 1, note: 'Extra point' },
+    { id: '2026-08-24-extra-thanh', name: 'Thanh B.', delta: 1, note: 'Extra point' },
+    { id: '2026-08-24-extra-danyela', name: 'Danyela C.', delta: 1, note: 'Extra point' },
+    { id: '2026-08-24-extra-naia', name: 'Naia B.', delta: 1, note: 'Extra point' },
+    { id: '2026-08-24-extra-trinity', name: 'Trinity T.', delta: 1, note: 'Extra point' },
+    { id: '2026-08-24-extra-nghia', name: 'Nghia T.', delta: 1, note: 'Extra point' },
+    { id: '2026-08-24-extra-dania', name: 'Dania C.', delta: 1, note: 'Extra point' },
+    { id: '2026-08-24-extra-jeffrey', name: 'Jeffrey D.', delta: 1, note: 'Extra point' },
+    { id: '2026-08-24-extra-kiaraliz', name: 'Kiaraliz O.', delta: 1, note: 'Extra point' },
+    { id: '2026-08-24-extra-sophia', name: 'Sophia L.', delta: 1, note: 'Extra point' },
+    { id: '2026-08-24-extra-tyran', name: 'Tyran C.', delta: 1, note: 'Extra point' },
+    { id: '2026-08-24-extra-lucas', name: 'Lucas D.', delta: 1, note: 'Extra point' }
   ]
 }
