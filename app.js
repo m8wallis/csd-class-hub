@@ -202,8 +202,6 @@ function savedPin() {
   }
 }
 
-// commit test
-
 function renderTeacherChrome() {
   const on = isTeacher()
   const btn = $('#teacher-btn')
