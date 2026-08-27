@@ -133,6 +133,10 @@ window.CSD_POINTS = {
     { id: '2026-08-25-trivia-extra-sofia', name: 'Sofia J.', delta: 1, note: 'Extra trivia' },
     { id: '2026-08-26-helper-charlize', name: 'Charlize P.', delta: 2, note: 'Helper bonus' },
     { id: '2026-08-26-helper-isaac', name: 'Isaac L.', delta: 2, note: 'Helper bonus' },
-    { id: '2026-08-26-adjust-savannah', name: 'Savannah A.', delta: 6, note: 'Points adjustment' }
+    { id: '2026-08-26-adjust-savannah', name: 'Savannah A.', delta: 6, note: 'Points adjustment' },
+    { id: '2026-08-27-redeem-alyssia-gatorade', name: 'Alyssia R.', delta: -5, note: 'Gatorade' },
+    { id: '2026-08-27-redeem-victoria-chips', name: 'Victoria R.', delta: -5, note: 'Chips' },
+    { id: '2026-08-27-redeem-giselle-chips', name: 'Giselle A.', delta: -5, note: 'Chips' },
+    { id: '2026-08-27-redeem-logan-chips', name: 'Logan M.', delta: -5, note: 'Chips' }
   ]
 }
