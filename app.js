@@ -86,9 +86,7 @@ function loadPointsStore() {
       version: 1,
       balances: parsed.balances || {},
       ledger: Array.isArray(parsed.ledger) ? parsed.ledger : [],
-      appliedAwardIds: Array.isArray(parsed.appliedAwardIds)
-        ? parsed.appliedAwardIds
-        : []
+      appliedAwardIds: Array.isArray(parsed.appliedAwardIds) ? parsed.appliedAwardIds : []
     }
   } catch (err) {
     return emptyPointsStore()
@@ -109,7 +107,9 @@ function getPoints(id) {
 
 function studentFromAward(award) {
   if (award.studentId) return studentById(award.studentId)
-  const q = String(award.name || award.student || '').trim().toLowerCase()
+  const q = String(award.name || award.student || '')
+    .trim()
+    .toLowerCase()
   if (!q) return null
   const exact = students.find((s) => s.displayName.toLowerCase() === q)
   if (exact) return exact
@@ -201,6 +201,8 @@ function savedPin() {
     return ''
   }
 }
+
+// commit test
 
 function renderTeacherChrome() {
   const on = isTeacher()
@@ -316,9 +318,7 @@ function importPoints(file) {
         version: 1,
         balances: parsed.balances || {},
         ledger: Array.isArray(parsed.ledger) ? parsed.ledger : [],
-        appliedAwardIds: Array.isArray(parsed.appliedAwardIds)
-          ? parsed.appliedAwardIds
-          : []
+        appliedAwardIds: Array.isArray(parsed.appliedAwardIds) ? parsed.appliedAwardIds : []
       })
       applyFileAwards()
       renderCards()
