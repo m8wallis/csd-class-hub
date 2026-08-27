@@ -205,10 +205,14 @@ function savedPin() {
 function renderTeacherChrome() {
   const on = isTeacher()
   const btn = $('#teacher-btn')
-  btn.textContent = on ? 'Teacher on' : 'Teacher'
-  btn.classList.toggle('is-on', on)
-  $('#points-tools').hidden = !on
-  $('#sort-points').classList.toggle('is-on', state.sort === 'points')
+  if (btn) {
+    btn.textContent = on ? 'Teacher on' : 'Teacher'
+    btn.classList.toggle('is-on', on)
+  }
+  const tools = $('#points-tools')
+  if (tools) tools.hidden = !on
+  const sortBtn = $('#sort-points')
+  if (sortBtn) sortBtn.classList.toggle('is-on', state.sort === 'points')
 }
 
 function openTeacherDialog() {
