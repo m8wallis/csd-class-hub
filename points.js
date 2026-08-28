@@ -171,6 +171,26 @@ window.CSD_POINTS = {
     { id: '2026-08-27-class-s30', name: 'Aisha C.', delta: 2, note: 'Class points' },
     { id: '2026-08-27-class-s31', name: 'Naia B.', delta: 3, note: 'Class points' },
     { id: '2026-08-27-class-s32', name: 'Dana M.', delta: 1, note: 'Class points' },
-    { id: '2026-08-27-redeem-emma-candy', name: 'Emma C.', delta: -5, note: 'Candy' }
+    { id: '2026-08-27-redeem-emma-candy', name: 'Emma C.', delta: -5, note: 'Candy' },
+    { id: '2026-08-28-redeem-thanh-snacks', name: 'Thanh B.', delta: -5, note: 'Snacks' },
+    {
+      id: '2026-08-28-redeem-trinity-chips-drink',
+      name: 'Trinity T.',
+      delta: -10,
+      note: 'Chips & drink'
+    },
+    { id: '2026-08-28-puzzles-haddy', name: 'Hadassa G.', delta: 5, note: 'Puzzles' },
+    { id: '2026-08-28-puzzles-jackson', name: 'Jackson R.', delta: 3, note: 'Puzzles' },
+    { id: '2026-08-28-python-isaac', name: 'Isaac L.', delta: 3, note: 'Python' },
+    { id: '2026-08-28-python-logan', name: 'Logan M.', delta: 5, note: 'Python' }
   ]
 }
+
+// t1: 11
+// t2: 11
+// t3: 1
+// t4:
+// t5:
+// t6: 1
+// t7: 1
+// t8:
