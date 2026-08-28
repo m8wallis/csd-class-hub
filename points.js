@@ -182,15 +182,36 @@ window.CSD_POINTS = {
     { id: '2026-08-28-puzzles-haddy', name: 'Hadassa G.', delta: 5, note: 'Puzzles' },
     { id: '2026-08-28-puzzles-jackson', name: 'Jackson R.', delta: 3, note: 'Puzzles' },
     { id: '2026-08-28-python-isaac', name: 'Isaac L.', delta: 3, note: 'Python' },
-    { id: '2026-08-28-python-logan', name: 'Logan M.', delta: 5, note: 'Python' }
+    { id: '2026-08-28-python-logan', name: 'Logan M.', delta: 5, note: 'Python' },
+    { id: '2026-08-28-quiz-iszael', name: 'Iszael M.', delta: 3, note: 'Quiz points' },
+    { id: '2026-08-28-quiz-isaac', name: 'Isaac L.', delta: 3, note: 'Quiz points' },
+    { id: '2026-08-28-quiz-victoria-3', name: 'Victoria R.', delta: 3, note: 'Quiz points' },
+    { id: '2026-08-28-quiz-danyela', name: 'Danyela C.', delta: 3, note: 'Quiz points' },
+    { id: '2026-08-28-quiz-aisha', name: 'Aisha C.', delta: 3, note: 'Quiz points' },
+    { id: '2026-08-28-quiz-thanh', name: 'Thanh B.', delta: 3, note: 'Quiz points' },
+    { id: '2026-08-28-quiz-alyssia', name: 'Alyssia R.', delta: 2, note: 'Quiz points' },
+    { id: '2026-08-28-quiz-kiaraliz', name: 'Kiaraliz O.', delta: 2, note: 'Quiz points' },
+    { id: '2026-08-28-quiz-sophia', name: 'Sophia L.', delta: 2, note: 'Quiz points' },
+    { id: '2026-08-28-quiz-sofia', name: 'Sofia J.', delta: 2, note: 'Quiz points' },
+    { id: '2026-08-28-quiz-trinity', name: 'Trinity T.', delta: 2, note: 'Quiz points' },
+    { id: '2026-08-28-quiz-victoria-2', name: 'Victoria R.', delta: 2, note: 'Quiz points' },
+    { id: '2026-08-28-quiz-hadassa', name: 'Hadassa G.', delta: 1, note: 'Quiz points' },
+    { id: '2026-08-28-quiz-oswa', name: 'Oswa N.', delta: 1, note: 'Quiz points' },
+    { id: '2026-08-28-quiz-jeffrey', name: 'Jeffrey D.', delta: 1, note: 'Quiz points' },
+    { id: '2026-08-28-quiz-axel', name: 'Axel B.', delta: 1, note: 'Quiz points' },
+    { id: '2026-08-28-quiz-logan', name: 'Logan M.', delta: 1, note: 'Quiz points' },
+    { id: '2026-08-28-quiz-zayan', name: 'Zayan I.', delta: 1, note: 'Quiz points' },
+    { id: '2026-08-28-quiz-dania', name: 'Dania C.', delta: 1, note: 'Quiz points' },
+    { id: '2026-08-28-quiz-dana', name: 'Dana M.', delta: 1, note: 'Quiz points' },
+    { id: '2026-08-28-quiz-emma', name: 'Emma C.', delta: 1, note: 'Quiz points' }
   ]
 }
 
-// t1: 11
-// t2: 11
-// t3: 1
-// t4:
+// t1: 11111
+// t2: 11111
+// t3: 111
+// t4: 1
 // t5:
-// t6: 1
-// t7: 1
+// t6: 111
+// t7: 111
 // t8:
