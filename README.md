@@ -19,6 +19,7 @@ No install and no server needed.
 - Room wishlist: posters, snacks, prizes
 - Searchable student cards with filters
 - Find a classmate by shared games, music, or hobbies
+- Processing lab (`lab.html`): interactive If/Then, comparing, finding a match, and counting
 
 Names are shown as **first name + last initial**. Survey answers about fears, extra help, and private support notes are not included.
 

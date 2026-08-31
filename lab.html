@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Four kinds of processing · CSD Class Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="lab.css" />
+  </head>
+  <body class="lab-page">
+    <div class="paper-grain" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">CSD</span>
+        <span class="brand-text">Class Hub</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html">Hub</a>
+        <a href="#if-then">If/Then</a>
+        <a href="#comparing">Comparing</a>
+        <a href="#find-match">Finding a match</a>
+        <a href="#counting">Counting</a>
+      </nav>
+      <a class="btn btn-tiny" href="index.html">Back to hub</a>
+    </header>
+
+    <main id="top">
+      <section class="hero lab-hero">
+        <div class="hero-copy">
+          <p class="kicker">Computer science · Hands-on</p>
+          <h1>Four kinds of processing.</h1>
+          <p class="lede">
+            Computers don’t just store stuff — they process it. These four moves show up in every
+            game, app, and program. Flip, compare, search, and count. Same ideas, made playable.
+          </p>
+        </div>
+        <nav class="station-jump" aria-label="Lab stations">
+          <a class="station-card" href="#if-then">
+            <span>01</span>
+            <strong>If/Then</strong>
+            <em>Decisions</em>
+          </a>
+          <a class="station-card" href="#comparing">
+            <span>02</span>
+            <strong>Comparing</strong>
+            <em>Bigger or same</em>
+          </a>
+          <a class="station-card" href="#find-match">
+            <span>03</span>
+            <strong>Finding a match</strong>
+            <em>Search a list</em>
+          </a>
+          <a class="station-card" href="#counting">
+            <span>04</span>
+            <strong>Counting</strong>
+            <em>Keep a total</em>
+          </a>
+        </nav>
+      </section>
+
+      <section class="section lab-station" id="if-then">
+        <div class="section-head">
+          <p class="kicker">01 · If/Then</p>
+          <h2>If something is true, do something else.</h2>
+          <p>
+            A computer checks a condition. If it’s yes, it runs one path. If it’s no, it runs the
+            other. Flip the switch and watch the robot choose.
+          </p>
+        </div>
+        <div class="lab-split">
+          <div class="panel lab-play">
+            <div class="chip-row" id="if-scenarios" aria-label="If/Then scenarios"></div>
+            <div class="diorama" id="if-diorama" data-scene="rain">
+              <div class="diorama-sky"></div>
+              <div class="diorama-stars" aria-hidden="true"></div>
+              <div class="diorama-rain" aria-hidden="true"></div>
+              <div class="diorama-stage">
+                <span class="diorama-bot" aria-hidden="true">🤖</span>
+                <span class="diorama-prop" id="if-prop">🧥</span>
+              </div>
+              <p class="diorama-speech" id="if-speech">Good thing I packed a coat.</p>
+            </div>
+            <div class="rocker-wrap">
+              <p class="rocker-question" id="if-question">Is it raining?</p>
+              <label class="rocker">
+                <span id="if-no-label">No</span>
+                <input id="if-toggle" type="checkbox" checked aria-describedby="if-question" />
+                <span id="if-yes-label">Yes</span>
+              </label>
+            </div>
+          </div>
+          <aside class="panel lab-notes">
+            <p class="kicker">The computer sees</p>
+            <pre class="code-caption" id="if-code"></pre>
+            <p class="lab-explain" id="if-explain"></p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section lab-station" id="comparing">
+        <div class="section-head">
+          <p class="kicker">02 · Comparing</p>
+          <h2>Same, bigger, or smaller?</h2>
+          <p>
+            Comparing asks a yes-or-no question: is this equal to that? Is this greater? The answer
+            is what If/Then uses to decide.
+          </p>
+        </div>
+        <div class="lab-split">
+          <div class="panel lab-play">
+            <div class="compare-arena">
+              <div class="compare-side" data-side="left">
+                <p class="compare-label">Left</p>
+                <div class="compare-stack" id="compare-left-stack"></div>
+                <p class="compare-num" id="compare-left-num">4</p>
+                <div class="compare-stepper">
+                  <button
+                    class="btn btn-small"
+                    type="button"
+                    data-compare-delta="-1"
+                    data-side="left"
+                    aria-label="Decrease left"
+                  >
+                    −
+                  </button>
+                  <button
+                    class="btn btn-small"
+                    type="button"
+                    data-compare-delta="1"
+                    data-side="left"
+                    aria-label="Increase left"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+              <div class="compare-op" id="compare-op" aria-live="polite">&gt;</div>
+              <div class="compare-side" data-side="right">
+                <p class="compare-label">Right</p>
+                <div class="compare-stack" id="compare-right-stack"></div>
+                <p class="compare-num" id="compare-right-num">6</p>
+                <div class="compare-stepper">
+                  <button
+                    class="btn btn-small"
+                    type="button"
+                    data-compare-delta="-1"
+                    data-side="right"
+                    aria-label="Decrease right"
+                  >
+                    −
+                  </button>
+                  <button
+                    class="btn btn-small"
+                    type="button"
+                    data-compare-delta="1"
+                    data-side="right"
+                    aria-label="Increase right"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="seesaw" aria-hidden="true">
+              <div class="seesaw-board" id="seesaw-board">
+                <span class="seesaw-weight" id="seesaw-left"></span>
+                <span class="seesaw-weight" id="seesaw-right"></span>
+              </div>
+              <div class="seesaw-fulcrum"></div>
+            </div>
+            <p class="compare-readout" id="compare-readout"></p>
+            <p class="points-sub">Set from the prize board</p>
+            <div class="chip-row" id="compare-prizes"></div>
+          </div>
+          <aside class="panel lab-notes">
+            <p class="kicker">The computer sees</p>
+            <pre class="code-caption" id="compare-code"></pre>
+            <p class="lab-explain" id="compare-explain"></p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section lab-station" id="find-match">
+        <div class="section-head">
+          <p class="kicker">03 · Finding a match</p>
+          <h2>Search a list until something matches.</h2>
+          <p>
+            Pick a target, then watch the search check lockers one at a time — the same way a
+            program walks through a list.
+          </p>
+        </div>
+        <div class="lab-split">
+          <div class="panel lab-play">
+            <p class="points-sub">Looking for</p>
+            <div class="chip-row" id="match-targets"></div>
+            <div class="locker-grid" id="locker-grid" aria-label="Lockers"></div>
+            <div class="lab-actions">
+              <button class="btn btn-primary" type="button" id="match-search">Search lockers</button>
+              <button class="btn btn-ghost" type="button" id="match-shuffle">Shuffle</button>
+            </div>
+            <p class="lab-status" id="match-status" aria-live="polite">Pick a target, then search.</p>
+          </div>
+          <aside class="panel lab-notes">
+            <p class="kicker">The computer sees</p>
+            <pre class="code-caption" id="match-code"></pre>
+            <p class="lab-explain" id="match-explain">
+              This is a linear search: start at the beginning, check each item, stop when you find a
+              match — or reach the end.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section lab-station" id="counting">
+        <div class="section-head">
+          <p class="kicker">04 · Counting</p>
+          <h2>Keep track of how many there are.</h2>
+          <p>
+            Counting is a running total. The computer looks at each thing, and when it matches, it
+            adds one.
+          </p>
+        </div>
+        <div class="lab-split">
+          <div class="panel lab-play">
+            <p class="points-sub">Count the</p>
+            <div class="chip-row" id="count-types"></div>
+            <div class="count-grid" id="count-grid"></div>
+            <div class="count-meter">
+              <p class="count-total" id="count-total">0</p>
+              <p class="count-total-label" id="count-total-label">not counted yet</p>
+            </div>
+            <div class="lab-actions">
+              <button class="btn btn-primary" type="button" id="count-run">Count them</button>
+              <button class="btn btn-ghost" type="button" id="count-mix">Mix them up</button>
+            </div>
+            <p class="lab-status" id="count-status" aria-live="polite">
+              Pick a type, then press count.
+            </p>
+          </div>
+          <aside class="panel lab-notes">
+            <p class="kicker">The computer sees</p>
+            <pre class="code-caption" id="count-code"></pre>
+            <p class="lab-explain" id="count-explain">
+              Start at zero. Loop through the pile. Every time you see a match, add one. That’s a
+              counter.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section lab-close">
+        <div class="section-head">
+          <p class="kicker">String them together</p>
+          <h2>Games use all four.</h2>
+          <p>
+            If the player grabs a coin, compare it to the goal, find a matching item on the board,
+            and count the score. Four simple moves. That’s processing.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>CSD Class Hub · Four kinds of processing · Try them, then go build something</p>
+    </footer>
+
+    <script src="lab.js"></script>
+  </body>
+</html>

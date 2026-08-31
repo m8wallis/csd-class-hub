@@ -130,6 +130,10 @@ a {
   color: var(--ink);
 }
 
+.topbar-extra {
+  display: none;
+}
+
 .btn {
   border: 0;
   cursor: pointer;
@@ -902,6 +906,11 @@ h1 {
 
   .nav {
     display: none;
+  }
+
+  .topbar-extra {
+    display: inline-flex;
+    margin-right: auto;
   }
 
   .wishlist-section {
