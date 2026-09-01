@@ -215,15 +215,38 @@ window.CSD_POINTS = {
     { id: '2026-08-31-quiz-naia', name: 'Naia B.', delta: 2, note: 'Quiz points' },
     { id: '2026-08-31-quiz-danyela', name: 'Danyela C.', delta: 2, note: 'Quiz points' },
     { id: '2026-08-31-quiz-thanh', name: 'Thanh B.', delta: 2, note: 'Quiz points' },
-    { id: '2026-08-31-quiz-victoria', name: 'Victoria R.', delta: 2, note: 'Quiz points' }
+    { id: '2026-08-31-quiz-victoria', name: 'Victoria R.', delta: 2, note: 'Quiz points' },
+    { id: '2026-09-01-redeem-logan-chips', name: 'Logan M.', delta: -5, note: 'Chips' },
+    { id: '2026-09-01-redeem-giselle-candy', name: 'Giselle A.', delta: -5, note: 'Candy' },
+    { id: '2026-09-01-redeem-victoria-candy', name: 'Victoria R.', delta: -5, note: 'Candy' },
+    { id: '2026-09-01-redeem-thanh-chips', name: 'Thanh B.', delta: -5, note: 'Chips' },
+    { id: '2026-09-01-redeem-angel-chips', name: 'Angel M.', delta: -5, note: 'Chips' },
+    { id: '2026-09-01-class-charlize', name: 'Charlize P.', delta: 3, note: 'Class points' },
+    { id: '2026-09-01-class-nghia', name: 'Nghia T.', delta: 3, note: 'Class points' },
+    { id: '2026-09-01-class-tyran', name: 'Tyran C.', delta: 3, note: 'Class points' },
+    { id: '2026-09-01-class-trinity', name: 'Trinity T.', delta: 3, note: 'Class points' },
+    { id: '2026-09-01-class-victoria', name: 'Victoria R.', delta: 2, note: 'Class points' },
+    { id: '2026-09-01-class-aisha', name: 'Aisha C.', delta: 2, note: 'Class points' },
+    { id: '2026-09-01-class-isaac', name: 'Isaac L.', delta: 2, note: 'Class points' },
+    { id: '2026-09-01-class-javier', name: 'Javier A.', delta: 2, note: 'Class points' },
+    { id: '2026-09-01-class-haddy', name: 'Hadassa G.', delta: 2, note: 'Class points' },
+    { id: '2026-09-01-class-dania', name: 'Dania C.', delta: 2, note: 'Class points' },
+    { id: '2026-09-01-class-iszael', name: 'Iszael M.', delta: 2, note: 'Class points' },
+    { id: '2026-09-01-class-zayan', name: 'Zayan I.', delta: 2, note: 'Class points' },
+    { id: '2026-09-01-class-jackson', name: 'Jackson R.', delta: 1, note: 'Class points' },
+    { id: '2026-09-01-class-emma', name: 'Emma C.', delta: 1, note: 'Class points' },
+    { id: '2026-09-01-class-axel', name: 'Axel B.', delta: 1, note: 'Class points' },
+    { id: '2026-09-01-class-logan', name: 'Logan M.', delta: 1, note: 'Class points' },
+    { id: '2026-09-01-redeem-kiaraliz-snacks', name: 'Kiaraliz O.', delta: -5, note: 'Snacks' },
+    { id: '2026-09-01-redeem-sophia-snacks', name: 'Sophia L.', delta: -5, note: 'Snacks' }
   ]
 }
 
-// t1: 11111
-// t2: 11111
-// t3: 111
-// t4: 
-// t5: 11
-// t6: 1
-// t7: 
-// t8: 1
+// t1: 111
+// t2: 11
+// t3: 
+// t4: 11
+// t5: 
+// t6: 11
+// t7: 111
+// t8: 11111
