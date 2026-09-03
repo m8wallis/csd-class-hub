@@ -238,7 +238,10 @@ window.CSD_POINTS = {
     { id: '2026-09-01-class-axel', name: 'Axel B.', delta: 1, note: 'Class points' },
     { id: '2026-09-01-class-logan', name: 'Logan M.', delta: 1, note: 'Class points' },
     { id: '2026-09-01-redeem-kiaraliz-snacks', name: 'Kiaraliz O.', delta: -5, note: 'Snacks' },
-    { id: '2026-09-01-redeem-sophia-snacks', name: 'Sophia L.', delta: -5, note: 'Snacks' }
+    { id: '2026-09-01-redeem-sophia-snacks', name: 'Sophia L.', delta: -5, note: 'Snacks' },
+    { id: '2026-09-02-redeem-nghia-chips', name: 'Nghia T.', delta: -5, note: 'Chips' },
+    { id: '2026-09-02-redeem-savannah-gatorade', name: 'Savannah A.', delta: -5, note: 'Gatorade' },
+    { id: '2026-09-02-redeem-logan-chips', name: 'Logan M.', delta: -5, note: 'Chips' }
   ]
 }
 
