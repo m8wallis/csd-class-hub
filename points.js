@@ -241,7 +241,25 @@ window.CSD_POINTS = {
     { id: '2026-09-01-redeem-sophia-snacks', name: 'Sophia L.', delta: -5, note: 'Snacks' },
     { id: '2026-09-02-redeem-nghia-chips', name: 'Nghia T.', delta: -5, note: 'Chips' },
     { id: '2026-09-02-redeem-savannah-gatorade', name: 'Savannah A.', delta: -5, note: 'Gatorade' },
-    { id: '2026-09-02-redeem-logan-chips', name: 'Logan M.', delta: -5, note: 'Chips' }
+    { id: '2026-09-02-redeem-logan-chips', name: 'Logan M.', delta: -5, note: 'Chips' },
+    { id: '2026-09-03-birthday-kiaraliz', name: 'Kiaraliz O.', delta: 10, note: 'Birthday' },
+    { id: '2026-09-03-birthday-jackson', name: 'Jackson R.', delta: 10, note: 'Birthday' },
+    { id: '2026-09-03-birthday-sophia', name: 'Sophia L.', delta: 10, note: 'Birthday' },
+    { id: '2026-09-03-early-app-danyela', name: 'Danyela C.', delta: 3, note: 'Early App Presentation' },
+    { id: '2026-09-03-early-app-thanh', name: 'Thanh B.', delta: 3, note: 'Early App Presentation' },
+    { id: '2026-09-03-early-app-oswa', name: 'Oswa N.', delta: 3, note: 'Early App Presentation' },
+    { id: '2026-09-03-early-app-jeffrey', name: 'Jeffrey D.', delta: 3, note: 'Early App Presentation' },
+    { id: '2026-09-03-early-app-dania', name: 'Dania C.', delta: 3, note: 'Early App Presentation' },
+    { id: '2026-09-03-early-app-zayan', name: 'Zayan I.', delta: 3, note: 'Early App Presentation' },
+    { id: '2026-09-03-early-app-haddy', name: 'Hadassa G.', delta: 3, note: 'Early App Presentation' },
+    { id: '2026-09-03-early-app-isaac', name: 'Isaac L.', delta: 3, note: 'Early App Presentation' },
+    { id: '2026-09-03-early-app-javier', name: 'Javier A.', delta: 3, note: 'Early App Presentation' },
+    { id: '2026-09-03-early-app-savannah', name: 'Savannah A.', delta: 3, note: 'Early App Presentation' },
+    { id: '2026-09-03-early-app-giselle', name: 'Giselle A.', delta: 3, note: 'Early App Presentation' },
+    { id: '2026-09-03-early-app-victoria', name: 'Victoria R.', delta: 3, note: 'Early App Presentation' },
+    { id: '2026-09-03-early-app-aisha', name: 'Aisha C.', delta: 3, note: 'Early App Presentation' },
+    { id: '2026-09-03-early-app-junho', name: 'Junho A.', delta: 3, note: 'Early App Presentation' },
+    { id: '2026-09-03-early-app-naia', name: 'Naia B.', delta: 3, note: 'Early App Presentation' }
   ]
 }
 
@@ -253,3 +271,12 @@ window.CSD_POINTS = {
 // t6: 11
 // t7: 111
 // t8: 11111
+
+
+/// danyela, thanh
+/// oswa, jeff + 
+/// dania, zayan, haddy +
+/// isaac, javier
+// savannah, giselle
+/// victoria, aisha
+// juhno / naia
