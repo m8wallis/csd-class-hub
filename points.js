@@ -259,7 +259,17 @@ window.CSD_POINTS = {
     { id: '2026-09-03-early-app-victoria', name: 'Victoria R.', delta: 3, note: 'Early App Presentation' },
     { id: '2026-09-03-early-app-aisha', name: 'Aisha C.', delta: 3, note: 'Early App Presentation' },
     { id: '2026-09-03-early-app-junho', name: 'Junho A.', delta: 3, note: 'Early App Presentation' },
-    { id: '2026-09-03-early-app-naia', name: 'Naia B.', delta: 3, note: 'Early App Presentation' }
+    { id: '2026-09-03-early-app-naia', name: 'Naia B.', delta: 3, note: 'Early App Presentation' },
+    { id: '2026-09-08-participation-axel', name: 'Axel B.', delta: 2, note: 'Participation' },
+    { id: '2026-09-08-participation-giselle', name: 'Giselle A.', delta: 2, note: 'Participation' },
+    { id: '2026-09-08-participation-isaac', name: 'Isaac L.', delta: 2, note: 'Participation' },
+    { id: '2026-09-08-participation-jackson', name: 'Jackson R.', delta: 2, note: 'Participation' },
+    { id: '2026-09-08-participation-oswa', name: 'Oswa N.', delta: 2, note: 'Participation' },
+    { id: '2026-09-08-participation-emma', name: 'Emma C.', delta: 2, note: 'Participation' },
+    { id: '2026-09-08-participation-tyran', name: 'Tyran C.', delta: 2, note: 'Participation' },
+    { id: '2026-09-08-participation-savannah', name: 'Savannah A.', delta: 2, note: 'Participation' },
+    { id: '2026-09-08-participation-haddy', name: 'Hadassa G.', delta: 2, note: 'Participation' },
+    { id: '2026-09-08-participation-victoria', name: 'Victoria R.', delta: 2, note: 'Participation' }
   ]
 }
 
