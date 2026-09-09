@@ -245,20 +245,85 @@ window.CSD_POINTS = {
     { id: '2026-09-03-birthday-kiaraliz', name: 'Kiaraliz O.', delta: 10, note: 'Birthday' },
     { id: '2026-09-03-birthday-jackson', name: 'Jackson R.', delta: 10, note: 'Birthday' },
     { id: '2026-09-03-birthday-sophia', name: 'Sophia L.', delta: 10, note: 'Birthday' },
-    { id: '2026-09-03-early-app-danyela', name: 'Danyela C.', delta: 3, note: 'Early App Presentation' },
-    { id: '2026-09-03-early-app-thanh', name: 'Thanh B.', delta: 3, note: 'Early App Presentation' },
+    {
+      id: '2026-09-03-early-app-danyela',
+      name: 'Danyela C.',
+      delta: 3,
+      note: 'Early App Presentation'
+    },
+    {
+      id: '2026-09-03-early-app-thanh',
+      name: 'Thanh B.',
+      delta: 3,
+      note: 'Early App Presentation'
+    },
     { id: '2026-09-03-early-app-oswa', name: 'Oswa N.', delta: 3, note: 'Early App Presentation' },
-    { id: '2026-09-03-early-app-jeffrey', name: 'Jeffrey D.', delta: 3, note: 'Early App Presentation' },
-    { id: '2026-09-03-early-app-dania', name: 'Dania C.', delta: 3, note: 'Early App Presentation' },
-    { id: '2026-09-03-early-app-zayan', name: 'Zayan I.', delta: 3, note: 'Early App Presentation' },
-    { id: '2026-09-03-early-app-haddy', name: 'Hadassa G.', delta: 3, note: 'Early App Presentation' },
-    { id: '2026-09-03-early-app-isaac', name: 'Isaac L.', delta: 3, note: 'Early App Presentation' },
-    { id: '2026-09-03-early-app-javier', name: 'Javier A.', delta: 3, note: 'Early App Presentation' },
-    { id: '2026-09-03-early-app-savannah', name: 'Savannah A.', delta: 3, note: 'Early App Presentation' },
-    { id: '2026-09-03-early-app-giselle', name: 'Giselle A.', delta: 3, note: 'Early App Presentation' },
-    { id: '2026-09-03-early-app-victoria', name: 'Victoria R.', delta: 3, note: 'Early App Presentation' },
-    { id: '2026-09-03-early-app-aisha', name: 'Aisha C.', delta: 3, note: 'Early App Presentation' },
-    { id: '2026-09-03-early-app-junho', name: 'Junho A.', delta: 3, note: 'Early App Presentation' },
+    {
+      id: '2026-09-03-early-app-jeffrey',
+      name: 'Jeffrey D.',
+      delta: 3,
+      note: 'Early App Presentation'
+    },
+    {
+      id: '2026-09-03-early-app-dania',
+      name: 'Dania C.',
+      delta: 3,
+      note: 'Early App Presentation'
+    },
+    {
+      id: '2026-09-03-early-app-zayan',
+      name: 'Zayan I.',
+      delta: 3,
+      note: 'Early App Presentation'
+    },
+    {
+      id: '2026-09-03-early-app-haddy',
+      name: 'Hadassa G.',
+      delta: 3,
+      note: 'Early App Presentation'
+    },
+    {
+      id: '2026-09-03-early-app-isaac',
+      name: 'Isaac L.',
+      delta: 3,
+      note: 'Early App Presentation'
+    },
+    {
+      id: '2026-09-03-early-app-javier',
+      name: 'Javier A.',
+      delta: 3,
+      note: 'Early App Presentation'
+    },
+    {
+      id: '2026-09-03-early-app-savannah',
+      name: 'Savannah A.',
+      delta: 3,
+      note: 'Early App Presentation'
+    },
+    {
+      id: '2026-09-03-early-app-giselle',
+      name: 'Giselle A.',
+      delta: 3,
+      note: 'Early App Presentation'
+    },
+    {
+      id: '2026-09-03-early-app-victoria',
+      name: 'Victoria R.',
+      delta: 3,
+      note: 'Early App Presentation'
+    },
+    {
+      id: '2026-09-03-early-app-aisha',
+      name: 'Aisha C.',
+      delta: 3,
+      note: 'Early App Presentation'
+    },
+    {
+      id: '2026-09-03-early-app-junho',
+      name: 'Junho A.',
+      delta: 3,
+      note: 'Early App Presentation'
+    },
     { id: '2026-09-03-early-app-naia', name: 'Naia B.', delta: 3, note: 'Early App Presentation' },
     { id: '2026-09-08-participation-axel', name: 'Axel B.', delta: 2, note: 'Participation' },
     { id: '2026-09-08-participation-giselle', name: 'Giselle A.', delta: 2, note: 'Participation' },
@@ -267,27 +332,73 @@ window.CSD_POINTS = {
     { id: '2026-09-08-participation-oswa', name: 'Oswa N.', delta: 2, note: 'Participation' },
     { id: '2026-09-08-participation-emma', name: 'Emma C.', delta: 2, note: 'Participation' },
     { id: '2026-09-08-participation-tyran', name: 'Tyran C.', delta: 2, note: 'Participation' },
-    { id: '2026-09-08-participation-savannah', name: 'Savannah A.', delta: 2, note: 'Participation' },
+    {
+      id: '2026-09-08-participation-savannah',
+      name: 'Savannah A.',
+      delta: 2,
+      note: 'Participation'
+    },
     { id: '2026-09-08-participation-haddy', name: 'Hadassa G.', delta: 2, note: 'Participation' },
-    { id: '2026-09-08-participation-victoria', name: 'Victoria R.', delta: 2, note: 'Participation' },
-    { id: '2026-09-09-redeem-nghia-chips', name: 'Nghia T.', delta: -5, note: 'Chips' }
+    {
+      id: '2026-09-08-participation-victoria',
+      name: 'Victoria R.',
+      delta: 2,
+      note: 'Participation'
+    },
+    { id: '2026-09-09-redeem-nghia-chips', name: 'Nghia T.', delta: -5, note: 'Chips' },
+    { id: '2026-09-09-quiz-isaac', name: 'Isaac L.', delta: 5, note: 'Quiz points' },
+    { id: '2026-09-09-quiz-savannah', name: 'Savannah A.', delta: 5, note: 'Quiz points' },
+    { id: '2026-09-09-quiz-iszael', name: 'Iszael M.', delta: 5, note: 'Quiz points' },
+    { id: '2026-09-09-quiz-victoria', name: 'Victoria R.', delta: 5, note: 'Quiz points' },
+    { id: '2026-09-09-quiz-charlize', name: 'Charlize P.', delta: 5, note: 'Quiz points' },
+    { id: '2026-09-09-quiz-danyela', name: 'Danyela C.', delta: 5, note: 'Quiz points' },
+    { id: '2026-09-09-quiz-trinity', name: 'Trinity T.', delta: 5, note: 'Quiz points' },
+    { id: '2026-09-09-quiz-logan', name: 'Logan M.', delta: 5, note: 'Quiz points' },
+    { id: '2026-09-09-quiz-javier', name: 'Javier A.', delta: 2, note: 'Quiz points' },
+    { id: '2026-09-09-quiz-aisha', name: 'Aisha C.', delta: 2, note: 'Quiz points' },
+    { id: '2026-09-09-quiz-giselle', name: 'Giselle A.', delta: 2, note: 'Quiz points' },
+    { id: '2026-09-09-quiz-thanh', name: 'Thanh B.', delta: 2, note: 'Quiz points' },
+    { id: '2026-09-09-quiz-zayan', name: 'Zayan I.', delta: 2, note: 'Quiz points' },
+    { id: '2026-09-09-quiz-tyran', name: 'Tyran C.', delta: 2, note: 'Quiz points' },
+    { id: '2026-09-09-quiz-nghia', name: 'Nghia T.', delta: 2, note: 'Quiz points' },
+    { id: '2026-09-09-quiz-axel', name: 'Axel B.', delta: 2, note: 'Quiz points' },
+    { id: '2026-09-09-quiz-oswa', name: 'Oswa N.', delta: 2, note: 'Quiz points' },
+    { id: '2026-09-09-quiz-haddy', name: 'Hadassa G.', delta: 2, note: 'Quiz points' },
+    { id: '2026-09-09-quiz-naia', name: 'Naia B.', delta: 2, note: 'Quiz points' },
+    { id: '2026-09-09-quiz-alyviah', name: 'Alyviah C.', delta: 2, note: 'Quiz points' }
   ]
 }
 
-// t1: 111
-// t2: 11
-// t3: 
-// t4: 11
-// t5: 
-// t6: 11
-// t7: 111
-// t8: 11111
-
+// t1: 111111111
+// t2: 111111111
+// t3: 1
+// t4: 11111
+// t5:
+// t6: 111
+// t7: 11111111
+// t8: 111111111
 
 /// danyela, thanh
-/// oswa, jeff + 
+/// oswa, jeff +
 /// dania, zayan, haddy +
 /// isaac, javier
 // savannah, giselle
 /// victoria, aisha
 // juhno / naia
+
+// good questions points: savanahh, isaac
+
+// web content vs web structure
+// browser vs server
+// website languages (html, css, js)
+// tags vs elements
+
+// attributes vs properties
+// inline vs block
+// inline vs inline-block
+// inline vs inline-inline
+// inline vs inline-inline-block
+// inline vs inline-inline-inline
+// inline vs inline-inline-inline-block
+// inline vs inline-inline-inline-inline
+// inline vs inline-inline-inline-inline-block
