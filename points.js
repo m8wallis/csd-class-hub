@@ -269,7 +269,8 @@ window.CSD_POINTS = {
     { id: '2026-09-08-participation-tyran', name: 'Tyran C.', delta: 2, note: 'Participation' },
     { id: '2026-09-08-participation-savannah', name: 'Savannah A.', delta: 2, note: 'Participation' },
     { id: '2026-09-08-participation-haddy', name: 'Hadassa G.', delta: 2, note: 'Participation' },
-    { id: '2026-09-08-participation-victoria', name: 'Victoria R.', delta: 2, note: 'Participation' }
+    { id: '2026-09-08-participation-victoria', name: 'Victoria R.', delta: 2, note: 'Participation' },
+    { id: '2026-09-09-redeem-nghia-chips', name: 'Nghia T.', delta: -5, note: 'Chips' }
   ]
 }
 
