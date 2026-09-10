@@ -369,7 +369,10 @@ window.CSD_POINTS = {
     { id: '2026-09-10-redeem-giselle-candy', name: 'Giselle A.', delta: -5, note: 'Candy' },
     { id: '2026-09-10-redeem-sophia-candy', name: 'Sophia L.', delta: -5, note: 'Candy' },
     { id: '2026-09-10-redeem-thanh-chips', name: 'Thanh B.', delta: -5, note: 'Chips' },
-    { id: '2026-09-10-redeem-savannah-drink-candy', name: 'Savannah A.', delta: -10, note: 'Drink & Candy' }
+    { id: '2026-09-10-redeem-savannah-drink-candy', name: 'Savannah A.', delta: -10, note: 'Drink & Candy' },
+    { id: '2026-09-10-redeem-logan-snacks', name: 'Logan M.', delta: -5, note: 'Snacks' },
+    { id: '2026-09-10-redeem-sofia-snacks', name: 'Sofia J.', delta: -5, note: 'Snacks' },
+    { id: '2026-09-10-redeem-zayan-snacks', name: 'Zayan I.', delta: -5, note: 'Snacks' }
   ]
 }
 
@@ -408,6 +411,10 @@ window.CSD_POINTS = {
 // inline vs inline-inline-inline-inline-block
 
 
-// logan, jackson, emma, alivyah, naia, sophia, dana, isaac, oswa
+// logan, jackson, emma, alivyah, naia, sophia, dana, isaac, oswa, alyssia, jeff, sofia, tryan
+// 
+// trinity, kiaraliz, giselle, aisha, javier, thanh, zayan, nghia, axel, haddy, dania, iszael, jackson, emma, alyssia, jeff, sofia, tryan, trinity, kiaraliz, giselle, aisha, javier, thanh, zayan, nghia, axel, haddy, dania, iszael
+
+// bonus for class participation: 
 
 
