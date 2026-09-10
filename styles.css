@@ -130,7 +130,7 @@ a {
   color: var(--ink);
 }
 
-.topbar-extra {
+.btn.topbar-extra {
   display: none;
 }
 
@@ -908,7 +908,7 @@ h1 {
     display: none;
   }
 
-  .topbar-extra {
+  .btn.topbar-extra {
     display: inline-flex;
     margin-right: auto;
   }

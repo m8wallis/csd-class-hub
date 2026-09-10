@@ -445,35 +445,66 @@ function attrBits() {
   ]
 }
 
+function fieldLabel(caption, control) {
+  const label = document.createElement('label')
+  label.className = 'html-field'
+  const span = document.createElement('span')
+  span.textContent = caption
+  label.append(span, control)
+  return label
+}
+
 function renderAttrFields() {
+  const wrap = $('#attr-fields')
+  wrap.replaceChildren()
   if (htmlState.attrKind === 'img') {
-    $('#attr-fields').innerHTML =
-      `<label class='html-field'><span>src — which file</span><select id='attr-src'>${IMG_PRESETS.map(
-        (row) =>
-          `<option value='${row.id}'${row.id === htmlState.imgPreset ? ' selected' : ''}>${row.label} (${row.id}.jpg)</option>`
-      ).join('')}</select></label>` +
-      `<label class='html-field'><span>alt — describe the picture</span><input id='attr-alt' type='text' value='${escapeHtml(htmlState.alt)}'></label>`
-    $('#attr-src').addEventListener('change', (event) => {
+    const select = document.createElement('select')
+    select.id = 'attr-src'
+    IMG_PRESETS.forEach((row) => {
+      const opt = document.createElement('option')
+      opt.value = row.id
+      opt.textContent = `${row.label} (${row.id}.jpg)`
+      opt.selected = row.id === htmlState.imgPreset
+      select.appendChild(opt)
+    })
+    select.addEventListener('change', (event) => {
       htmlState.imgPreset = event.target.value
       renderAttrStation()
     })
-    $('#attr-alt').addEventListener('input', (event) => {
+    const alt = document.createElement('input')
+    alt.id = 'attr-alt'
+    alt.type = 'text'
+    alt.value = htmlState.alt
+    alt.addEventListener('input', (event) => {
       htmlState.alt = event.target.value
       renderAttrStation(true)
     })
+    wrap.append(
+      fieldLabel('src — which file', select),
+      fieldLabel('alt — describe the picture', alt)
+    )
     return
   }
-  $('#attr-fields').innerHTML =
-    `<label class='html-field'><span>Link text — the content</span><input id='attr-text' type='text' value='${escapeHtml(htmlState.linkText)}'></label>` +
-    `<label class='html-field'><span>href — where it goes</span><input id='attr-href' type='text' value='${escapeHtml(htmlState.href)}'></label>`
-  $('#attr-text').addEventListener('input', (event) => {
+  const text = document.createElement('input')
+  text.id = 'attr-text'
+  text.type = 'text'
+  text.value = htmlState.linkText
+  text.addEventListener('input', (event) => {
     htmlState.linkText = event.target.value
     renderAttrStation(true)
   })
-  $('#attr-href').addEventListener('input', (event) => {
+  const href = document.createElement('input')
+  href.id = 'attr-href'
+  href.type = 'text'
+  href.value = htmlState.href
+  href.addEventListener('input', (event) => {
     htmlState.href = event.target.value
     renderAttrStation(true)
   })
+  wrap.append(
+    fieldLabel('Link text — the content', text),
+    fieldLabel('href — where it goes', href)
+  )
 }
 
 function renderAttrStation(keepFields) {

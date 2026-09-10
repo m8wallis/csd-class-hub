@@ -366,7 +366,10 @@ window.CSD_POINTS = {
     { id: '2026-09-09-quiz-haddy', name: 'Hadassa G.', delta: 2, note: 'Quiz points' },
     { id: '2026-09-09-quiz-naia', name: 'Naia B.', delta: 2, note: 'Quiz points' },
     { id: '2026-09-09-quiz-alyviah', name: 'Alyviah C.', delta: 2, note: 'Quiz points' },
-    { id: '2026-09-10-redeem-giselle-candy', name: 'Giselle A.', delta: -5, note: 'Candy' }
+    { id: '2026-09-10-redeem-giselle-candy', name: 'Giselle A.', delta: -5, note: 'Candy' },
+    { id: '2026-09-10-redeem-sophia-candy', name: 'Sophia L.', delta: -5, note: 'Candy' },
+    { id: '2026-09-10-redeem-thanh-chips', name: 'Thanh B.', delta: -5, note: 'Chips' },
+    { id: '2026-09-10-redeem-savannah-drink-candy', name: 'Savannah A.', delta: -10, note: 'Drink & Candy' }
   ]
 }
 
@@ -403,3 +406,8 @@ window.CSD_POINTS = {
 // inline vs inline-inline-inline-block
 // inline vs inline-inline-inline-inline
 // inline vs inline-inline-inline-inline-block
+
+
+// logan, jackson, emma, alivyah, naia, sophia, dana, isaac, oswa
+
+
