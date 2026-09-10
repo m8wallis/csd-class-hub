@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML basics · CSD Class Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="lab.css" />
+    <link rel="stylesheet" href="html.css" />
+  </head>
+  <body class="html-page">
+    <div class="paper-grain" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">CSD</span>
+        <span class="brand-text">Class Hub</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html">Hub</a>
+        <a href="#tags">Tags</a>
+        <a href="#elements">Elements</a>
+        <a href="#attributes">Attributes</a>
+        <a href="#page">A page</a>
+        <a href="#try">Try it</a>
+      </nav>
+      <a class="btn btn-tiny" href="index.html">Back to hub</a>
+    </header>
+
+    <main id="top">
+      <section class="hero lab-hero">
+        <div class="hero-copy">
+          <p class="kicker">Computer science · Markup</p>
+          <h1>HTML is the skeleton.</h1>
+          <p class="lede">
+            A webpage is a text file with labels. Those labels are tags. The browser reads them and
+            builds the page you see. Click each part — you’ll always get the code on one side and the
+            result on the other.
+          </p>
+        </div>
+        <nav class="station-jump html-jump" aria-label="HTML stations">
+          <a class="station-card" href="#tags">
+            <span>01</span>
+            <strong>Tags</strong>
+            <em>Labels in &lt;brackets&gt;</em>
+          </a>
+          <a class="station-card" href="#elements">
+            <span>02</span>
+            <strong>Elements</strong>
+            <em>The whole box</em>
+          </a>
+          <a class="station-card" href="#attributes">
+            <span>03</span>
+            <strong>Attributes</strong>
+            <em>Extra instructions</em>
+          </a>
+          <a class="station-card" href="#page">
+            <span>04</span>
+            <strong>A page</strong>
+            <em>Head vs body</em>
+          </a>
+          <a class="station-card" href="#try">
+            <span>05</span>
+            <strong>Try it</strong>
+            <em>Type and preview</em>
+          </a>
+        </nav>
+      </section>
+
+      <section class="section lab-station" id="tags">
+        <div class="section-head">
+          <p class="kicker">01 · Tags</p>
+          <h2>Tags are labels in angle brackets.</h2>
+          <p>
+            The name inside the brackets tells the browser what this piece is. Most tags come in a
+            pair: an opening tag to start, a closing tag with a slash to finish.
+          </p>
+        </div>
+        <div class="lab-split">
+          <div class="panel lab-play">
+            <p class="points-sub">Pick a tag</p>
+            <div class="chip-row" id="tag-chips"></div>
+            <p class="points-sub">Tap a piece</p>
+            <div class="tag-sandwich" id="tag-sandwich" role="group" aria-label="Parts of the markup"></div>
+            <p class="tag-caption" id="tag-caption"></p>
+            <div class="mini-browser">
+              <div class="mini-chrome" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+                <em>what the browser shows</em>
+              </div>
+              <div class="mini-page" id="tag-preview"></div>
+            </div>
+          </div>
+          <aside class="panel lab-notes">
+            <p class="kicker">Say it out loud</p>
+            <pre class="code-caption" id="tag-code"></pre>
+            <p class="lab-explain" id="tag-explain"></p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section lab-station" id="elements">
+        <div class="section-head">
+          <p class="kicker">02 · Elements</p>
+          <h2>An element is the whole box.</h2>
+          <p>
+            A tag is just the label. The element is the tag, plus everything it wraps. Pages are
+            boxes inside boxes — that’s called nesting. Close the inner box before the outer one.
+          </p>
+        </div>
+        <div class="lab-split">
+          <div class="panel lab-play">
+            <p class="points-sub">Pick a structure</p>
+            <div class="chip-row" id="nest-chips"></div>
+            <div class="nest-stage" id="nest-stage" aria-label="Nested elements"></div>
+            <p class="lab-status" id="nest-status">Tap a box to see which element it is.</p>
+          </div>
+          <aside class="panel lab-notes">
+            <p class="kicker">The browser sees</p>
+            <pre class="code-caption" id="nest-code"></pre>
+            <p class="lab-explain" id="nest-explain"></p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section lab-station" id="attributes">
+        <div class="section-head">
+          <p class="kicker">03 · Attributes</p>
+          <h2>Attributes add extra instructions.</h2>
+          <p>
+            They live in the opening tag, as a name and a value in quotes. The tag says
+            <em>what</em> it is. The attribute says <em>how</em> — where a link goes, what an image
+            is, which tab it opens.
+          </p>
+        </div>
+        <div class="lab-split">
+          <div class="panel lab-play">
+            <p class="points-sub">Build one</p>
+            <div class="chip-row" id="attr-kinds"></div>
+            <div class="html-fields" id="attr-fields"></div>
+            <div class="attr-code" id="attr-anatomy" role="group" aria-label="Attribute anatomy"></div>
+            <div class="mini-browser">
+              <div class="mini-chrome" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+                <em>result</em>
+              </div>
+              <div class="mini-page" id="attr-preview"></div>
+            </div>
+          </div>
+          <aside class="panel lab-notes">
+            <p class="kicker">Name = "value"</p>
+            <pre class="code-caption" id="attr-code"></pre>
+            <p class="lab-explain" id="attr-explain"></p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section lab-station" id="page">
+        <div class="section-head">
+          <p class="kicker">04 · A page</p>
+          <h2>Every page has a head and a body.</h2>
+          <p>
+            The head is behind the scenes — tab title, letters, and other setup. The body is what
+            people actually see. Click a line of the skeleton and watch the mini browser light up.
+          </p>
+        </div>
+        <div class="lab-split">
+          <div class="panel lab-play">
+            <div class="page-browser" id="page-browser">
+              <div class="page-tabs">
+                <div class="page-tab" data-page-part="title">
+                  <span>CSD</span>
+                  <strong id="page-tab-title">My first page</strong>
+                </div>
+                <div class="page-tab is-ghost" aria-hidden="true">+</div>
+              </div>
+              <div class="page-toolbar">
+                <span class="page-dot"></span>
+                <span class="page-url">my-first-page.html</span>
+              </div>
+              <div class="page-head-drawer" data-page-part="head">
+                <p class="points-sub">Inside &lt;head&gt; — not on the page</p>
+                <p id="page-head-copy">Letters, title, and setup live here.</p>
+              </div>
+              <div class="page-body" data-page-part="body">
+                <h2>Hello, class.</h2>
+                <p>This paragraph is in the body, so you can see it.</p>
+              </div>
+            </div>
+          </div>
+          <aside class="panel lab-notes">
+            <p class="kicker">The skeleton</p>
+            <pre class="code-caption page-skeleton" id="page-code"></pre>
+            <p class="lab-explain" id="page-explain"></p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section lab-station" id="try">
+        <div class="section-head">
+          <p class="kicker">05 · Try it</p>
+          <h2>Type HTML. Watch a page appear.</h2>
+          <p>
+            Start from a snippet, then change the words, tags, and attributes. The preview is a tiny
+            browser. It only shows HTML — no extra magic.
+          </p>
+        </div>
+        <div class="try-split">
+          <div class="panel lab-play">
+            <p class="points-sub">Start from</p>
+            <div class="chip-row" id="try-chips"></div>
+            <label class="try-editor">
+              <span class="sr-only">HTML editor</span>
+              <textarea id="try-input" spellcheck="false" rows="12"></textarea>
+            </label>
+          </div>
+          <div class="panel lab-play">
+            <p class="points-sub">Preview</p>
+            <div class="mini-browser try-browser">
+              <div class="mini-chrome" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+                <em>your page</em>
+              </div>
+              <iframe
+                id="try-frame"
+                class="try-frame"
+                title="HTML preview"
+                sandbox=""
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section lab-close">
+        <div class="section-head">
+          <p class="kicker">Keep these four words</p>
+          <h2>Tag, element, attribute, nest.</h2>
+          <p>
+            Tags name the boxes. An element is the whole box. Attributes add extra instructions.
+            Nest them, and you’ve got a page.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>CSD Class Hub · HTML basics · Tags, elements, attributes, then a page</p>
+    </footer>
+
+    <script src="html.js"></script>
+  </body>
+</html>

@@ -365,7 +365,8 @@ window.CSD_POINTS = {
     { id: '2026-09-09-quiz-oswa', name: 'Oswa N.', delta: 2, note: 'Quiz points' },
     { id: '2026-09-09-quiz-haddy', name: 'Hadassa G.', delta: 2, note: 'Quiz points' },
     { id: '2026-09-09-quiz-naia', name: 'Naia B.', delta: 2, note: 'Quiz points' },
-    { id: '2026-09-09-quiz-alyviah', name: 'Alyviah C.', delta: 2, note: 'Quiz points' }
+    { id: '2026-09-09-quiz-alyviah', name: 'Alyviah C.', delta: 2, note: 'Quiz points' },
+    { id: '2026-09-10-redeem-giselle-candy', name: 'Giselle A.', delta: -5, note: 'Candy' }
   ]
 }
 
