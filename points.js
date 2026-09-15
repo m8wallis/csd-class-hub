@@ -372,7 +372,22 @@ window.CSD_POINTS = {
     { id: '2026-09-10-redeem-savannah-drink-candy', name: 'Savannah A.', delta: -10, note: 'Drink & Candy' },
     { id: '2026-09-10-redeem-logan-snacks', name: 'Logan M.', delta: -5, note: 'Snacks' },
     { id: '2026-09-10-redeem-sofia-snacks', name: 'Sofia J.', delta: -5, note: 'Snacks' },
-    { id: '2026-09-10-redeem-zayan-snacks', name: 'Zayan I.', delta: -5, note: 'Snacks' }
+    { id: '2026-09-10-redeem-zayan-snacks', name: 'Zayan I.', delta: -5, note: 'Snacks' },
+    { id: '2026-09-15-redeem-giselle-chips', name: 'Giselle A.', delta: -5, note: 'Chips' },
+    { id: '2026-09-15-redeem-thanh-chips', name: 'Thanh B.', delta: -5, note: 'Chips' },
+    { id: '2026-09-15-redeem-sofia-snacks', name: 'Sofia J.', delta: -5, note: 'Snacks' },
+    { id: '2026-09-15-redeem-savannah-snacks', name: 'Savannah A.', delta: -5, note: 'Snacks' },
+    { id: '2026-09-15-redeem-naia-snacks', name: 'Naia B.', delta: -5, note: 'Snacks' },
+    { id: '2026-09-15-game-winners-aisha', name: 'Aisha C.', delta: 5, note: 'Game winners' },
+    { id: '2026-09-15-game-winners-victoria', name: 'Victoria R.', delta: 5, note: 'Game winners' },
+    { id: '2026-09-15-game-winners-isaac', name: 'Isaac L.', delta: 5, note: 'Game winners' },
+    { id: '2026-09-15-game-winners-sophia', name: 'Sophia L.', delta: 5, note: 'Game winners' },
+    { id: '2026-09-15-game-winners-kiaraliz', name: 'Kiaraliz O.', delta: 5, note: 'Game winners' },
+    { id: '2026-09-15-game-winners-alyssia', name: 'Alyssia R.', delta: 5, note: 'Game winners' },
+    { id: '2026-09-15-game-winners-sofia', name: 'Sofia J.', delta: 5, note: 'Game winners' },
+    { id: '2026-09-15-good-drawings-oswa', name: 'Oswa N.', delta: 5, note: 'Good drawings' },
+    { id: '2026-09-15-good-drawings-dania', name: 'Dania C.', delta: 5, note: 'Good drawings' },
+    { id: '2026-09-15-good-drawings-charlize', name: 'Charlize P.', delta: 5, note: 'Good drawings' }
   ]
 }
 
@@ -418,3 +433,10 @@ window.CSD_POINTS = {
 // bonus for class participation: 
 
 
+5 1
+2 111
+3 111
+1 .5 1
+4 1
+8 1
+7 1
