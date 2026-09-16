@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Locked Lab · CSD Class Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="escape.css" />
+  </head>
+  <body class="escape-page">
+    <div class="paper-grain" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">CSD</span>
+        <span class="brand-text">Class Hub</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html">Hub</a>
+        <a href="html.html">HTML</a>
+        <a href="lab.html">Lab</a>
+        <a href="escape.html" aria-current="page">Locked Lab</a>
+      </nav>
+      <p class="escape-timer" id="timer" aria-live="off">00:00</p>
+      <button class="btn btn-tiny btn-ghost" type="button" id="hint-btn">Stuck?</button>
+      <button class="btn btn-tiny btn-ghost" type="button" id="reset-btn">Start over</button>
+      <a class="btn btn-tiny" href="index.html">Back to hub</a>
+    </header>
+
+    <main class="escape-shell">
+      <p class="escape-hint" id="hint-banner" hidden></p>
+
+      <div class="escape-layout">
+        <section class="escape-stage-wrap">
+          <p class="kicker">Period 8 · After the bell</p>
+          <h1 class="escape-title">Look around. The password is in the room.</h1>
+          <p class="escape-lede">
+            Click anything that might matter. Some objects are junk. Two are locked. The computer is
+            the way out.
+          </p>
+          <div class="look-list" id="look-list" aria-label="Things you can inspect"></div>
+
+          <div class="scene" id="scene" role="img" aria-label="Computer lab with clickable objects">
+            <div class="scene-ceiling"></div>
+            <div class="scene-wall"></div>
+            <div class="scene-floor"></div>
+            <div class="scene-glow" aria-hidden="true"></div>
+
+            <div class="prop prop-window" aria-hidden="true">
+              <span class="window-sky"></span>
+              <span class="window-sash"></span>
+            </div>
+            <div class="prop prop-door" aria-hidden="true">
+              <span class="door-plate">LAB 204</span>
+              <span class="door-lock">LOCKED</span>
+            </div>
+            <div class="prop prop-plant" aria-hidden="true">
+              <span class="plant-leaf"></span>
+              <span class="plant-leaf plant-leaf-2"></span>
+              <span class="plant-pot"></span>
+            </div>
+            <div class="prop prop-board" aria-hidden="true">
+              <p class="board-date">Tue · Sept 15</p>
+              <p class="board-period">PERIOD 8</p>
+              <p class="board-note">mascot vote Friday</p>
+              <p class="board-doodle">admin ✗</p>
+            </div>
+            <div class="prop prop-clock" aria-hidden="true">
+              <span class="clock-face">3:14</span>
+            </div>
+            <div class="prop prop-calendar" aria-hidden="true">
+              <span class="cal-month">SEP</span>
+              <span class="cal-day">15</span>
+            </div>
+            <div class="prop prop-fox" aria-hidden="true">
+              <span class="fox-art">🦊</span>
+              <span class="fox-text">GO FOXES</span>
+            </div>
+            <div class="prop prop-wifi" aria-hidden="true">
+              <span>Wi‑Fi</span>
+              <strong>LabGuest</strong>
+            </div>
+            <div class="prop prop-shelf" aria-hidden="true">
+              <span class="book book-a">22</span>
+              <span class="book book-b">1984</span>
+              <span class="book book-c">π</span>
+            </div>
+            <div class="prop prop-cabinet" id="cabinet-prop" aria-hidden="true">
+              <span class="cab-door"></span>
+              <span class="cab-lock"># # #</span>
+            </div>
+            <div class="prop prop-printer" aria-hidden="true">🖨️</div>
+            <div class="prop prop-desk" aria-hidden="true"></div>
+            <div class="prop prop-computer" id="computer-prop" aria-hidden="true">
+              <span class="monitor-screen">CSD</span>
+              <span class="sticky-note">pwd ≠ wifi</span>
+              <span class="keyboard-deck"></span>
+            </div>
+            <div class="prop prop-photo" aria-hidden="true">🦊</div>
+            <div class="prop prop-mug" aria-hidden="true">mug</div>
+            <div class="prop prop-drawer" id="drawer-prop" aria-hidden="true">
+              <span>DRAWER</span>
+            </div>
+            <div class="prop prop-chair" aria-hidden="true">
+              <span class="jersey-num">23</span>
+            </div>
+            <div class="prop prop-trash" aria-hidden="true">🗑️</div>
+            <div class="prop prop-bag" aria-hidden="true">🎒</div>
+
+            <div class="hotspots" id="hotspots"></div>
+          </div>
+        </section>
+
+        <aside class="escape-side">
+          <article class="panel inspect-card" id="inspect">
+            <p class="kicker" id="inspect-kicker">Inspect</p>
+            <h2 id="inspect-title">Pick something</h2>
+            <div class="inspect-body" id="inspect-body">
+              <p>
+                Click an object in the lab — or a name in the list — and the details show up here.
+                Useful clues get copied into the notebook below.
+              </p>
+            </div>
+          </article>
+
+          <article class="panel notebook-card">
+            <p class="kicker">Notebook</p>
+            <h2>What we’ve noticed</h2>
+            <ul class="progress-list" id="progress-list">
+              <li data-flag="cabinetOpen">Cabinet</li>
+              <li data-flag="drawerOpen">Desk drawer</li>
+              <li data-flag="won">Computer</li>
+            </ul>
+            <ul class="clue-list" id="clue-list">
+              <li class="clue-empty">Nothing in the notebook yet. Start clicking.</li>
+            </ul>
+          </article>
+        </aside>
+      </div>
+    </main>
+
+    <div class="escape-overlay is-open" id="intro" role="dialog" aria-labelledby="intro-title">
+      <div class="overlay-card">
+        <p class="kicker">Escape the computer lab</p>
+        <h2 id="intro-title">The door just locked.</h2>
+        <p>
+          Period 8 is over, and the lab computer engaged the after-hours lock. The only way out is
+          to sign in. The password is somewhere in this room — if you actually look.
+        </p>
+        <ul class="overlay-steps">
+          <li>Click objects. Some clues matter. Some are decoys.</li>
+          <li>Unlock the cabinet, then the desk drawer.</li>
+          <li>Type the computer password to open the door.</li>
+        </ul>
+        <p class="overlay-time">About 20–25 minutes if you talk it out.</p>
+        <button class="btn btn-primary" type="button" id="start-btn">Enter the lab</button>
+      </div>
+    </div>
+
+    <div class="escape-overlay" id="win" role="dialog" aria-labelledby="win-title">
+      <div class="overlay-card overlay-win">
+        <p class="kicker">Door unlocked</p>
+        <h2 id="win-title">You read the room.</h2>
+        <p id="win-time"></p>
+        <ol class="win-recap">
+          <li>
+            <strong>Cabinet 204</strong> — the room number, sitting on the door. The trash spelled
+            it out.
+          </li>
+          <li>
+            <strong>Drawer 0915</strong> — today’s date as month then day. Calendar + sticky.
+          </li>
+          <li>
+            <strong>Password FOX8</strong> — mascot on the wall + period on the whiteboard. The
+            wifi, the clock, and jersey 23 were bait.
+          </li>
+        </ol>
+        <p class="win-moral">
+          The skill isn’t guessing. It’s noticing what’s around you, ignoring the noise, and
+          connecting two true things.
+        </p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" type="button" id="play-again-btn">Play again</button>
+          <a class="btn btn-ghost" href="index.html">Back to hub</a>
+        </div>
+      </div>
+    </div>
+
+    <script src="escape.js"></script>
+  </body>
+</html>
