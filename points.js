@@ -387,7 +387,15 @@ window.CSD_POINTS = {
     { id: '2026-09-15-game-winners-sofia', name: 'Sofia J.', delta: 5, note: 'Game winners' },
     { id: '2026-09-15-good-drawings-oswa', name: 'Oswa N.', delta: 5, note: 'Good drawings' },
     { id: '2026-09-15-good-drawings-dania', name: 'Dania C.', delta: 5, note: 'Good drawings' },
-    { id: '2026-09-15-good-drawings-charlize', name: 'Charlize P.', delta: 5, note: 'Good drawings' }
+    { id: '2026-09-15-good-drawings-charlize', name: 'Charlize P.', delta: 5, note: 'Good drawings' },
+    { id: '2026-09-16-redeem-charlize-axolotl-squishie', name: 'Charlize P.', delta: -20, note: 'Axolotl Squishie' },
+    { id: '2026-09-16-redeem-sophia-chips', name: 'Sophia L.', delta: -5, note: 'Chips' },
+    { id: '2026-09-16-redeem-trinity-chips', name: 'Trinity T.', delta: -5, note: 'Chips' },
+    { id: '2026-09-16-redeem-isaac-snacks', name: 'Isaac L.', delta: -3, note: 'Snacks' },
+    { id: '2026-09-16-redeem-kiaraliz-snacks', name: 'Kiaraliz O.', delta: -3, note: 'Snacks' },
+    { id: '2026-09-16-redeem-kiaraliz-fruit-snacks', name: 'Kiaraliz O.', delta: -2, note: 'Fruit snacks' },
+    { id: '2026-09-17-adjust-javier', name: 'Javier A.', delta: -10 },
+    { id: '2026-09-17-adjust-angel', name: 'Angel M.', delta: -15 }
   ]
 }
 
