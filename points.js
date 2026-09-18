@@ -395,7 +395,8 @@ window.CSD_POINTS = {
     { id: '2026-09-16-redeem-kiaraliz-snacks', name: 'Kiaraliz O.', delta: -3, note: 'Snacks' },
     { id: '2026-09-16-redeem-kiaraliz-fruit-snacks', name: 'Kiaraliz O.', delta: -2, note: 'Fruit snacks' },
     { id: '2026-09-17-adjust-javier', name: 'Javier A.', delta: -10 },
-    { id: '2026-09-17-adjust-angel', name: 'Angel M.', delta: -15 }
+    { id: '2026-09-17-adjust-angel', name: 'Angel M.', delta: -15 },
+    { id: '2026-09-18-redeem-isaac-candy', name: 'Isaac L.', delta: -5, note: 'Candy' }
   ]
 }
 
