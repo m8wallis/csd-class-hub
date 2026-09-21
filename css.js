@@ -432,12 +432,105 @@ function renderTry(html, css) {
     '</body></html>'
 }
 
+function cssEditorDepth(text, pos) {
+  let depth = 0
+  let i = 0
+  while (i < pos && i < text.length) {
+    if (text.startsWith('/*', i)) {
+      const end = text.indexOf('*/', i + 2)
+      i = end === -1 ? pos : Math.min(pos, end + 2)
+      continue
+    }
+    const ch = text[i]
+    if (ch === '{') depth += 1
+    else if (ch === '}') depth = Math.max(0, depth - 1)
+    i += 1
+  }
+  return depth
+}
+
+function cssEditorLineStart(text, pos) {
+  return text.lastIndexOf('\n', pos - 1) + 1
+}
+
+function replaceCssRange(textarea, start, end, insert, cursor) {
+  textarea.value = textarea.value.slice(0, start) + insert + textarea.value.slice(end)
+  const at = cursor == null ? start + insert.length : cursor
+  textarea.selectionStart = textarea.selectionEnd = at
+}
+
+function onCssEditorKey(event, afterChange) {
+  const textarea = event.target
+  if (event.key !== 'Tab' && event.key !== 'Enter') return
+  event.preventDefault()
+
+  const value = textarea.value
+  const start = textarea.selectionStart
+  const end = textarea.selectionEnd
+  const indentUnit = '  '
+
+  if (event.key === 'Tab') {
+    if (event.shiftKey) {
+      const lineStart = cssEditorLineStart(value, start)
+      const lead = value.slice(lineStart, start).match(/^[ \t]*/)?.[0] || ''
+      const cut = lead.endsWith('\t') ? 1 : Math.min(2, lead.length)
+      if (!cut) return
+      replaceCssRange(textarea, lineStart, lineStart + cut, '', start - cut)
+    } else if (start !== end) {
+      replaceCssRange(textarea, start, end, indentUnit)
+    } else {
+      const lineStart = cssEditorLineStart(value, start)
+      const before = value.slice(lineStart, start)
+      if (/^[ \t]*$/.test(before)) {
+        const depth = cssEditorDepth(value, start)
+        const wanted = indentUnit.repeat(depth)
+        if (depth > 0 && before !== wanted) {
+          replaceCssRange(textarea, lineStart, start, wanted)
+        } else {
+          replaceCssRange(textarea, start, end, indentUnit)
+        }
+      } else {
+        replaceCssRange(textarea, start, end, indentUnit)
+      }
+    }
+    afterChange()
+    return
+  }
+
+  const lineStart = cssEditorLineStart(value, start)
+  const before = value.slice(lineStart, start)
+  const after = value.slice(end)
+  const baseIndent = before.match(/^[ \t]*/)?.[0] || ''
+  const opened = before.trimEnd().endsWith('{')
+  const depth = cssEditorDepth(value, start)
+  const innerIndent = indentUnit.repeat(opened ? Math.max(depth, 1) : depth)
+  const next = after.trimStart()
+
+  if (opened && !next.startsWith('}')) {
+    replaceCssRange(
+      textarea,
+      start,
+      end,
+      `\n${innerIndent}\n${baseIndent}}`,
+      start + 1 + innerIndent.length
+    )
+  } else if (opened && next.startsWith('}')) {
+    replaceCssRange(textarea, start, end, `\n${innerIndent}`)
+  } else {
+    const keepIndent = depth > 0 ? innerIndent || indentUnit : baseIndent
+    replaceCssRange(textarea, start, end, `\n${keepIndent}`)
+  }
+  afterChange()
+}
+
 function initTry() {
   const first = TRY_SNIPPETS[0]
   renderChips($('#try-chips'), TRY_SNIPPETS, first.id, 'data-try')
   $('#try-html').value = first.html
   $('#try-css').value = first.css
   renderTry(first.html, first.css)
+  const paintHtml = window.CSD_HIGHLIGHT.bindEditor($('#try-html'), window.CSD_HIGHLIGHT.html)
+  const paintCss = window.CSD_HIGHLIGHT.bindEditor($('#try-css'), window.CSD_HIGHLIGHT.css)
 
   $('#try-chips').addEventListener('click', (event) => {
     const btn = event.target.closest('[data-try]')
@@ -448,12 +541,20 @@ function initTry() {
     $('#try-css').value = snippet.css
     renderChips($('#try-chips'), TRY_SNIPPETS, snippet.id, 'data-try')
     renderTry(snippet.html, snippet.css)
+    paintHtml()
+    paintCss()
   })
   function previewNow() {
     renderTry($('#try-html').value, $('#try-css').value)
   }
   $('#try-html').addEventListener('input', previewNow)
   $('#try-css').addEventListener('input', previewNow)
+  $('#try-css').addEventListener('keydown', (event) => {
+    onCssEditorKey(event, () => {
+      paintCss()
+      previewNow()
+    })
+  })
 }
 
 initRules()

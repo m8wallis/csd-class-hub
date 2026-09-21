@@ -39,18 +39,14 @@
   text-align: left;
   cursor: pointer;
   border-radius: 16px;
-  transition: outline-color 0.18s ease, transform 0.18s ease;
+  transition:
+    outline-color 0.18s ease,
+    transform 0.18s ease;
 }
 
 .box-margin {
   padding: 18px;
-  background: repeating-linear-gradient(
-    -45deg,
-    #f3d9a4,
-    #f3d9a4 8px,
-    #ead6b4 8px,
-    #ead6b4 16px
-  );
+  background: repeating-linear-gradient(-45deg, #f3d9a4, #f3d9a4 8px, #ead6b4 8px, #ead6b4 16px);
 }
 
 .box-border {
@@ -129,8 +125,8 @@
   color: var(--teal-deep);
 }
 
-.css-try .try-editor textarea {
-  min-height: 160px;
+.css-try .code-editor {
+  min-height: clamp(160px, 30dvh, 280px);
 }
 
 .css-try .try-browser {

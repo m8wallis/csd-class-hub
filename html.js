@@ -624,6 +624,7 @@ function initTry() {
   renderChips($('#try-chips'), TRY_SNIPPETS, TRY_SNIPPETS[0].id, 'data-try')
   $('#try-input').value = TRY_SNIPPETS[0].html
   renderTry(TRY_SNIPPETS[0].html)
+  const paint = window.CSD_HIGHLIGHT.bindEditor($('#try-input'), window.CSD_HIGHLIGHT.html)
 
   $('#try-chips').addEventListener('click', (event) => {
     const btn = event.target.closest('[data-try]')
@@ -633,6 +634,7 @@ function initTry() {
     $('#try-input').value = snippet.html
     renderChips($('#try-chips'), TRY_SNIPPETS, snippet.id, 'data-try')
     renderTry(snippet.html)
+    paint()
   })
   $('#try-input').addEventListener('input', (event) => {
     renderTry(event.target.value)

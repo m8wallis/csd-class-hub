@@ -238,13 +238,25 @@
           <div class="panel lab-play">
             <p class="points-sub">Start from</p>
             <div class="chip-row" id="try-chips"></div>
+            <ul class="code-key" aria-label="Color key">
+              <li><code class="code-tag">tag / selector</code></li>
+              <li><code class="code-attr">attribute / property</code></li>
+              <li><code class="code-val">value</code></li>
+              <li><code class="code-content">text</code></li>
+            </ul>
             <label class="try-editor">
               <span class="try-label">HTML</span>
-              <textarea id="try-html" spellcheck="false" rows="8"></textarea>
+              <div class="code-editor">
+                <pre class="code-highlight" id="try-html-hl" aria-hidden="true"></pre>
+                <textarea id="try-html" spellcheck="false" rows="8"></textarea>
+              </div>
             </label>
             <label class="try-editor">
               <span class="try-label">CSS</span>
-              <textarea id="try-css" spellcheck="false" rows="8"></textarea>
+              <div class="code-editor">
+                <pre class="code-highlight" id="try-css-hl" aria-hidden="true"></pre>
+                <textarea id="try-css" spellcheck="false" rows="8"></textarea>
+              </div>
             </label>
           </div>
           <div class="panel lab-play">
@@ -278,6 +290,7 @@
       <p>CSD Class Hub · CSS basics · Rules, paint, boxes, then layout</p>
     </footer>
 
+    <script src="code-highlight.js"></script>
     <script src="css.js"></script>
   </body>
 </html>
