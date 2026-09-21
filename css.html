@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS basics · CSD Class Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="lab.css" />
+    <link rel="stylesheet" href="html.css" />
+    <link rel="stylesheet" href="css.css" />
+  </head>
+  <body class="html-page css-page">
+    <div class="paper-grain" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">CSD</span>
+        <span class="brand-text">Class Hub</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html">Hub</a>
+        <a href="html.html">HTML</a>
+        <a href="#rules">Rules</a>
+        <a href="#paint">Paint</a>
+        <a href="#box">Box</a>
+        <a href="#layout">Layout</a>
+        <a href="#try">Try it</a>
+      </nav>
+      <a class="btn btn-tiny btn-ghost" href="html.html">HTML basics</a>
+      <a class="btn btn-tiny" href="index.html">Back to hub</a>
+    </header>
+
+    <main id="top">
+      <section class="hero lab-hero">
+        <div class="hero-copy">
+          <p class="kicker">Computer science · Style</p>
+          <h1>CSS is the clothes.</h1>
+          <p class="lede">
+            HTML names the pieces. CSS paints them — color, size, space, and where they sit. A rule
+            always has three parts: who, which property, and what value. Click around. Code on one
+            side, the result on the other.
+          </p>
+        </div>
+        <nav class="station-jump html-jump" aria-label="CSS stations">
+          <a class="station-card" href="#rules">
+            <span>01</span>
+            <strong>Rules</strong>
+            <em>Who gets the style</em>
+          </a>
+          <a class="station-card" href="#paint">
+            <span>02</span>
+            <strong>Paint</strong>
+            <em>Color and type</em>
+          </a>
+          <a class="station-card" href="#box">
+            <span>03</span>
+            <strong>Box</strong>
+            <em>Padding, border, margin</em>
+          </a>
+          <a class="station-card" href="#layout">
+            <span>04</span>
+            <strong>Layout</strong>
+            <em>How pieces sit</em>
+          </a>
+          <a class="station-card" href="#try">
+            <span>05</span>
+            <strong>Try it</strong>
+            <em>HTML + CSS live</em>
+          </a>
+        </nav>
+      </section>
+
+      <section class="section lab-station" id="rules">
+        <div class="section-head">
+          <p class="kicker">01 · Rules</p>
+          <h2>A rule says who, then how.</h2>
+          <p>
+            The selector picks the HTML. Curly braces wrap the instructions. Inside, a property is
+            the kind of style, and the value is the choice — ended with a semicolon.
+          </p>
+        </div>
+        <div class="lab-split">
+          <div class="panel lab-play">
+            <p class="points-sub">Pick a selector</p>
+            <div class="chip-row" id="rule-chips"></div>
+            <p class="points-sub">Tap a piece</p>
+            <div class="tag-sandwich" id="rule-sandwich" role="group" aria-label="Parts of a CSS rule"></div>
+            <p class="tag-caption" id="rule-caption"></p>
+            <div class="mini-browser">
+              <div class="mini-chrome" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+                <em>what the rule paints</em>
+              </div>
+              <div class="mini-page" id="rule-preview"></div>
+            </div>
+          </div>
+          <aside class="panel lab-notes">
+            <p class="kicker">Say it out loud</p>
+            <pre class="code-caption" id="rule-code"></pre>
+            <p class="lab-explain" id="rule-explain"></p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section lab-station" id="paint">
+        <div class="section-head">
+          <p class="kicker">02 · Paint</p>
+          <h2>Color and type are just properties.</h2>
+          <p>
+            <code>color</code> is the letters. <code>background</code> is the paper behind them.
+            <code>font-size</code> is how big. Change a value — the card updates, and so does the
+            CSS.
+          </p>
+        </div>
+        <div class="lab-split">
+          <div class="panel lab-play">
+            <p class="points-sub">Pick a property</p>
+            <div class="chip-row" id="paint-props"></div>
+            <p class="points-sub">Pick a value</p>
+            <div class="chip-row" id="paint-values"></div>
+            <div class="mini-browser">
+              <div class="mini-chrome" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+                <em>styled card</em>
+              </div>
+              <div class="mini-page">
+                <article class="paint-card" id="paint-card">
+                  <p class="paint-kicker">Class of 2026</p>
+                  <h2>Meet the room.</h2>
+                  <p>Chips, Roblox, and a whole lot of curiosity.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+          <aside class="panel lab-notes">
+            <p class="kicker">The rule so far</p>
+            <pre class="code-caption" id="paint-code"></pre>
+            <p class="lab-explain" id="paint-explain"></p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section lab-station" id="box">
+        <div class="section-head">
+          <p class="kicker">03 · Box</p>
+          <h2>Every element is a box with three layers.</h2>
+          <p>
+            Padding is space inside, between the words and the border. The border is the edge.
+            Margin is space outside, pushing neighbors away. Tap a layer, then nudge it.
+          </p>
+        </div>
+        <div class="lab-split">
+          <div class="panel lab-play">
+            <p class="points-sub">Tap a layer</p>
+            <div class="box-stage" id="box-stage">
+              <div class="box-layer box-margin" data-box="margin" role="button" tabindex="0">
+                <span class="box-layer-label">margin</span>
+                <div class="box-layer box-border" data-box="border" role="button" tabindex="0">
+                  <span class="box-layer-label">border</span>
+                  <div class="box-layer box-padding" data-box="padding" role="button" tabindex="0">
+                    <span class="box-layer-label">padding</span>
+                    <span class="box-content">Hello, CSD.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="lab-actions">
+              <button class="btn btn-small" type="button" data-box-nudge="-4">− smaller</button>
+              <button class="btn btn-small" type="button" data-box-nudge="4">+ bigger</button>
+            </div>
+            <p class="lab-status" id="box-status"></p>
+          </div>
+          <aside class="panel lab-notes">
+            <p class="kicker">The CSS</p>
+            <pre class="code-caption" id="box-code"></pre>
+            <p class="lab-explain" id="box-explain"></p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section lab-station" id="layout">
+        <div class="section-head">
+          <p class="kicker">04 · Layout</p>
+          <h2>Display decides how boxes sit.</h2>
+          <p>
+            Block takes the whole row. Inline-block keeps a box shape but can sit in a line. Flex
+            lines children up and lets you add a gap. Same HTML — only CSS changes.
+          </p>
+        </div>
+        <div class="lab-split">
+          <div class="panel lab-play">
+            <p class="points-sub">Pick a display</p>
+            <div class="chip-row" id="layout-chips"></div>
+            <div class="mini-browser">
+              <div class="mini-chrome" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+                <em>same three boxes</em>
+              </div>
+              <div class="mini-page">
+                <div class="layout-row" id="layout-row">
+                  <div class="layout-item">Chips</div>
+                  <div class="layout-item">Roblox</div>
+                  <div class="layout-item">Code</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <aside class="panel lab-notes">
+            <p class="kicker">The CSS</p>
+            <pre class="code-caption" id="layout-code"></pre>
+            <p class="lab-explain" id="layout-explain"></p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section lab-station" id="try">
+        <div class="section-head">
+          <p class="kicker">05 · Try it</p>
+          <h2>Type HTML and CSS. Watch both land.</h2>
+          <p>
+            Start from a snippet, then change tags, colors, padding — anything. The preview is a
+            tiny browser. Your CSS is the only extra style on the page.
+          </p>
+        </div>
+        <div class="try-split css-try">
+          <div class="panel lab-play">
+            <p class="points-sub">Start from</p>
+            <div class="chip-row" id="try-chips"></div>
+            <label class="try-editor">
+              <span class="try-label">HTML</span>
+              <textarea id="try-html" spellcheck="false" rows="8"></textarea>
+            </label>
+            <label class="try-editor">
+              <span class="try-label">CSS</span>
+              <textarea id="try-css" spellcheck="false" rows="8"></textarea>
+            </label>
+          </div>
+          <div class="panel lab-play">
+            <p class="points-sub">Preview</p>
+            <div class="mini-browser try-browser">
+              <div class="mini-chrome" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+                <em>your page</em>
+              </div>
+              <iframe id="try-frame" class="try-frame" title="HTML and CSS preview" sandbox=""></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section lab-close">
+        <div class="section-head">
+          <p class="kicker">Keep these four words</p>
+          <h2>Selector, property, value, box.</h2>
+          <p>
+            The selector picks the HTML. A property is the kind of style. The value is the choice.
+            Every element is a box — padding inside, margin outside.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>CSD Class Hub · CSS basics · Rules, paint, boxes, then layout</p>
+    </footer>
+
+    <script src="css.js"></script>
+  </body>
+</html>
