@@ -437,7 +437,15 @@ window.CSD_POINTS = {
     { id: '2026-09-21-participation-sofia', name: 'Sofia J.', delta: 2, note: 'Good Participation' },
     { id: '2026-09-21-participation-savannah', name: 'Savannah A.', delta: 2, note: 'Good Participation' },
     { id: '2026-09-22-correct-danyela', name: 'Danyela C.', delta: -14, note: 'Correction' },
-    { id: '2026-09-22-redeem-logan-candy', name: 'Logan M.', delta: -5, note: 'Candy bar' }
+    { id: '2026-09-22-redeem-logan-candy', name: 'Logan M.', delta: -5, note: 'Candy bar' },
+    { id: '2026-09-22-redeem-sofia-candy', name: 'Sofia J.', delta: -5, note: 'Candy bar' },
+    { id: '2026-09-22-redeem-nghia-candy', name: 'Nghia T.', delta: -5, note: 'Candy' },
+    { id: '2026-09-22-redeem-nghia-candy-2', name: 'Nghia T.', delta: -5, note: 'Candy' },
+    { id: '2026-09-22-redeem-haddy-candy', name: 'Hadassa G.', delta: -5, note: 'Candy' },
+    { id: '2026-09-22-redeem-savannah-candy', name: 'Savannah A.', delta: -5, note: 'Candy' },
+    { id: '2026-09-22-redeem-danyela-candy', name: 'Danyela C.', delta: -10, note: 'Candy' },
+    { id: '2026-09-22-redeem-jackson-candy', name: 'Jackson R.', delta: -10, note: 'Candy' },
+    { id: '2026-09-22-redeem-logan-candy-2', name: 'Logan M.', delta: -5, note: 'Candy' }
   ]
 }
 
