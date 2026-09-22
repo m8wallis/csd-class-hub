@@ -435,7 +435,9 @@ window.CSD_POINTS = {
     { id: '2026-09-21-participation-jackson', name: 'Jackson R.', delta: 2, note: 'Good Participation' },
     { id: '2026-09-21-participation-sophia', name: 'Sophia L.', delta: 2, note: 'Good Participation' },
     { id: '2026-09-21-participation-sofia', name: 'Sofia J.', delta: 2, note: 'Good Participation' },
-    { id: '2026-09-21-participation-savannah', name: 'Savannah A.', delta: 2, note: 'Good Participation' }
+    { id: '2026-09-21-participation-savannah', name: 'Savannah A.', delta: 2, note: 'Good Participation' },
+    { id: '2026-09-22-correct-danyela', name: 'Danyela C.', delta: -14, note: 'Correction' },
+    { id: '2026-09-22-redeem-logan-candy', name: 'Logan M.', delta: -5, note: 'Candy bar' }
   ]
 }
 
@@ -481,10 +483,10 @@ window.CSD_POINTS = {
 // bonus for class participation: 
 
 
-5 1
-2 111
-3 111
-1 .5 1
-4 1
-8 1
-7 1
+// 5 1
+// 2 111
+// 3 111
+// 1 .5 1
+// 4 1
+// 8 1
+// 7 1
