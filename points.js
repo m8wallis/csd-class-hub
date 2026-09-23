@@ -369,7 +369,12 @@ window.CSD_POINTS = {
     { id: '2026-09-10-redeem-giselle-candy', name: 'Giselle A.', delta: -5, note: 'Candy' },
     { id: '2026-09-10-redeem-sophia-candy', name: 'Sophia L.', delta: -5, note: 'Candy' },
     { id: '2026-09-10-redeem-thanh-chips', name: 'Thanh B.', delta: -5, note: 'Chips' },
-    { id: '2026-09-10-redeem-savannah-drink-candy', name: 'Savannah A.', delta: -10, note: 'Drink & Candy' },
+    {
+      id: '2026-09-10-redeem-savannah-drink-candy',
+      name: 'Savannah A.',
+      delta: -10,
+      note: 'Drink & Candy'
+    },
     { id: '2026-09-10-redeem-logan-snacks', name: 'Logan M.', delta: -5, note: 'Snacks' },
     { id: '2026-09-10-redeem-sofia-snacks', name: 'Sofia J.', delta: -5, note: 'Snacks' },
     { id: '2026-09-10-redeem-zayan-snacks', name: 'Zayan I.', delta: -5, note: 'Snacks' },
@@ -387,55 +392,240 @@ window.CSD_POINTS = {
     { id: '2026-09-15-game-winners-sofia', name: 'Sofia J.', delta: 5, note: 'Game winners' },
     { id: '2026-09-15-good-drawings-oswa', name: 'Oswa N.', delta: 5, note: 'Good drawings' },
     { id: '2026-09-15-good-drawings-dania', name: 'Dania C.', delta: 5, note: 'Good drawings' },
-    { id: '2026-09-15-good-drawings-charlize', name: 'Charlize P.', delta: 5, note: 'Good drawings' },
-    { id: '2026-09-16-redeem-charlize-axolotl-squishie', name: 'Charlize P.', delta: -20, note: 'Axolotl Squishie' },
+    {
+      id: '2026-09-15-good-drawings-charlize',
+      name: 'Charlize P.',
+      delta: 5,
+      note: 'Good drawings'
+    },
+    {
+      id: '2026-09-16-redeem-charlize-axolotl-squishie',
+      name: 'Charlize P.',
+      delta: -20,
+      note: 'Axolotl Squishie'
+    },
     { id: '2026-09-16-redeem-sophia-chips', name: 'Sophia L.', delta: -5, note: 'Chips' },
     { id: '2026-09-16-redeem-trinity-chips', name: 'Trinity T.', delta: -5, note: 'Chips' },
     { id: '2026-09-16-redeem-isaac-snacks', name: 'Isaac L.', delta: -3, note: 'Snacks' },
     { id: '2026-09-16-redeem-kiaraliz-snacks', name: 'Kiaraliz O.', delta: -3, note: 'Snacks' },
-    { id: '2026-09-16-redeem-kiaraliz-fruit-snacks', name: 'Kiaraliz O.', delta: -2, note: 'Fruit snacks' },
+    {
+      id: '2026-09-16-redeem-kiaraliz-fruit-snacks',
+      name: 'Kiaraliz O.',
+      delta: -2,
+      note: 'Fruit snacks'
+    },
     { id: '2026-09-17-adjust-javier', name: 'Javier A.', delta: -10 },
     { id: '2026-09-17-adjust-angel', name: 'Angel M.', delta: -15 },
     { id: '2026-09-18-redeem-isaac-candy', name: 'Isaac L.', delta: -5, note: 'Candy' },
-    { id: '2026-09-18-escape-trivia-s01', name: 'Danyela C.', delta: 6, note: 'Escape room + trivia' },
-    { id: '2026-09-18-escape-trivia-s02', name: 'Iszael M.', delta: 6, note: 'Escape room + trivia' },
-    { id: '2026-09-18-escape-trivia-s03', name: 'Savannah A.', delta: 6, note: 'Escape room + trivia' },
-    { id: '2026-09-18-escape-trivia-s04', name: 'Logan M.', delta: 6, note: 'Escape room + trivia' },
-    { id: '2026-09-18-escape-trivia-s05', name: 'Giselle A.', delta: 6, note: 'Escape room + trivia' },
-    { id: '2026-09-18-escape-trivia-s06', name: 'Sophia L.', delta: 6, note: 'Escape room + trivia' },
-    { id: '2026-09-18-escape-trivia-s07', name: 'Tyran C.', delta: 6, note: 'Escape room + trivia' },
-    { id: '2026-09-18-escape-trivia-s08', name: 'Zayan I.', delta: 6, note: 'Escape room + trivia' },
-    { id: '2026-09-18-escape-trivia-s09', name: 'Junho A.', delta: 6, note: 'Escape room + trivia' },
-    { id: '2026-09-18-escape-trivia-s10', name: 'Lucas D.', delta: 6, note: 'Escape room + trivia' },
+    {
+      id: '2026-09-18-escape-trivia-s01',
+      name: 'Danyela C.',
+      delta: 6,
+      note: 'Escape room + trivia'
+    },
+    {
+      id: '2026-09-18-escape-trivia-s02',
+      name: 'Iszael M.',
+      delta: 6,
+      note: 'Escape room + trivia'
+    },
+    {
+      id: '2026-09-18-escape-trivia-s03',
+      name: 'Savannah A.',
+      delta: 6,
+      note: 'Escape room + trivia'
+    },
+    {
+      id: '2026-09-18-escape-trivia-s04',
+      name: 'Logan M.',
+      delta: 6,
+      note: 'Escape room + trivia'
+    },
+    {
+      id: '2026-09-18-escape-trivia-s05',
+      name: 'Giselle A.',
+      delta: 6,
+      note: 'Escape room + trivia'
+    },
+    {
+      id: '2026-09-18-escape-trivia-s06',
+      name: 'Sophia L.',
+      delta: 6,
+      note: 'Escape room + trivia'
+    },
+    {
+      id: '2026-09-18-escape-trivia-s07',
+      name: 'Tyran C.',
+      delta: 6,
+      note: 'Escape room + trivia'
+    },
+    {
+      id: '2026-09-18-escape-trivia-s08',
+      name: 'Zayan I.',
+      delta: 6,
+      note: 'Escape room + trivia'
+    },
+    {
+      id: '2026-09-18-escape-trivia-s09',
+      name: 'Junho A.',
+      delta: 6,
+      note: 'Escape room + trivia'
+    },
+    {
+      id: '2026-09-18-escape-trivia-s10',
+      name: 'Lucas D.',
+      delta: 6,
+      note: 'Escape room + trivia'
+    },
     { id: '2026-09-18-escape-trivia-s11', name: 'Oswa N.', delta: 6, note: 'Escape room + trivia' },
-    { id: '2026-09-18-escape-trivia-s12', name: 'Sofia J.', delta: 6, note: 'Escape room + trivia' },
-    { id: '2026-09-18-escape-trivia-s13', name: 'Jeffrey D.', delta: 6, note: 'Escape room + trivia' },
-    { id: '2026-09-18-escape-trivia-s14', name: 'Trinity T.', delta: 6, note: 'Escape room + trivia' },
-    { id: '2026-09-18-escape-trivia-s15', name: 'Victoria R.', delta: 6, note: 'Escape room + trivia' },
-    { id: '2026-09-18-escape-trivia-s16', name: 'Thanh B.', delta: 6, note: 'Escape room + trivia' },
-    { id: '2026-09-18-escape-trivia-s17', name: 'Javier A.', delta: 6, note: 'Escape room + trivia' },
+    {
+      id: '2026-09-18-escape-trivia-s12',
+      name: 'Sofia J.',
+      delta: 6,
+      note: 'Escape room + trivia'
+    },
+    {
+      id: '2026-09-18-escape-trivia-s13',
+      name: 'Jeffrey D.',
+      delta: 6,
+      note: 'Escape room + trivia'
+    },
+    {
+      id: '2026-09-18-escape-trivia-s14',
+      name: 'Trinity T.',
+      delta: 6,
+      note: 'Escape room + trivia'
+    },
+    {
+      id: '2026-09-18-escape-trivia-s15',
+      name: 'Victoria R.',
+      delta: 6,
+      note: 'Escape room + trivia'
+    },
+    {
+      id: '2026-09-18-escape-trivia-s16',
+      name: 'Thanh B.',
+      delta: 6,
+      note: 'Escape room + trivia'
+    },
+    {
+      id: '2026-09-18-escape-trivia-s17',
+      name: 'Javier A.',
+      delta: 6,
+      note: 'Escape room + trivia'
+    },
     { id: '2026-09-18-escape-trivia-s18', name: 'Axel B.', delta: 6, note: 'Escape room + trivia' },
-    { id: '2026-09-18-escape-trivia-s19', name: 'Nghia T.', delta: 6, note: 'Escape room + trivia' },
-    { id: '2026-09-18-escape-trivia-s20', name: 'Charlize P.', delta: 6, note: 'Escape room + trivia' },
-    { id: '2026-09-18-escape-trivia-s21', name: 'Jackson R.', delta: 6, note: 'Escape room + trivia' },
-    { id: '2026-09-18-escape-trivia-s22', name: 'Isaac L.', delta: 6, note: 'Escape room + trivia' },
-    { id: '2026-09-18-escape-trivia-s23', name: 'Alyviah C.', delta: 6, note: 'Escape room + trivia' },
-    { id: '2026-09-18-escape-trivia-s24', name: 'Hadassa G.', delta: 6, note: 'Escape room + trivia' },
+    {
+      id: '2026-09-18-escape-trivia-s19',
+      name: 'Nghia T.',
+      delta: 6,
+      note: 'Escape room + trivia'
+    },
+    {
+      id: '2026-09-18-escape-trivia-s20',
+      name: 'Charlize P.',
+      delta: 6,
+      note: 'Escape room + trivia'
+    },
+    {
+      id: '2026-09-18-escape-trivia-s21',
+      name: 'Jackson R.',
+      delta: 6,
+      note: 'Escape room + trivia'
+    },
+    {
+      id: '2026-09-18-escape-trivia-s22',
+      name: 'Isaac L.',
+      delta: 6,
+      note: 'Escape room + trivia'
+    },
+    {
+      id: '2026-09-18-escape-trivia-s23',
+      name: 'Alyviah C.',
+      delta: 6,
+      note: 'Escape room + trivia'
+    },
+    {
+      id: '2026-09-18-escape-trivia-s24',
+      name: 'Hadassa G.',
+      delta: 6,
+      note: 'Escape room + trivia'
+    },
     { id: '2026-09-18-escape-trivia-s25', name: 'Emma C.', delta: 6, note: 'Escape room + trivia' },
-    { id: '2026-09-18-escape-trivia-s26', name: 'Kiaraliz O.', delta: 6, note: 'Escape room + trivia' },
-    { id: '2026-09-18-escape-trivia-s27', name: 'Angel M.', delta: 6, note: 'Escape room + trivia' },
-    { id: '2026-09-18-escape-trivia-s28', name: 'Dania C.', delta: 6, note: 'Escape room + trivia' },
-    { id: '2026-09-18-escape-trivia-s29', name: 'Alyssia R.', delta: 6, note: 'Escape room + trivia' },
-    { id: '2026-09-18-escape-trivia-s30', name: 'Aisha C.', delta: 6, note: 'Escape room + trivia' },
+    {
+      id: '2026-09-18-escape-trivia-s26',
+      name: 'Kiaraliz O.',
+      delta: 6,
+      note: 'Escape room + trivia'
+    },
+    {
+      id: '2026-09-18-escape-trivia-s27',
+      name: 'Angel M.',
+      delta: 6,
+      note: 'Escape room + trivia'
+    },
+    {
+      id: '2026-09-18-escape-trivia-s28',
+      name: 'Dania C.',
+      delta: 6,
+      note: 'Escape room + trivia'
+    },
+    {
+      id: '2026-09-18-escape-trivia-s29',
+      name: 'Alyssia R.',
+      delta: 6,
+      note: 'Escape room + trivia'
+    },
+    {
+      id: '2026-09-18-escape-trivia-s30',
+      name: 'Aisha C.',
+      delta: 6,
+      note: 'Escape room + trivia'
+    },
     { id: '2026-09-18-escape-trivia-s31', name: 'Naia B.', delta: 6, note: 'Escape room + trivia' },
     { id: '2026-09-18-escape-trivia-s32', name: 'Dana M.', delta: 6, note: 'Escape room + trivia' },
-    { id: '2026-09-21-participation-haddy', name: 'Hadassa G.', delta: 2, note: 'Good Participation' },
-    { id: '2026-09-21-participation-trinity', name: 'Trinity T.', delta: 2, note: 'Good Participation' },
-    { id: '2026-09-21-participation-isaac', name: 'Isaac L.', delta: 2, note: 'Good Participation' },
-    { id: '2026-09-21-participation-jackson', name: 'Jackson R.', delta: 2, note: 'Good Participation' },
-    { id: '2026-09-21-participation-sophia', name: 'Sophia L.', delta: 2, note: 'Good Participation' },
-    { id: '2026-09-21-participation-sofia', name: 'Sofia J.', delta: 2, note: 'Good Participation' },
-    { id: '2026-09-21-participation-savannah', name: 'Savannah A.', delta: 2, note: 'Good Participation' },
+    {
+      id: '2026-09-21-participation-haddy',
+      name: 'Hadassa G.',
+      delta: 2,
+      note: 'Good Participation'
+    },
+    {
+      id: '2026-09-21-participation-trinity',
+      name: 'Trinity T.',
+      delta: 2,
+      note: 'Good Participation'
+    },
+    {
+      id: '2026-09-21-participation-isaac',
+      name: 'Isaac L.',
+      delta: 2,
+      note: 'Good Participation'
+    },
+    {
+      id: '2026-09-21-participation-jackson',
+      name: 'Jackson R.',
+      delta: 2,
+      note: 'Good Participation'
+    },
+    {
+      id: '2026-09-21-participation-sophia',
+      name: 'Sophia L.',
+      delta: 2,
+      note: 'Good Participation'
+    },
+    {
+      id: '2026-09-21-participation-sofia',
+      name: 'Sofia J.',
+      delta: 2,
+      note: 'Good Participation'
+    },
+    {
+      id: '2026-09-21-participation-savannah',
+      name: 'Savannah A.',
+      delta: 2,
+      note: 'Good Participation'
+    },
     { id: '2026-09-22-correct-danyela', name: 'Danyela C.', delta: -14, note: 'Correction' },
     { id: '2026-09-22-redeem-logan-candy', name: 'Logan M.', delta: -5, note: 'Candy bar' },
     { id: '2026-09-22-redeem-sofia-candy', name: 'Sofia J.', delta: -5, note: 'Candy bar' },
@@ -453,7 +643,12 @@ window.CSD_POINTS = {
     { id: '2026-09-23-webpage-helper-oswa', name: 'Oswa N.', delta: 7, note: 'Webpage Helper' },
     { id: '2026-09-23-webpage-helper-thanh', name: 'Thanh B.', delta: 7, note: 'Webpage Helper' },
     { id: '2026-09-23-webpage-helper-axel', name: 'Axel B.', delta: 7, note: 'Webpage Helper' },
-    { id: '2026-09-23-webpage-helper-savannah', name: 'Savannah A.', delta: 7, note: 'Webpage Helper' }
+    {
+      id: '2026-09-23-webpage-helper-savannah',
+      name: 'Savannah A.',
+      delta: 7,
+      note: 'Webpage Helper'
+    }
   ]
 }
 
@@ -466,14 +661,6 @@ window.CSD_POINTS = {
 // t7: 11111111
 // t8: 111111111
 
-/// danyela, thanh
-/// oswa, jeff +
-/// dania, zayan, haddy +
-/// isaac, javier
-// savannah, giselle
-/// victoria, aisha
-// juhno / naia
-
 // good questions points: savanahh, isaac
 
 // web content vs web structure
@@ -483,28 +670,5 @@ window.CSD_POINTS = {
 
 // attributes vs properties
 // inline vs block
-// inline vs inline-block
-// inline vs inline-inline
-// inline vs inline-inline-block
-// inline vs inline-inline-inline
-// inline vs inline-inline-inline-block
-// inline vs inline-inline-inline-inline
-// inline vs inline-inline-inline-inline-block
 
-
-// logan, jackson, emma, alivyah, naia, sophia, dana, isaac, oswa, alyssia, jeff, sofia, tryan
-// 
-// trinity, kiaraliz, giselle, aisha, javier, thanh, zayan, nghia, axel, haddy, dania, iszael, jackson, emma, alyssia, jeff, sofia, tryan, trinity, kiaraliz, giselle, aisha, javier, thanh, zayan, nghia, axel, haddy, dania, iszael
-
-// bonus for class participation: 
-
-
-// 5 1
-// 2 111
-// 3 111
-// 1 .5 1
-// 4 1
-// 8 1
-// 7 1
-
-//website project peeps: javier, angel, logan, jeff
+// website project peeps: javier, angel, logan, jeff, alyviah
