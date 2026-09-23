@@ -445,7 +445,15 @@ window.CSD_POINTS = {
     { id: '2026-09-22-redeem-savannah-candy', name: 'Savannah A.', delta: -5, note: 'Candy' },
     { id: '2026-09-22-redeem-danyela-candy', name: 'Danyela C.', delta: -10, note: 'Candy' },
     { id: '2026-09-22-redeem-jackson-candy', name: 'Jackson R.', delta: -10, note: 'Candy' },
-    { id: '2026-09-22-redeem-logan-candy-2', name: 'Logan M.', delta: -5, note: 'Candy' }
+    { id: '2026-09-22-redeem-logan-candy-2', name: 'Logan M.', delta: -5, note: 'Candy' },
+    { id: '2026-09-23-redeem-sofia-candy', name: 'Sofia J.', delta: -5, note: 'Candy' },
+    { id: '2026-09-23-redeem-zayan-candy', name: 'Zayan I.', delta: -5, note: 'Candy' },
+    { id: '2026-09-23-redeem-naia-candy', name: 'Naia B.', delta: -5, note: 'Candy' },
+    { id: '2026-09-23-webpage-helper-tyran', name: 'Tyran C.', delta: 7, note: 'Webpage Helper' },
+    { id: '2026-09-23-webpage-helper-oswa', name: 'Oswa N.', delta: 7, note: 'Webpage Helper' },
+    { id: '2026-09-23-webpage-helper-thanh', name: 'Thanh B.', delta: 7, note: 'Webpage Helper' },
+    { id: '2026-09-23-webpage-helper-axel', name: 'Axel B.', delta: 7, note: 'Webpage Helper' },
+    { id: '2026-09-23-webpage-helper-savannah', name: 'Savannah A.', delta: 7, note: 'Webpage Helper' }
   ]
 }
 
@@ -498,3 +506,5 @@ window.CSD_POINTS = {
 // 4 1
 // 8 1
 // 7 1
+
+//website project peeps: javier, angel, logan, jeff
