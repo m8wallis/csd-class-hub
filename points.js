@@ -649,7 +649,8 @@ window.CSD_POINTS = {
       delta: 7,
       note: 'Webpage Helper'
     },
-    { id: '2026-09-24-birthday-zayan', name: 'Zayan I.', delta: 5, note: 'Birthday' }
+    { id: '2026-09-24-birthday-zayan', name: 'Zayan I.', delta: 5, note: 'Birthday' },
+    { id: '2026-09-25-redeem-naia-candy', name: 'Naia B.', delta: -5, note: 'Candy' }
   ]
 }
 
@@ -672,7 +673,7 @@ window.CSD_POINTS = {
 // attributes vs properties
 // inline vs block
 
-// website project peeps: javier, angel, logan, jeff, alyviah
+// website project peeps: javier, angel, jeff, alyviah, juhno
 
 // candy: reeses, nerds, gummy clusters, gatorade, orange juice, vitamin water
 // toys: smooshers, butter squishers, butter squishers, apple squisies
