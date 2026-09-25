@@ -21,6 +21,7 @@
         <span class="brand-text">Class Hub</span>
       </a>
       <nav class="nav">
+        <a href="#goals">Class goal</a>
         <a href="#pulse">Pulse</a>
         <a href="#wishlist">Wishlist</a>
         <a href="#prizes">Prizes</a>
@@ -28,11 +29,13 @@
         <a href="#match">Find a classmate</a>
         <a href="html.html">HTML</a>
         <a href="css.html">CSS</a>
+        <a href="js.html">JS</a>
         <a href="lab.html">Lab</a>
         <a href="escape.html">Locked Lab</a>
       </nav>
       <a class="btn btn-tiny btn-ghost topbar-extra" href="html.html">HTML</a>
       <a class="btn btn-tiny btn-ghost topbar-extra" href="css.html">CSS</a>
+      <a class="btn btn-tiny btn-ghost topbar-extra" href="js.html">JS</a>
       <a class="btn btn-tiny btn-ghost topbar-extra" href="lab.html">Lab</a>
       <a class="btn btn-tiny btn-ghost topbar-extra" href="escape.html">Locked Lab</a>
       <span id="points-tools" class="points-tools" hidden>
@@ -65,6 +68,7 @@
             <a class="btn btn-primary" href="#classmates">Browse classmates</a>
             <a class="btn btn-ghost" href="html.html">HTML basics</a>
             <a class="btn btn-ghost" href="css.html">CSS basics</a>
+            <a class="btn btn-ghost" href="js.html">JavaScript basics</a>
             <a class="btn btn-ghost" href="lab.html">Four kinds of processing</a>
             <a class="btn btn-ghost" href="escape.html">Locked Lab</a>
             <button class="btn btn-ghost" type="button" data-spotlight>Random icebreaker</button>
@@ -87,6 +91,56 @@
           <div class="chip-row" id="spotlight-chips"></div>
           <button class="btn btn-small" type="button" id="spotlight-open">Open card</button>
         </article>
+      </section>
+
+      <section class="section" id="goals">
+        <div class="section-head">
+          <p class="kicker">Class goal</p>
+          <h2>One score for the whole room</h2>
+          <p>
+            The class starts at 100. Stay high and the room earns a reward. Drop too far and the
+            reward changes — or disappears.
+          </p>
+        </div>
+        <div class="goal-layout">
+          <article class="panel goal-now">
+            <p class="kicker">Right now</p>
+            <p class="goal-score" id="goal-score">100</p>
+            <p class="goal-reward" id="goal-reward">Pizza party / free day</p>
+            <p class="goal-note" id="goal-note"></p>
+            <div class="goal-meter" aria-hidden="true">
+              <div class="goal-meter-fill" id="goal-meter-fill"></div>
+              <span class="goal-tick" style="left: 50%">50</span>
+              <span class="goal-tick" style="left: 61%">61</span>
+              <span class="goal-tick" style="left: 76%">76</span>
+              <span class="goal-tick" style="left: 91%">91</span>
+            </div>
+            <ol class="goal-ladder" id="goal-ladder"></ol>
+          </article>
+          <div class="goal-charts">
+            <article class="panel goal-chart goal-earn">
+              <h3>Earns points</h3>
+              <ul>
+                <li>Good participation</li>
+                <li>Great questions</li>
+                <li>Helping each other with assignments</li>
+                <li>Being above-and-beyond kind</li>
+                <li>Bonus assignments or projects</li>
+                <li>Good engagement, and winning class games</li>
+              </ul>
+            </article>
+            <article class="panel goal-chart goal-cost">
+              <h3>Costs points</h3>
+              <ul>
+                <li>Low class participation</li>
+                <li>Too much talking</li>
+                <li>Not listening well to others</li>
+                <li>Disrespecting each other or the class</li>
+                <li>Not doing assignments</li>
+              </ul>
+            </article>
+          </div>
+        </div>
       </section>
 
       <section class="section" id="pulse">
@@ -197,6 +251,7 @@
       </div>
     </dialog>
 
+    <script src="class-goal.js"></script>
     <script src="data.js"></script>
     <script src="points.js"></script>
     <script src="app.js"></script>

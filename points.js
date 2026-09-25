@@ -648,7 +648,8 @@ window.CSD_POINTS = {
       name: 'Savannah A.',
       delta: 7,
       note: 'Webpage Helper'
-    }
+    },
+    { id: '2026-09-24-birthday-zayan', name: 'Zayan I.', delta: 5, note: 'Birthday' }
   ]
 }
 
@@ -672,3 +673,13 @@ window.CSD_POINTS = {
 // inline vs block
 
 // website project peeps: javier, angel, logan, jeff, alyviah
+
+// candy: reeses, nerds, gummy clusters, gatorade, orange juice, vitamin water
+// toys: smooshers, butter squishers, butter squishers, apple squisies
+
+// adults: know it all, arrogant, not able to admit they are wrong
+// why are on your phone? tiktok
+// when adults downplan their feelings or stress etc
+// when they tell you to google stuff, don't google it, ask them
+// parents have bad day but don't ask about the kids
+// dont ask like thy have real probs as kids

@@ -166,6 +166,79 @@ function highlightCss(src) {
   return out
 }
 
+const JS_KEYWORDS = new Set([
+  'let',
+  'const',
+  'var',
+  'function',
+  'return',
+  'if',
+  'else',
+  'for',
+  'while',
+  'true',
+  'false',
+  'new'
+])
+
+function highlightJs(src) {
+  const text = String(src)
+  let i = 0
+  let out = ''
+
+  while (i < text.length) {
+    if (text.startsWith('//', i)) {
+      const end = text.indexOf('\n', i)
+      const chunk = end === -1 ? text.slice(i) : text.slice(i, end)
+      out += `<span class="code-comment">${escapeCode(chunk)}</span>`
+      i += chunk.length
+      continue
+    }
+    if (text.startsWith('/*', i)) {
+      const end = text.indexOf('*/', i + 2)
+      const chunk = end === -1 ? text.slice(i) : text.slice(i, end + 2)
+      out += `<span class="code-comment">${escapeCode(chunk)}</span>`
+      i += chunk.length
+      continue
+    }
+    const ch = text[i]
+    if (ch === "'" || ch === '"' || ch === '`') {
+      let j = i + 1
+      while (j < text.length && text[j] !== ch) {
+        if (text[j] === '\\') j += 1
+        j += 1
+      }
+      out += `<span class="code-val">${escapeCode(text.slice(i, Math.min(text.length, j + 1)))}</span>`
+      i = j + 1
+      continue
+    }
+    if (/\d/.test(ch) && (i === 0 || !/[\w$]/.test(text[i - 1]))) {
+      let j = i + 1
+      while (j < text.length && /[\d.]/.test(text[j])) j += 1
+      out += `<span class="code-val">${escapeCode(text.slice(i, j))}</span>`
+      i = j
+      continue
+    }
+    if (/[A-Za-z_$]/.test(ch)) {
+      let j = i + 1
+      while (j < text.length && /[\w$]/.test(text[j])) j += 1
+      const word = text.slice(i, j)
+      const cls = JS_KEYWORDS.has(word) ? 'code-tag' : 'code-attr'
+      out += `<span class="${cls}">${escapeCode(word)}</span>`
+      i = j
+      continue
+    }
+    if ('{}()[];.,=<>!+-*/%'.includes(ch)) {
+      out += `<span class="code-punct">${escapeCode(ch)}</span>`
+      i += 1
+      continue
+    }
+    out += escapeCode(ch)
+    i += 1
+  }
+  return out
+}
+
 function bindCodeEditor(textarea, highlight) {
   const wrap = textarea.closest('.code-editor')
   const pre = wrap && wrap.querySelector('.code-highlight')
@@ -189,5 +262,6 @@ function bindCodeEditor(textarea, highlight) {
 window.CSD_HIGHLIGHT = {
   html: highlightHtml,
   css: highlightCss,
+  js: highlightJs,
   bindEditor: bindCodeEditor
 }

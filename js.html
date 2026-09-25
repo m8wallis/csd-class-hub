@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript basics · CSD Class Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="lab.css" />
+    <link rel="stylesheet" href="html.css" />
+    <link rel="stylesheet" href="js.css" />
+  </head>
+  <body class="html-page js-page">
+    <div class="paper-grain" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">CSD</span>
+        <span class="brand-text">Class Hub</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html">Hub</a>
+        <a href="html.html">HTML</a>
+        <a href="css.html">CSS</a>
+        <a href="#values">Values</a>
+        <a href="#variables">Variables</a>
+        <a href="#functions">Functions</a>
+        <a href="#if">If</a>
+        <a href="#arrays">Arrays</a>
+        <a href="#objects">Objects</a>
+        <a href="#loops">Loops</a>
+        <a href="#try">Try it</a>
+      </nav>
+      <a class="btn btn-tiny btn-ghost" href="css.html">CSS basics</a>
+      <a class="btn btn-tiny" href="index.html">Back to hub</a>
+    </header>
+
+    <main id="top">
+      <section class="hero lab-hero">
+        <div class="hero-copy">
+          <p class="kicker">Computer science · Action</p>
+          <h1>JavaScript makes it do something.</h1>
+          <p class="lede">
+            HTML is the skeleton. CSS is the clothes. JavaScript is the action — it stores a value,
+            makes a choice, and reacts when someone clicks. Click around. Code on one side, the
+            result on the other.
+          </p>
+        </div>
+        <nav class="station-jump html-jump" aria-label="JavaScript stations">
+          <a class="station-card" href="#values">
+            <span>01</span>
+            <strong>Values</strong>
+            <em>Words, numbers, yes/no</em>
+          </a>
+          <a class="station-card" href="#variables">
+            <span>02</span>
+            <strong>Variables</strong>
+            <em>A labeled box</em>
+          </a>
+          <a class="station-card" href="#functions">
+            <span>03</span>
+            <strong>Functions</strong>
+            <em>A named recipe</em>
+          </a>
+          <a class="station-card" href="#if">
+            <span>04</span>
+            <strong>If</strong>
+            <em>A yes-or-no choice</em>
+          </a>
+          <a class="station-card" href="#arrays">
+            <span>05</span>
+            <strong>Arrays</strong>
+            <em>A list in order</em>
+          </a>
+          <a class="station-card" href="#objects">
+            <span>06</span>
+            <strong>Objects</strong>
+            <em>Labeled values</em>
+          </a>
+          <a class="station-card" href="#loops">
+            <span>07</span>
+            <strong>Loops</strong>
+            <em>Visit each item</em>
+          </a>
+          <a class="station-card" href="#try">
+            <span>08</span>
+            <strong>Try it</strong>
+            <em>Type and run</em>
+          </a>
+        </nav>
+      </section>
+
+      <section class="section lab-station" id="values">
+        <div class="section-head">
+          <p class="kicker">01 · Values</p>
+          <h2>A value is a piece of information.</h2>
+          <p>
+            A string is words in quotes. A number is a count — no quotes. A boolean is only
+            <code>true</code> or <code>false</code>. <code>console.log</code> prints the value so you
+            can see it.
+          </p>
+        </div>
+        <div class="lab-split">
+          <div class="panel lab-play">
+            <p class="points-sub">Pick a kind of value</p>
+            <div class="chip-row" id="value-chips"></div>
+            <p class="points-sub">Tap a piece</p>
+            <div class="tag-sandwich" id="value-sandwich" role="group" aria-label="Parts of a statement"></div>
+            <p class="tag-caption" id="value-caption"></p>
+            <div class="mini-browser">
+              <div class="mini-chrome" aria-hidden="true">
+                <span></span><span></span><span></span>
+                <em>console</em>
+              </div>
+              <pre class="js-console" id="value-console"></pre>
+            </div>
+          </div>
+          <aside class="panel lab-notes">
+            <p class="kicker">The code</p>
+            <pre class="code-caption" id="value-code"></pre>
+            <p class="lab-explain" id="value-explain"></p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section lab-station" id="variables">
+        <div class="section-head">
+          <p class="kicker">02 · Variables</p>
+          <h2>A variable is a labeled box.</h2>
+          <p>
+            <code>let</code> creates the box and gives it a name. <code>=</code> stores a value
+            inside. Store a new number and the old one is replaced. Nudge the points and watch both
+            the code and the console change.
+          </p>
+        </div>
+        <div class="lab-split">
+          <div class="panel lab-play">
+            <p class="points-sub">Change the box</p>
+            <p class="js-readout" id="var-readout"></p>
+            <div class="lab-actions">
+              <button class="btn btn-small" type="button" data-var="-1">− 1</button>
+              <button class="btn btn-small" type="button" data-var="1">+ 1</button>
+              <button class="btn btn-small btn-ghost" type="button" data-var="reset">Reset</button>
+            </div>
+            <div class="mini-browser">
+              <div class="mini-chrome" aria-hidden="true">
+                <span></span><span></span><span></span>
+                <em>console</em>
+              </div>
+              <pre class="js-console" id="var-console"></pre>
+            </div>
+          </div>
+          <aside class="panel lab-notes">
+            <p class="kicker">The code</p>
+            <pre class="code-caption" id="var-code"></pre>
+            <p class="lab-explain" id="var-explain"></p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section lab-station" id="functions">
+        <div class="section-head">
+          <p class="kicker">03 · Functions</p>
+          <h2>A function is a recipe you can call.</h2>
+          <p>
+            The name is how you call it. The parameter in the parentheses is the input. <code>return</code>
+            hands a value back. Change the input — the recipe stays the same, the result changes.
+          </p>
+        </div>
+        <div class="lab-split">
+          <div class="panel lab-play">
+            <p class="points-sub">Pick a function</p>
+            <div class="chip-row" id="fn-chips"></div>
+            <label class="js-field">
+              <span id="fn-input-label">Input</span>
+              <input id="fn-input" type="text" autocomplete="off" />
+            </label>
+            <div class="mini-browser">
+              <div class="mini-chrome" aria-hidden="true">
+                <span></span><span></span><span></span>
+                <em>what it returns</em>
+              </div>
+              <pre class="js-console" id="fn-console"></pre>
+            </div>
+          </div>
+          <aside class="panel lab-notes">
+            <p class="kicker">The code</p>
+            <pre class="code-caption" id="fn-code"></pre>
+            <p class="lab-explain" id="fn-explain"></p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section lab-station" id="if">
+        <div class="section-head">
+          <p class="kicker">04 · If</p>
+          <h2>If the answer is yes, do this. Otherwise, do that.</h2>
+          <p>
+            The condition in the parentheses is a yes-or-no question. <code>if</code> runs when the
+            answer is yes. <code>else</code> runs when it is no. Only one path runs.
+          </p>
+        </div>
+        <div class="lab-split">
+          <div class="panel lab-play">
+            <p class="points-sub">Pick a score</p>
+            <div class="chip-row" id="if-chips"></div>
+            <div class="mini-browser">
+              <div class="mini-chrome" aria-hidden="true">
+                <span></span><span></span><span></span>
+                <em>which path ran</em>
+              </div>
+              <pre class="js-console" id="if-console"></pre>
+            </div>
+          </div>
+          <aside class="panel lab-notes">
+            <p class="kicker">The code</p>
+            <pre class="code-caption" id="if-code"></pre>
+            <p class="lab-explain" id="if-explain"></p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section lab-station" id="arrays">
+        <div class="section-head">
+          <p class="kicker">05 · Arrays</p>
+          <h2>An array is a list in order.</h2>
+          <p>
+            Square brackets hold the items. Each item has an index, and the first index is
+            <code>0</code>, not 1. <code>length</code> is how many items are in the list. Tap an item
+            to read it.
+          </p>
+        </div>
+        <div class="lab-split">
+          <div class="panel lab-play">
+            <p class="points-sub">Tap an item</p>
+            <div class="js-slots" id="array-slots"></div>
+            <div class="mini-browser">
+              <div class="mini-chrome" aria-hidden="true">
+                <span></span><span></span><span></span>
+                <em>what you get</em>
+              </div>
+              <pre class="js-console" id="array-console"></pre>
+            </div>
+          </div>
+          <aside class="panel lab-notes">
+            <p class="kicker">The code</p>
+            <pre class="code-caption" id="array-code"></pre>
+            <p class="lab-explain" id="array-explain"></p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section lab-station" id="objects">
+        <div class="section-head">
+          <p class="kicker">06 · Objects</p>
+          <h2>An object stores values by name.</h2>
+          <p>
+            Curly braces wrap the object. Each line is a property: a name, then a value. You read one
+            with a dot — <code>student.name</code> — instead of a number.
+          </p>
+        </div>
+        <div class="lab-split">
+          <div class="panel lab-play">
+            <p class="points-sub">Tap a property</p>
+            <div class="js-slots" id="object-keys"></div>
+            <div class="mini-browser">
+              <div class="mini-chrome" aria-hidden="true">
+                <span></span><span></span><span></span>
+                <em>what you get</em>
+              </div>
+              <pre class="js-console" id="object-console"></pre>
+            </div>
+          </div>
+          <aside class="panel lab-notes">
+            <p class="kicker">The code</p>
+            <pre class="code-caption" id="object-code"></pre>
+            <p class="lab-explain" id="object-explain"></p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section lab-station" id="loops">
+        <div class="section-head">
+          <p class="kicker">07 · Loops</p>
+          <h2>A loop visits each item for you.</h2>
+          <p>
+            A <code>for</code> loop starts <code>i</code> at 0, keeps going while <code>i</code> is
+            less than the length, then adds 1. Each pass logs the item at that index. Step through
+            one item at a time.
+          </p>
+        </div>
+        <div class="lab-split">
+          <div class="panel lab-play">
+            <p class="points-sub">Step through the list</p>
+            <div class="js-slots" id="loop-slots"></div>
+            <div class="lab-actions">
+              <button class="btn btn-small" type="button" id="loop-next">Next item</button>
+              <button class="btn btn-small btn-ghost" type="button" id="loop-reset">Start over</button>
+            </div>
+            <div class="mini-browser">
+              <div class="mini-chrome" aria-hidden="true">
+                <span></span><span></span><span></span>
+                <em>console</em>
+              </div>
+              <pre class="js-console" id="loop-console"></pre>
+            </div>
+          </div>
+          <aside class="panel lab-notes">
+            <p class="kicker">The code</p>
+            <pre class="code-caption" id="loop-code"></pre>
+            <p class="lab-explain" id="loop-explain"></p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section lab-station" id="try">
+        <div class="section-head">
+          <p class="kicker">08 · Try it</p>
+          <h2>Type JavaScript. Press Run.</h2>
+          <p>
+            Start from a snippet, then change the words, the numbers, or the condition. The console
+            shows what <code>console.log</code> prints. The page on the right is there if your code
+            looks for the button.
+          </p>
+        </div>
+        <div class="try-split js-try">
+          <div class="panel lab-play">
+            <p class="points-sub">Start from</p>
+            <div class="chip-row" id="try-chips"></div>
+            <ul class="code-key" aria-label="Color key">
+              <li><code class="code-tag">keyword</code></li>
+              <li><code class="code-val">string / number</code></li>
+              <li><code class="code-comment">comment</code></li>
+            </ul>
+            <label class="try-editor">
+              <span class="try-label">JavaScript</span>
+              <div class="code-editor">
+                <pre class="code-highlight" id="try-js-hl" aria-hidden="true"></pre>
+                <textarea id="try-js" spellcheck="false" rows="12"></textarea>
+              </div>
+            </label>
+            <div class="lab-actions">
+              <button class="btn btn-small" type="button" id="try-run">Run</button>
+              <button class="btn btn-small btn-ghost" type="button" id="try-stop">Stop</button>
+            </div>
+          </div>
+          <div class="panel lab-play">
+            <p class="points-sub">Page</p>
+            <div class="mini-browser try-browser">
+              <div class="mini-chrome" aria-hidden="true">
+                <span></span><span></span><span></span>
+                <em>your page</em>
+              </div>
+              <iframe id="try-frame" class="try-frame" title="JavaScript preview" sandbox="allow-scripts"></iframe>
+            </div>
+            <p class="points-sub">Console</p>
+            <pre class="js-console js-console-live" id="try-console">Press Run.</pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="section lab-close">
+        <div class="section-head">
+          <p class="kicker">Keep these ideas</p>
+          <h2>Value, variable, function, if. Then lists, labels, and loops.</h2>
+          <p>
+            A value is the information. A variable stores it under a name. A function is a recipe you
+            can call. <code>if</code> picks a path. An array is a numbered list, an object is named
+            values, and a loop visits each item.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>CSD Class Hub · JavaScript basics · Values through loops</p>
+    </footer>
+
+    <script src="code-highlight.js"></script>
+    <script src="js.js"></script>
+  </body>
+</html>

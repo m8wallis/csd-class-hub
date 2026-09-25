@@ -809,8 +809,49 @@ function onClick(event) {
   }
 }
 
+const CLASS_GOALS = [
+  { min: 91, range: '91+', reward: 'Pizza party / free day' },
+  { min: 76, range: '76–90', reward: 'Snack party / half free day' },
+  { min: 61, range: '61–75', reward: 'Smaller snack party / quarter free day' },
+  { min: 50, range: '50–60', reward: 'No reward' },
+  { min: -Infinity, range: 'Under 50', reward: 'Extra test' }
+]
+
+function classGoalScore() {
+  const goal = window.CSD_CLASS_GOAL || { start: 100, adjustments: [] }
+  const adjustments = Array.isArray(goal.adjustments) ? goal.adjustments : []
+  return adjustments.reduce((sum, row) => sum + Number(row.delta || 0), Number(goal.start))
+}
+
+function renderClassGoal() {
+  const score = classGoalScore()
+  const current = CLASS_GOALS.find((row) => score >= row.min) || CLASS_GOALS[CLASS_GOALS.length - 1]
+  const currentIndex = CLASS_GOALS.indexOf(current)
+  const higher = currentIndex > 0 ? CLASS_GOALS[currentIndex - 1] : null
+  $('#goal-score').textContent = String(score)
+  $('#goal-reward').textContent = current.reward
+  if (current.min === -Infinity) {
+    const need = 50 - score
+    $('#goal-note').textContent = 'This score means an extra test. ' + need + ' more point' + (need === 1 ? '' : 's') + ' gets the class back to 50.'
+  } else if (!higher) {
+    $('#goal-note').textContent = 'The class is in the top band. Stay at 91 or above to keep the pizza party and free day.'
+  } else {
+    const need = higher.min - score
+    $('#goal-note').textContent = need + ' more point' + (need === 1 ? '' : 's') + ' reaches ' + higher.reward.toLowerCase() + '.'
+  }
+  const fill = $('#goal-meter-fill')
+  const width = Math.max(0, Math.min(100, score))
+  fill.style.width = width + '%'
+  fill.style.background = score >= 91 ? 'var(--teal)' : score >= 61 ? 'var(--gold)' : score >= 50 ? 'var(--ink-soft)' : 'var(--coral)'
+  $('#goal-ladder').innerHTML = CLASS_GOALS.map((row) => {
+    const on = row.reward === current.reward ? ' class="is-on"' : ''
+    return '<li' + on + '><span>' + row.range + '</span><span>' + row.reward + '</span></li>'
+  }).join('')
+}
+
 function init() {
   applyFileAwards()
+  renderClassGoal()
   renderHeroCounts()
   renderPulse()
   renderWishlist()
