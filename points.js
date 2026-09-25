@@ -651,11 +651,26 @@ window.CSD_POINTS = {
     },
     { id: '2026-09-24-birthday-zayan', name: 'Zayan I.', delta: 5, note: 'Birthday' },
     { id: '2026-09-25-redeem-naia-candy', name: 'Naia B.', delta: -5, note: 'Candy' },
-    { id: '2026-09-25-trashketball-s01', name: 'Danyela C.', delta: 5, note: 'Trashketball Trivia' },
+    {
+      id: '2026-09-25-trashketball-s01',
+      name: 'Danyela C.',
+      delta: 5,
+      note: 'Trashketball Trivia'
+    },
     { id: '2026-09-25-trashketball-s02', name: 'Iszael M.', delta: 5, note: 'Trashketball Trivia' },
-    { id: '2026-09-25-trashketball-s03', name: 'Savannah A.', delta: 5, note: 'Trashketball Trivia' },
+    {
+      id: '2026-09-25-trashketball-s03',
+      name: 'Savannah A.',
+      delta: 5,
+      note: 'Trashketball Trivia'
+    },
     { id: '2026-09-25-trashketball-s04', name: 'Logan M.', delta: 5, note: 'Trashketball Trivia' },
-    { id: '2026-09-25-trashketball-s05', name: 'Giselle A.', delta: 5, note: 'Trashketball Trivia' },
+    {
+      id: '2026-09-25-trashketball-s05',
+      name: 'Giselle A.',
+      delta: 5,
+      note: 'Trashketball Trivia'
+    },
     { id: '2026-09-25-trashketball-s06', name: 'Sophia L.', delta: 5, note: 'Trashketball Trivia' },
     { id: '2026-09-25-trashketball-s07', name: 'Tyran C.', delta: 5, note: 'Trashketball Trivia' },
     { id: '2026-09-25-trashketball-s08', name: 'Zayan I.', delta: 5, note: 'Trashketball Trivia' },
@@ -663,26 +678,72 @@ window.CSD_POINTS = {
     { id: '2026-09-25-trashketball-s10', name: 'Lucas D.', delta: 5, note: 'Trashketball Trivia' },
     { id: '2026-09-25-trashketball-s11', name: 'Oswa N.', delta: 5, note: 'Trashketball Trivia' },
     { id: '2026-09-25-trashketball-s12', name: 'Sofia J.', delta: 5, note: 'Trashketball Trivia' },
-    { id: '2026-09-25-trashketball-s13', name: 'Jeffrey D.', delta: 5, note: 'Trashketball Trivia' },
-    { id: '2026-09-25-trashketball-s14', name: 'Trinity T.', delta: 5, note: 'Trashketball Trivia' },
-    { id: '2026-09-25-trashketball-s15', name: 'Victoria R.', delta: 5, note: 'Trashketball Trivia' },
+    {
+      id: '2026-09-25-trashketball-s13',
+      name: 'Jeffrey D.',
+      delta: 5,
+      note: 'Trashketball Trivia'
+    },
+    {
+      id: '2026-09-25-trashketball-s14',
+      name: 'Trinity T.',
+      delta: 5,
+      note: 'Trashketball Trivia'
+    },
+    {
+      id: '2026-09-25-trashketball-s15',
+      name: 'Victoria R.',
+      delta: 5,
+      note: 'Trashketball Trivia'
+    },
     { id: '2026-09-25-trashketball-s16', name: 'Thanh B.', delta: 5, note: 'Trashketball Trivia' },
     { id: '2026-09-25-trashketball-s17', name: 'Javier A.', delta: 5, note: 'Trashketball Trivia' },
     { id: '2026-09-25-trashketball-s18', name: 'Axel B.', delta: 5, note: 'Trashketball Trivia' },
     { id: '2026-09-25-trashketball-s19', name: 'Nghia T.', delta: 5, note: 'Trashketball Trivia' },
-    { id: '2026-09-25-trashketball-s20', name: 'Charlize P.', delta: 5, note: 'Trashketball Trivia' },
-    { id: '2026-09-25-trashketball-s21', name: 'Jackson R.', delta: 5, note: 'Trashketball Trivia' },
+    {
+      id: '2026-09-25-trashketball-s20',
+      name: 'Charlize P.',
+      delta: 5,
+      note: 'Trashketball Trivia'
+    },
+    {
+      id: '2026-09-25-trashketball-s21',
+      name: 'Jackson R.',
+      delta: 5,
+      note: 'Trashketball Trivia'
+    },
     { id: '2026-09-25-trashketball-s22', name: 'Isaac L.', delta: 5, note: 'Trashketball Trivia' },
-    { id: '2026-09-25-trashketball-s23', name: 'Alyviah C.', delta: 5, note: 'Trashketball Trivia' },
-    { id: '2026-09-25-trashketball-s24', name: 'Hadassa G.', delta: 5, note: 'Trashketball Trivia' },
+    {
+      id: '2026-09-25-trashketball-s23',
+      name: 'Alyviah C.',
+      delta: 5,
+      note: 'Trashketball Trivia'
+    },
+    {
+      id: '2026-09-25-trashketball-s24',
+      name: 'Hadassa G.',
+      delta: 5,
+      note: 'Trashketball Trivia'
+    },
     { id: '2026-09-25-trashketball-s25', name: 'Emma C.', delta: 5, note: 'Trashketball Trivia' },
-    { id: '2026-09-25-trashketball-s26', name: 'Kiaraliz O.', delta: 5, note: 'Trashketball Trivia' },
+    {
+      id: '2026-09-25-trashketball-s26',
+      name: 'Kiaraliz O.',
+      delta: 5,
+      note: 'Trashketball Trivia'
+    },
     { id: '2026-09-25-trashketball-s27', name: 'Angel M.', delta: 5, note: 'Trashketball Trivia' },
     { id: '2026-09-25-trashketball-s28', name: 'Dania C.', delta: 5, note: 'Trashketball Trivia' },
-    { id: '2026-09-25-trashketball-s29', name: 'Alyssia R.', delta: 5, note: 'Trashketball Trivia' },
+    {
+      id: '2026-09-25-trashketball-s29',
+      name: 'Alyssia R.',
+      delta: 5,
+      note: 'Trashketball Trivia'
+    },
     { id: '2026-09-25-trashketball-s30', name: 'Aisha C.', delta: 5, note: 'Trashketball Trivia' },
     { id: '2026-09-25-trashketball-s31', name: 'Naia B.', delta: 5, note: 'Trashketball Trivia' },
-    { id: '2026-09-25-trashketball-s32', name: 'Dana M.', delta: 5, note: 'Trashketball Trivia' }
+    { id: '2026-09-25-trashketball-s32', name: 'Dana M.', delta: 5, note: 'Trashketball Trivia' },
+    { id: '2026-09-25-birthday-emma', name: 'Emma C.', delta: 5, note: 'Birthday!' }
   ]
 }
 
