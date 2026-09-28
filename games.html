@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Games · CSD Class Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="games.css" />
+  </head>
+  <body class="games-page">
+    <div class="paper-grain" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">CSD</span>
+        <span class="brand-text">Class Hub</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html">Hub</a>
+        <a href="#if-else">If or Else</a>
+        <a href="#quest">Map</a>
+      </nav>
+      <a class="btn btn-tiny" href="index.html">Back to hub</a>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="kicker">Computer science · Games</p>
+          <h1>Play the logic.</h1>
+          <p class="lede">
+            Short games for the ideas we use in code. Read a rule, then do what that rule would do —
+            pick a door, or walk a little map.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="if-else">
+        <div class="section-head">
+          <p class="kicker">01 · If or Else</p>
+          <h2>Only one door is the code.</h2>
+          <p>
+            Left arrow walks through the <strong>if</strong> door. Right arrow walks through the
+            <strong>else</strong> door. If the condition is true, take if. If it is false, take else.
+          </p>
+        </div>
+
+        <div class="game-layout">
+          <aside class="panel game-facts">
+            <p class="kicker">The facts</p>
+            <p class="game-fact" id="game-fact">Press an arrow to start.</p>
+            <pre class="game-code" id="game-code">if ( ? ) {
+  left door
+} else {
+  right door
+}</pre>
+            <p class="game-progress" id="game-progress">Round 1 of 8</p>
+          </aside>
+
+          <div class="panel game-stage" id="game-stage">
+            <button class="door door-if" type="button" id="door-if" data-door="if">
+              <span>If</span>
+              <strong>Left arrow</strong>
+            </button>
+            <div class="bot" id="game-bot" aria-hidden="true">
+              <span class="bot-face"></span>
+            </div>
+            <button class="door door-else" type="button" id="door-else" data-door="else">
+              <span>Else</span>
+              <strong>Right arrow</strong>
+            </button>
+          </div>
+        </div>
+
+        <p class="game-status" id="game-status" aria-live="polite">
+          Left arrow is if. Right arrow is else.
+        </p>
+        <div class="lab-actions game-actions">
+          <button class="btn btn-small btn-ghost" type="button" id="game-restart">Play again</button>
+        </div>
+      </section>
+
+      <section class="section" id="quest">
+        <div class="section-head">
+          <p class="kicker">02 · Map</p>
+          <h2>Key, gem, book, then the sword.</h2>
+          <p>
+            Arrow keys move. Collect the <strong>key</strong>, the <strong>gem</strong>, and the
+            <strong>book</strong>. The door opens only when all three are true. The sword is past
+            that door. With the sword, you can get past the enemy.
+          </p>
+        </div>
+
+        <div class="game-layout">
+          <aside class="panel game-facts">
+            <p class="kicker">The facts</p>
+            <p class="game-fact" id="quest-facts">hasKey = false</p>
+            <pre class="game-code" id="quest-code"></pre>
+            <p class="game-progress" id="quest-where">Above the gate</p>
+          </aside>
+          <div>
+            <div class="quest-map" id="quest-map" tabindex="0" role="application" aria-label="Logic map">
+              <div class="quest-grid" id="quest-grid"></div>
+              <div class="quest-player face-down" id="quest-player" aria-hidden="true">
+                <svg class="hero-svg hero-front" viewBox="0 0 16 16">
+                  <rect x="5" y="1" width="6" height="2" fill="#1f8a34" />
+                  <rect x="6" y="0" width="4" height="2" fill="#146626" />
+                  <rect x="4" y="2" width="2" height="2" fill="#e2b84a" />
+                  <rect x="10" y="2" width="2" height="2" fill="#e2b84a" />
+                  <rect x="5" y="2" width="6" height="4" fill="#f3c89a" />
+                  <rect x="6" y="4" width="1" height="1" fill="#24180f" />
+                  <rect x="9" y="4" width="1" height="1" fill="#24180f" />
+                  <rect x="4" y="6" width="2" height="4" fill="#f3c89a" />
+                  <rect x="10" y="6" width="2" height="4" fill="#f3c89a" />
+                  <rect x="6" y="6" width="4" height="5" fill="#1f8a34" />
+                  <rect x="6" y="8" width="4" height="1" fill="#6b3a22" />
+                  <rect x="6" y="11" width="1" height="3" fill="#4a2c16" />
+                  <rect x="9" y="11" width="1" height="3" fill="#4a2c16" />
+                  <g class="hero-sword">
+                    <rect x="12" y="6" width="2" height="7" fill="#d5dde4" />
+                    <rect x="11" y="6" width="4" height="2" fill="#d9a21b" />
+                  </g>
+                </svg>
+                <svg class="hero-svg hero-back" viewBox="0 0 16 16">
+                  <rect x="6" y="0" width="4" height="2" fill="#146626" />
+                  <rect x="4" y="1" width="8" height="3" fill="#1f8a34" />
+                  <rect x="5" y="3" width="6" height="2" fill="#e2b84a" />
+                  <rect x="6" y="5" width="4" height="6" fill="#1f8a34" />
+                  <rect x="6" y="8" width="4" height="1" fill="#6b3a22" />
+                  <rect x="4" y="6" width="2" height="3" fill="#1f8a34" />
+                  <rect x="10" y="6" width="2" height="3" fill="#1f8a34" />
+                  <rect x="6" y="11" width="1" height="3" fill="#4a2c16" />
+                  <rect x="9" y="11" width="1" height="3" fill="#4a2c16" />
+                  <g class="hero-sword">
+                    <rect x="12" y="5" width="2" height="7" fill="#d5dde4" />
+                    <rect x="11" y="5" width="4" height="2" fill="#d9a21b" />
+                  </g>
+                </svg>
+              </div>
+            </div>
+            <div class="quest-pad" aria-label="Move">
+              <button class="btn btn-small" type="button" data-move="ArrowUp">Up</button>
+              <button class="btn btn-small" type="button" data-move="ArrowLeft">Left</button>
+              <button class="btn btn-small" type="button" data-move="ArrowDown">Down</button>
+              <button class="btn btn-small" type="button" data-move="ArrowRight">Right</button>
+            </div>
+          </div>
+        </div>
+
+        <p class="game-status" id="quest-status" aria-live="polite">
+          Arrow keys move. Collect the key, the gem, and the book.
+        </p>
+        <div class="game-actions">
+          <button class="btn btn-small btn-ghost" type="button" id="quest-restart">Play again</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>CSD Class Hub · Games · If or Else, then a map</p>
+    </footer>
+
+    <script src="games.js"></script>
+  </body>
+</html>

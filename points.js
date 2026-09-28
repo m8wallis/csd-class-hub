@@ -743,7 +743,11 @@ window.CSD_POINTS = {
     { id: '2026-09-25-trashketball-s30', name: 'Aisha C.', delta: 5, note: 'Trashketball Trivia' },
     { id: '2026-09-25-trashketball-s31', name: 'Naia B.', delta: 5, note: 'Trashketball Trivia' },
     { id: '2026-09-25-trashketball-s32', name: 'Dana M.', delta: 5, note: 'Trashketball Trivia' },
-    { id: '2026-09-25-birthday-emma', name: 'Emma C.', delta: 5, note: 'Birthday!' }
+    { id: '2026-09-25-birthday-emma', name: 'Emma C.', delta: 5, note: 'Birthday!' },
+    { id: '2026-09-28-redeem-zayan-candy', name: 'Zayan I.', delta: -5, note: 'Candy' },
+    { id: '2026-09-28-redeem-thanh-candy', name: 'Thanh B.', delta: -5, note: 'Candy' },
+    { id: '2026-09-28-redeem-trinity-candy', name: 'Trinity T.', delta: -5, note: 'Candy' },
+    { id: '2026-09-28-redeem-zayan-candy-2', name: 'Zayan I.', delta: -10, note: 'Candy' }
   ]
 }
 
