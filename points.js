@@ -747,9 +747,23 @@ window.CSD_POINTS = {
     { id: '2026-09-28-redeem-zayan-candy', name: 'Zayan I.', delta: -5, note: 'Candy' },
     { id: '2026-09-28-redeem-thanh-candy', name: 'Thanh B.', delta: -5, note: 'Candy' },
     { id: '2026-09-28-redeem-trinity-candy', name: 'Trinity T.', delta: -5, note: 'Candy' },
-    { id: '2026-09-28-redeem-zayan-candy-2', name: 'Zayan I.', delta: -10, note: 'Candy' }
+    { id: '2026-09-28-redeem-zayan-candy-2', name: 'Zayan I.', delta: -10, note: 'Candy' },
+    { id: '2026-09-28-redeem-sophia-candy', name: 'Sophia L.', delta: -10, note: 'Candy' },
+    { id: '2026-09-28-angel-talking', name: 'Angel M.', delta: -5, note: 'Talking' },
+    { id: '2026-09-29-1', name: 'Danyela C.', delta: -5, note: 'Candy' },
+    { id: '2026-09-29-2', name: 'Zayan I.', delta: -10, note: 'Candy' },
+    { id: '2026-09-29-3', name: 'Victoria R.', delta: -5, note: 'Candy' },
+    { id: '2026-09-29-bonus-1', name: 'Zayan I.', delta: 5, note: 'Game Presentation' },
+    { id: '2026-09-29-bonus-2', name: 'Dana M.', delta: 5, note: 'Game Presentation' },
+    { id: '2026-09-29-bonus-3', name: 'Trinity T.', delta: 5, note: 'Game Presentation' },
+    { id: '2026-09-29-bonus-4', name: 'Isaac L.', delta: 5, note: 'Game Presentation' },
+    { id: '2026-09-29-bonus-5', name: 'Giselle A.', delta: 5, note: 'Game Presentation' },
+    { id: '2026-09-29-bonus-6', name: 'Aisha C.', delta: 5, note: 'Game Presentation' }
   ]
 }
+
+///// WEB PROJECTS: angel, javier
+///// Dana project! For homework. Check on Lucas too
 
 // t1: 111111111
 // t2: 111111111
