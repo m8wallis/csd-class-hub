@@ -758,7 +758,14 @@ window.CSD_POINTS = {
     { id: '2026-09-29-bonus-3', name: 'Trinity T.', delta: 5, note: 'Game Presentation' },
     { id: '2026-09-29-bonus-4', name: 'Isaac L.', delta: 5, note: 'Game Presentation' },
     { id: '2026-09-29-bonus-5', name: 'Giselle A.', delta: 5, note: 'Game Presentation' },
-    { id: '2026-09-29-bonus-6', name: 'Aisha C.', delta: 5, note: 'Game Presentation' }
+    { id: '2026-09-29-bonus-6', name: 'Aisha C.', delta: 5, note: 'Game Presentation' },
+    { id: '2026-09-30-axel-jackson-shot', name: 'Axel B.', delta: -5, note: 'Jackson making shot' },
+    { id: '2026-09-30-presentation-sophia', name: 'Sophia L.', delta: 1, note: 'Good Presentation/Good Questions' },
+    { id: '2026-09-30-presentation-zayan', name: 'Zayan I.', delta: 1, note: 'Good Presentation/Good Questions' },
+    { id: '2026-09-30-presentation-kiaraliz', name: 'Kiaraliz O.', delta: 1, note: 'Good Presentation/Good Questions' },
+    { id: '2026-09-30-presentation-trinity', name: 'Trinity T.', delta: 1, note: 'Good Presentation/Good Questions' },
+    { id: '2026-09-30-presentation-isaac', name: 'Isaac L.', delta: 1, note: 'Good Presentation/Good Questions' },
+    { id: '2026-09-30-presentation-aisha', name: 'Aisha C.', delta: 1, note: 'Good Presentation/Good Questions' }
   ]
 }
 
@@ -795,3 +802,7 @@ window.CSD_POINTS = {
 // when they tell you to google stuff, don't google it, ask them
 // parents have bad day but don't ask about the kids
 // dont ask like thy have real probs as kids
+
+
+//// Good Questions
+// sophia, trinity, kiara, yana
