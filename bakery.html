@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bake Before Dark · CSD Class Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@600;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="bakery.css" />
+  </head>
+  <body>
+    <canvas id="game" aria-label="Bake Before Dark game"></canvas>
+    <button id="mute" class="mute" type="button" aria-label="Mute sound" title="Mute (M)">🔊</button>
+
+    <div id="overlay" class="overlay is-open is-solid">
+      <!-- Title / setup -->
+      <section class="screen is-active" id="screen-title">
+        <div class="title-wrap">
+          <header class="logo">
+            <p class="logo-kicker">A zombie apocalypse… but make it pastry</p>
+            <h1 class="logo-title"><span>Bake</span> <span>Before</span> <span>Dark</span></h1>
+            <p class="logo-sub">
+              Scavenge by day. Bake like your life depends on it. Feed the hungry undead by night.
+            </p>
+          </header>
+
+          <div class="title-grid">
+            <form class="card setup" id="setup-form" autocomplete="off">
+              <h2>Who's playing?</h2>
+              <div class="seg" role="radiogroup" aria-label="Number of players">
+                <label><input type="radio" name="players" value="1" checked /><span>1 player</span></label>
+                <label><input type="radio" name="players" value="2" /><span>2 players · take turns</span></label>
+              </div>
+              <label class="field"><span>Player 1</span><select id="p1"></select></label>
+              <label class="field" id="p2-field" hidden><span>Player 2</span><select id="p2"></select></label>
+
+              <h3>Game length</h3>
+              <div class="seg" role="radiogroup" aria-label="Game length">
+                <label><input type="radio" name="gameLength" value="full" checked /><span>Full · ~15 min</span></label>
+                <label><input type="radio" name="gameLength" value="short" /><span>Short · ~8 min</span></label>
+              </div>
+              <p class="hint" id="length-hint">5 phases. Each phase is a 90 second day and a 90 second night.</p>
+              <p class="form-error" id="setup-error" aria-live="polite"></p>
+              <button class="btn btn-big" type="submit">Start baking ▶</button>
+            </form>
+
+            <div class="card howto">
+              <h2>How to play</h2>
+              <ol class="rules">
+                <li><b>☀️ Day:</b> explore town. Grab ingredients, weapons, and 🩹 first aid.</li>
+                <li><b>🔥 Oven:</b> bring ingredients to the bakery. Mix 2–3 to discover recipes. You start knowing 🍪 Sugar Cookie, and 📜 recipe scrolls hidden around town teach you more.</li>
+                <li><b>🌙 Night:</b> zombies swarm. Throw treats for a food coma… but some treats make them <b>ANGRY</b>.</li>
+                <li><b>🏏 Weapons</b> stun zombies. You can't defeat them, only slow them down.</li>
+                <li><b>💖 The cure:</b> a legendary treat made from rare ingredients turns a zombie back into a person.</li>
+              </ol>
+              <p class="scoring">
+                <b>Points:</b> +1 per stun · +5, 10, 15, 20, 25 for surviving each phase · +20 per cure
+              </p>
+              <h3>Controls</h3>
+              <ul class="keys">
+                <li><kbd>WASD</kbd> / <kbd>Arrows</kbd> move</li>
+                <li><kbd>Space</kbd> swing weapon</li>
+                <li><kbd>F</kbd> or <kbd>click</kbd> throw treat</li>
+                <li><kbd>Q</kbd> / <kbd>1–9</kbd> pick treat</li>
+                <li><kbd>E</kbd> use oven / swap weapon</li>
+                <li><kbd>B</kbd> recipe book</li>
+                <li><kbd>P</kbd> pause · <kbd>M</kbd> mute</li>
+              </ul>
+            </div>
+
+            <div class="card board-mini">
+              <h2>🏆 Top bakers</h2>
+              <p class="hint" id="board-mini-mode">Full games</p>
+              <ol id="board-mini"></ol>
+              <button class="btn btn-ghost" type="button" data-go="board">Full leaderboard</button>
+            </div>
+          </div>
+          <a class="back-link" href="games.html">← Back to Class Hub games</a>
+        </div>
+      </section>
+
+      <!-- Pass the keyboard -->
+      <section class="screen" id="screen-pass">
+        <div class="card center-card">
+          <p class="kicker" id="pass-kicker">Player 1</p>
+          <h2 class="big" id="pass-name">Ready?</h2>
+          <p id="pass-msg">Grab the keyboard. The sun is up… for now.</p>
+          <button class="btn btn-big" type="button" id="pass-go">I'm ready! ▶</button>
+        </div>
+      </section>
+
+      <!-- Pause -->
+      <section class="screen" id="screen-pause">
+        <div class="card center-card">
+          <h2 class="big">Paused</h2>
+          <div class="actions">
+            <button class="btn btn-big" type="button" id="pause-resume">Resume</button>
+            <button class="btn" type="button" id="pause-book">📖 Recipe book</button>
+            <button class="btn btn-ghost" type="button" id="pause-quit">Quit to menu</button>
+          </div>
+          <ul class="keys compact">
+            <li><kbd>WASD</kbd> move</li>
+            <li><kbd>Space</kbd> swing</li>
+            <li><kbd>F</kbd> / <kbd>click</kbd> throw</li>
+            <li><kbd>Q</kbd> / <kbd>1–9</kbd> pick treat</li>
+            <li><kbd>E</kbd> oven / swap weapon</li>
+            <li><kbd>B</kbd> book</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Oven -->
+      <section class="screen" id="screen-bake">
+        <div class="bake-wrap">
+          <div class="card bake-card">
+            <h2>🔥 The Oven</h2>
+            <p class="hint">
+              Pick 2 or 3 ingredients, then bake. Experiment! Wrong combos burn, so read the hints in your book.
+            </p>
+            <div class="bake-slots" id="bake-slots"></div>
+            <div class="pantry" id="bake-pantry"></div>
+            <p class="bake-result" id="bake-result" aria-live="polite"></p>
+            <div class="actions">
+              <button class="btn btn-big" type="button" id="bake-go">Bake! (Enter)</button>
+              <button class="btn" type="button" id="bake-clear">Clear</button>
+              <button class="btn btn-ghost" type="button" id="bake-close">Back to game (Esc)</button>
+            </div>
+          </div>
+          <aside class="card book-card">
+            <h3>📖 Recipe book</h3>
+            <ul class="book" id="bake-book"></ul>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Recipe book -->
+      <section class="screen" id="screen-book">
+        <div class="card book-solo">
+          <h2 class="big">📖 Recipe book</h2>
+          <p class="hint">Recipes you discover this game show up here. Feed a treat to a zombie to learn what it does.</p>
+          <ul class="book" id="book-list"></ul>
+          <button class="btn" type="button" id="book-close">Back (Esc)</button>
+        </div>
+      </section>
+
+      <!-- One player's game over -->
+      <section class="screen" id="screen-over">
+        <div class="card center-card">
+          <p class="kicker" id="over-kicker"></p>
+          <h2 class="big" id="over-title"></h2>
+          <p id="over-msg"></p>
+          <dl class="stats" id="over-stats"></dl>
+          <p class="rank" id="over-rank"></p>
+          <button class="btn btn-big" type="button" id="over-next">Next ▶</button>
+        </div>
+      </section>
+
+      <!-- Session results -->
+      <section class="screen" id="screen-results">
+        <div class="card results-card">
+          <h2 class="big" id="results-title">Results</h2>
+          <table class="table">
+            <thead>
+              <tr><th>Player</th><th>Score</th><th>Reached</th><th>Cures</th><th>Class points</th></tr>
+            </thead>
+            <tbody id="results-body"></tbody>
+          </table>
+          <div class="export">
+            <h3>Class points</h3>
+            <p class="hint">Copy this and send it to your teacher so your class points get added.</p>
+            <textarea id="results-json" readonly rows="4"></textarea>
+            <button class="btn btn-small" type="button" id="results-copy">Copy</button>
+          </div>
+          <div class="actions">
+            <button class="btn btn-big" type="button" id="results-again">Play again</button>
+            <button class="btn" type="button" id="results-new">New players</button>
+            <button class="btn btn-ghost" type="button" data-go="board">Leaderboard</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Leaderboard -->
+      <section class="screen" id="screen-board">
+        <div class="card board-card">
+          <h2 class="big">🏆 Leaderboard</h2>
+          <div class="seg tabs" role="tablist">
+            <button type="button" data-board="full" class="is-on">Full games</button>
+            <button type="button" data-board="short">Short games</button>
+          </div>
+          <table class="table">
+            <thead>
+              <tr><th>#</th><th>Baker</th><th>Score</th><th>Reached</th><th>Cures</th><th>Date</th></tr>
+            </thead>
+            <tbody id="board-body"></tbody>
+          </table>
+          <p class="hint">Scores are saved on this Chromebook.</p>
+          <details class="teacher">
+            <summary>Teacher: class points from this Chromebook</summary>
+            <p class="hint" id="teacher-count"></p>
+            <textarea id="teacher-json" readonly rows="5"></textarea>
+            <div class="actions">
+              <button class="btn btn-small" type="button" id="teacher-copy">Copy</button>
+              <button class="btn btn-small btn-ghost" type="button" id="teacher-clear">Mark as added (clear)</button>
+            </div>
+          </details>
+          <div class="actions">
+            <button class="btn" type="button" data-go="title">Back</button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="bakery.js"></script>
+  </body>
+</html>
