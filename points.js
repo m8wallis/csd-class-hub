@@ -765,7 +765,27 @@ window.CSD_POINTS = {
     { id: '2026-09-30-presentation-kiaraliz', name: 'Kiaraliz O.', delta: 1, note: 'Good Presentation/Good Questions' },
     { id: '2026-09-30-presentation-trinity', name: 'Trinity T.', delta: 1, note: 'Good Presentation/Good Questions' },
     { id: '2026-09-30-presentation-isaac', name: 'Isaac L.', delta: 1, note: 'Good Presentation/Good Questions' },
-    { id: '2026-09-30-presentation-aisha', name: 'Aisha C.', delta: 1, note: 'Good Presentation/Good Questions' }
+    { id: '2026-09-30-presentation-aisha', name: 'Aisha C.', delta: 1, note: 'Good Presentation/Good Questions' },
+    { id: '2026-10-06-redeem-oswa-squishie', name: 'Oswa N.', delta: -20, note: 'Squishie' },
+    { id: '2026-10-06-redeem-iszael-squishie', name: 'Iszael M.', delta: -20, note: 'Squishie' },
+    { id: '2026-10-06-redeem-alyviah-squishie', name: 'Alyviah C.', delta: -20, note: 'Squishie' },
+    { id: '2026-10-06-redeem-trinity-squishie', name: 'Trinity T.', delta: -20, note: 'Squishie' },
+    { id: '2026-10-06-redeem-kiaraliz-squishie', name: 'Kiaraliz O.', delta: -20, note: 'Squishie' },
+    { id: '2026-10-06-redeem-sophia-squishie', name: 'Sophia L.', delta: -20, note: 'Squishie' },
+    { id: '2026-10-06-redeem-aisha-squishie', name: 'Aisha C.', delta: -20, note: 'Squishie' },
+    { id: '2026-10-06-redeem-hadassa-squishie', name: 'Hadassa G.', delta: -20, note: 'Squishie' },
+    { id: '2026-10-06-redeem-victoria-squishie', name: 'Victoria R.', delta: -20, note: 'Squishie' },
+    { id: '2026-10-06-redeem-jackson-gatorade', name: 'Jackson R.', delta: -5, note: 'Gatorade' },
+    { id: '2026-10-06-redeem-javier-chips', name: 'Javier A.', delta: -10, note: 'Chips' },
+    { id: '2026-10-06-redeem-angel-chips', name: 'Angel M.', delta: -5, note: 'Chips' },
+    { id: '2026-10-06-redeem-kiaraliz-snacks', name: 'Kiaraliz O.', delta: -5, note: 'Snacks' },
+    { id: '2026-10-06-redeem-sophia-snacks', name: 'Sophia L.', delta: -5, note: 'Snacks' },
+    { id: '2026-10-06-good-question-isaac', name: 'Isaac L.', delta: 1, note: 'Good Question' },
+    { id: '2026-10-06-good-question-hadassa', name: 'Hadassa G.', delta: 1, note: 'Good Question' },
+    { id: '2026-10-06-good-question-iszael', name: 'Iszael M.', delta: 1, note: 'Good Question' },
+    { id: '2026-10-06-good-question-trinity', name: 'Trinity T.', delta: 1, note: 'Good Question' },
+    { id: '2026-10-06-good-question-danyela', name: 'Danyela C.', delta: 1, note: 'Good Question' },
+    { id: '2026-10-06-redeem-naia-gatorade', name: 'Naia B.', delta: -5, note: 'Gatorade' }
   ]
 }
 
