@@ -785,7 +785,10 @@ window.CSD_POINTS = {
     { id: '2026-10-06-good-question-iszael', name: 'Iszael M.', delta: 1, note: 'Good Question' },
     { id: '2026-10-06-good-question-trinity', name: 'Trinity T.', delta: 1, note: 'Good Question' },
     { id: '2026-10-06-good-question-danyela', name: 'Danyela C.', delta: 1, note: 'Good Question' },
-    { id: '2026-10-06-redeem-naia-gatorade', name: 'Naia B.', delta: -5, note: 'Gatorade' }
+    { id: '2026-10-06-redeem-naia-gatorade', name: 'Naia B.', delta: -5, note: 'Gatorade' },
+    { id: '2026-10-07-redeem-dana-snacks', name: 'Dana M.', delta: -5, note: 'Snacks' },
+    { id: '2026-10-07-redeem-oswa-snacks', name: 'Oswa N.', delta: -5, note: 'Snacks' },
+    { id: '2026-10-07-redeem-savannah-gatorades', name: 'Savannah A.', delta: -10, note: 'Gatorades' }
   ]
 }
 
