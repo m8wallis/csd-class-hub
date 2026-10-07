@@ -788,7 +788,13 @@ window.CSD_POINTS = {
     { id: '2026-10-06-redeem-naia-gatorade', name: 'Naia B.', delta: -5, note: 'Gatorade' },
     { id: '2026-10-07-redeem-dana-snacks', name: 'Dana M.', delta: -5, note: 'Snacks' },
     { id: '2026-10-07-redeem-oswa-snacks', name: 'Oswa N.', delta: -5, note: 'Snacks' },
-    { id: '2026-10-07-redeem-savannah-gatorades', name: 'Savannah A.', delta: -10, note: 'Gatorades' }
+    { id: '2026-10-07-redeem-savannah-gatorades', name: 'Savannah A.', delta: -10, note: 'Gatorades' },
+    { id: '2026-10-07-redeem-charlize-chips', name: 'Charlize P.', delta: -10, note: 'Chips' },
+    { id: '2026-10-07-good-question-haddy', name: 'Hadassa G.', delta: 2, note: 'Asking good questions' },
+    { id: '2026-10-07-good-question-isaac', name: 'Isaac L.', delta: 2, note: 'Asking good questions' },
+    { id: '2026-10-07-redeem-zayan-chips', name: 'Zayan I.', delta: -5, note: 'Chips' },
+    { id: '2026-10-07-redeem-thanh-chips', name: 'Thanh B.', delta: -5, note: 'Chips' },
+    { id: '2026-10-07-helping-oswa', name: 'Oswa N.', delta: 5, note: 'Helping classmates' }
   ]
 }
 
