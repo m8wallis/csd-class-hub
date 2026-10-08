@@ -1,0 +1,22 @@
+---
+description: Add pasted Bake Before Dark game exports to the class leaderboard and class points
+alwaysApply: true
+---
+
+# Bake Before Dark exports
+
+A pasted export looks like `{ "game": "Bake Before Dark", "runs": [ ... ] }`. For each run:
+
+1. **Leaderboard:** if the run has a `score` and its `id` is not already in `bakery-scores.js`, append it to `window.BBD_SCORES.runs`. Keep every field. Write single-quoted JS, one run per line.
+2. **Class points:** if `classPoints > 0`, append an award to `points.js` (per the student points rule) with id `bbd-<run id>` and note `'Bake Before Dark'`. Skip it if that award id already exists, so a double paste is safe.
+
+Skip runs whose `name` is not a student in `data.js`, and tell the user who was skipped. Never edit or reorder existing runs or awards.
+
+```javascript
+// bakery-scores.js
+{ id: 'mf2k9a-x7q1c', name: 'Danyela C.', score: 110, reached: 'Phase 6 · day', cures: 0, kills: 2, mode: 'full', date: '2026-10-08', classPoints: 5 }
+// points.js
+{ id: 'bbd-mf2k9a-x7q1c', name: 'Danyela C.', delta: 5, note: 'Bake Before Dark' }
+```
+
+Afterwards, report how many runs and points were added, and remind the user to commit and push so every Chromebook gets the update.

@@ -5,23 +5,33 @@
   'use strict'
 
   // ---------- Tunables ----------
-  const PHASES = 5
   const HALF_SECONDS = { full: 90, short: 45 }
   const MAX_HEALTH = 100
-  const DAWN_HEAL = 25
+  const DAWN_HEAL = 20
   const MEDKIT_HEAL = 30
   const PLAYER_SPEED = 215
   const PLAYER_R = 14
   const ZOMBIE_R = 15
-  const POINTS = { stun: 1, cure: 20, phase: 5 }
-  const CLASS_POINTS = { base: 1, perGamePoints: 25, max: 10, note: 'Bake Before Dark' }
+  const POINTS = { stun: 1, kill: 3, cure: 30, phase: 5, recipe: 5, allRecipes: 25 }
+  const TRAPS_FROM_PHASE = 6
+  const SNARE_STUN = 2.5
+  const ZOMBIE_SPEED_CAP = 175
+  const ENRAGED_SPEED_CAP = 205
+  const MAX_NIGHT_ZOMBIES = { full: 45, short: 32 }
+  const zombieHp = (phase) => 3 + Math.floor(phase / 2)
+  const zombieDamage = (phase) => Math.min(30, 8 + 2 * phase)
+  const CLASS_POINTS = { base: 1, perGamePoints: 100, max: 10 }
   const WORLD = { w: 2400, h: 1800 }
   const OVEN = { x: 1195, y: 905 }
   const STORAGE = {
     board: 'bbd-leaderboard-v1',
     unclaimed: 'bbd-unclaimed-v1',
-    muted: 'bbd-muted-v1'
+    muted: 'bbd-muted-v1',
+    teacher: 'bbd-teacher-v1'
   }
+  const TEACHER_PIN = '7319'
+  const SHARED_RUNS = (window.BBD_SCORES && window.BBD_SCORES.runs) || []
+  const SHARED_IDS = new Set(SHARED_RUNS.map((r) => r.id))
   const PLAYER_COLORS = ['#2ec4b6', '#ff9f1c']
   const GUEST = '__guest'
   const INK = '#221a33'
@@ -130,7 +140,7 @@
       icon: '🍰',
       needs: ['berries', 'lemon', 'cinnamon'],
       makes: 2,
-      effect: { type: 'enrage', secs: 8 },
+      effect: { type: 'damage', amount: 4, secs: 1.5 },
       hint: "Fruit, citrus, spice. Everyone's grandma makes one."
     },
     {
@@ -139,7 +149,7 @@
       icon: '🍮',
       needs: ['eggs', 'milk', 'lemon'],
       makes: 2,
-      effect: { type: 'enrage', secs: 8 },
+      effect: { type: 'coma', secs: 6 },
       hint: 'Eggs and milk plus something sour. Hmm.'
     },
     {
@@ -156,7 +166,7 @@
       name: 'Miracle Macaron',
       icon: '💖',
       needs: ['sprinkles', 'moonberry', 'sugar'],
-      makes: 1,
+      makes: 3,
       effect: { type: 'cure' },
       hint: 'Legend says rainbow + moon + something sweet turns a zombie back into a person.'
     }
@@ -172,9 +182,43 @@
   const CARDS_PER_DAY = 1
 
   const WEAPONS = {
-    bat: { name: 'Baseball Bat', stun: 2.0, range: 62, arc: 1.3, durability: 14, knock: 70 },
-    crowbar: { name: 'Crowbar', stun: 2.4, range: 58, arc: 1.1, durability: 20, knock: 55 },
-    pan: { name: 'Frying Pan', stun: 3.0, range: 50, arc: 1.5, durability: 10, knock: 85 }
+    bat: {
+      name: 'Baseball Bat',
+      damage: 1,
+      stun: 2.0,
+      range: 62,
+      arc: 1.3,
+      durability: 14,
+      knock: 70
+    },
+    crowbar: {
+      name: 'Crowbar',
+      damage: 1,
+      stun: 2.4,
+      range: 58,
+      arc: 1.1,
+      durability: 20,
+      knock: 55
+    },
+    pan: {
+      name: 'Frying Pan',
+      damage: 2,
+      stun: 3.0,
+      range: 50,
+      arc: 1.5,
+      durability: 10,
+      knock: 85
+    },
+    machete: {
+      name: 'Machete',
+      damage: 3,
+      stun: 2.4,
+      range: 84,
+      arc: 1.6,
+      durability: 15,
+      knock: 75,
+      fromPhase: 6
+    }
   }
 
   // ---------- Helpers ----------
@@ -238,6 +282,8 @@
         return `🐌 Sugar crash: slows them for ${e.secs}s`
       case 'enrage':
         return '😡 ENRAGES them! Faster and meaner'
+      case 'damage':
+        return `🧱 Hard as a brick! Hits for ${e.amount} damage (can knock them out)`
       case 'areaComa':
         return `💤 Food coma for EVERY zombie nearby (${e.secs}s)`
       case 'cure':
@@ -380,7 +426,7 @@
           break
         case 'heal':
           ;[523, 659, 784].forEach((f, i) =>
-            T(f, { type: 'sine', dur: 0.22, vol: 0.15, at: i * 0.08 })
+            T(f, { type: 'sine', dur: 0.19, vol: 0.15, at: i * 0.08 })
           )
           break
         case 'swing':
@@ -1057,7 +1103,9 @@
       t: half,
       time: 0,
       score: 0,
-      stats: { stuns: 0, cures: 0, survived: 0 },
+      stats: { stuns: 0, kills: 0, cures: 0, survived: 0 },
+      traps: [],
+      deathCause: null,
       ingredients: {},
       treats: {},
       treatOrder: [],
@@ -1090,6 +1138,7 @@
         invuln: 0,
         swingT: 0,
         swingCd: 0,
+        stunT: 0,
         weapon: null,
         anim: 0,
         moving: false,
@@ -1125,7 +1174,8 @@
       sub = `Survived the night! +${game.lastBonus} pts · +${DAWN_HEAL} health`
     }
     spawnSupplies()
-    const n = 2 + Math.floor(game.phase / 2)
+    spawnTraps()
+    const n = Math.min(10, 2 + Math.floor(game.phase / 2))
     for (let i = 0; i < n; i++) spawnZombie()
     banner(`Day ${game.phase}`, sub)
     if (first) {
@@ -1138,6 +1188,8 @@
     if (game.phase === 2)
       toast('✨ Golden Honey appeared far from the bakery. Look for gold dots on your map!')
     if (game.phase === 3) toast('🌈 Legendary ingredients spotted! Legend says they make a cure…')
+    if (game.phase === TRAPS_FROM_PHASE)
+      toast('⚠️ Traps have appeared! Bear traps freeze you. Pits are DEADLY. Watch your step!')
     Sound.play('day')
     Sound.setMood('day')
   }
@@ -1145,9 +1197,12 @@
   function startNight() {
     game.isNight = true
     game.t = game.half
-    const count = session.mode === 'short' ? 4 + 2 * game.phase : 6 + 3 * game.phase
+    const count = Math.min(
+      MAX_NIGHT_ZOMBIES[session.mode],
+      session.mode === 'short' ? 4 + 2 * game.phase : 6 + 3 * game.phase
+    )
     game.spawn = { left: count, timer: 1, interval: (game.half * 0.6) / count }
-    banner(`Night ${game.phase}`, 'Here they come… feed them, bonk them, survive!', true)
+    banner(`Night ${game.phase}`, 'The oven is off. Feed them, bonk them, survive!', true)
     Sound.play('night')
     Sound.setMood('night')
   }
@@ -1157,10 +1212,6 @@
     game.lastBonus = bonus
     addScore(bonus, game.player.x, game.player.y - 80, `Night ${game.phase} survived!`)
     game.stats.survived = game.phase
-    if (game.phase >= PHASES) {
-      endGame(true)
-      return
-    }
     game.phase++
     startDay(false)
   }
@@ -1195,14 +1246,41 @@
       const n = 2 + (game.phase >= 5 ? 1 : 0)
       for (let i = 0; i < n; i++) placeItem('ingredient', k, { far: true })
     }
-    const weaponKeys = Object.keys(WEAPONS)
+    const weaponKeys = Object.keys(WEAPONS).filter((k) => game.phase >= (WEAPONS[k].fromPhase ?? 1))
     if (game.phase === 1) placeItem('weapon', 'bat', { near: 380 })
     placeItem('weapon', pick(weaponKeys))
     if (game.phase >= 3) placeItem('weapon', pick(weaponKeys))
+    if (game.phase >= WEAPONS.machete.fromPhase) placeItem('weapon', 'machete', { far: true })
+    if (game.phase === WEAPONS.machete.fromPhase)
+      toast('🔪 A Machete has appeared somewhere in town! Most damage, longest reach.')
     if (game.phase >= 2) for (let i = 0; i < (short ? 1 : 2); i++) placeItem('medkit', 'medkit')
     if (cardCandidates().length) {
       for (let i = 0; i < CARDS_PER_DAY; i++) placeItem('card', 'card', { min: 450 })
     }
+  }
+
+  function spawnTraps() {
+    game.traps = []
+    if (game.phase < TRAPS_FROM_PHASE) return
+    const extra = game.phase - TRAPS_FROM_PHASE
+    const snares = Math.min(10, 3 + extra)
+    const pits = Math.min(5, 1 + Math.floor(extra / 2))
+    const place = (kind, r) => {
+      const p = game.player
+      for (let i = 0; i < 120; i++) {
+        const x = rand(60, WORLD.w - 60)
+        const y = rand(60, WORLD.h - 60)
+        if (Math.hypot(x - OVEN.x, y - OVEN.y) < 220) continue
+        if (Math.hypot(x - p.x, y - p.y) < 200) continue
+        if (!isFree(x, y, r + 6)) continue
+        if (game.traps.some((t) => Math.hypot(t.x - x, t.y - y) < t.r + r + 40)) continue
+        if (game.items.some((it) => Math.hypot(it.x - x, it.y - y) < r + 30)) continue
+        game.traps.push({ kind, x, y, r, armed: true })
+        return
+      }
+    }
+    for (let i = 0; i < pits; i++) place('pit', 38)
+    for (let i = 0; i < snares; i++) place('snare', 16)
   }
 
   function cardCandidates() {
@@ -1265,7 +1343,9 @@
       steamT: 0,
       shirt: pick(['#7b6fd6', '#d65f8a', '#4f9dd9', '#c9a14a', '#6cae5b', '#9a6b4f', '#e07a5f']),
       size: rand(0.92, 1.1),
-      spawnT: 0.7
+      spawnT: 0.7,
+      hp: zombieHp(game.phase),
+      maxHp: zombieHp(game.phase)
     })
   }
 
@@ -1386,13 +1466,44 @@
     addScore(POINTS.stun, z.x, z.y - 78)
   }
 
+  function defeatZombie(z, label = 'KO!') {
+    if (z.dead) return
+    z.dead = true
+    game.zombies = game.zombies.filter((o) => o !== z)
+    game.stats.kills++
+    poof(z.x, z.y - 20)
+    burst(z.x, z.y - 30, '#94d26b', 12)
+    comic(label, z.x, z.y - 86, '#ff5c5c')
+    addScore(POINTS.kill, z.x, z.y - 62, 'Knocked out!')
+    Sound.play('break')
+  }
+
+  function damageZombie(z, amount) {
+    z.hp -= amount
+    if (z.hp <= 0) defeatZombie(z)
+    return z.dead
+  }
+
+  function discoverRecipe(r) {
+    if (game.known[r.id]) return false
+    game.known[r.id] = { effectKnown: false }
+    const p = game.player
+    addScore(POINTS.recipe, p.x, p.y - 90, 'New recipe!')
+    if (RECIPES.every((x) => game.known[x.id])) {
+      addScore(POINTS.allRecipes, p.x, p.y - 120, 'EVERY recipe!')
+      toast(`🏆 Master Baker! You found every recipe: +${POINTS.allRecipes} bonus`)
+      Sound.play('win')
+    }
+    return true
+  }
+
   // ---------- Actions ----------
   function swing() {
     const p = game.player
-    if (p.swingCd > 0) return
+    if (p.swingCd > 0 || p.stunT > 0) return
     const w = p.weapon ? WEAPONS[p.weapon.type] : null
     p.swingCd = w ? 0.42 : 0.5
-    p.swingT = 0.22
+    p.swingT = 0.19
     Sound.play('swing')
     const range = (w ? w.range : 42) + ZOMBIE_R
     const arc = (w ? w.arc : 1.4) / 2 + 0.25
@@ -1415,6 +1526,7 @@
         comic(pick(['BONK!', 'WHACK!', 'POW!', 'THWACK!']), z.x, z.y - 62, '#ffd23f')
         burst(z.x, z.y - 30, '#ffffff', 6)
         if (fresh) awardStun(z)
+        damageZombie(z, w.damage)
       } else {
         z.kx = Math.cos(a) * 300
         z.ky = Math.sin(a) * 300
@@ -1433,12 +1545,16 @@
         Sound.play('break')
       }
     } else {
-      tipOnce('fists', 'Shoving only pushes them away. Find a weapon to stun zombies!')
+      tipOnce(
+        'fists',
+        'Shoving only pushes them away. Find a weapon to stun and knock out zombies!'
+      )
     }
   }
 
   function throwTreat(aimX, aimY) {
     const p = game.player
+    if (p.stunT > 0) return
     const id = game.treatOrder[game.selected]
     if (!id) {
       toast('No treats yet! Bake some at the oven 🔥')
@@ -1501,8 +1617,13 @@
 
   function interact() {
     const p = game.player
-    if (game.ovenNear) {
+    if (game.ovenNear && !game.isNight) {
       openBake()
+      return
+    }
+    if (game.ovenNear && !game.swapItem) {
+      toast('🌙 The oven is off at night. Bake during the day!')
+      Sound.play('error')
       return
     }
     if (game.swapItem) {
@@ -1563,6 +1684,18 @@
         game.shake = 6
         tipOnce('enrage', '😡 Uh oh. That treat made it ANGRY. Avoid baking that one!')
         break
+      case 'damage': {
+        const fresh = !isDisabled(z)
+        z.stunT = Math.max(z.stunT, e.secs)
+        z.enrageT = 0
+        z.flash = 0.15
+        Sound.play('bonk')
+        comic('THUNK!', z.x, z.y - 62, '#ffd23f')
+        game.shake = Math.max(game.shake, 4)
+        if (fresh) awardStun(z)
+        damageZombie(z, e.amount)
+        break
+      }
       case 'areaComa':
         areaComa(x ?? z.x, y ?? z.y, e)
         break
@@ -1589,6 +1722,7 @@
   }
 
   function cureZombie(z) {
+    z.dead = true
     game.zombies = game.zombies.filter((o) => o !== z)
     game.humans.push({ x: z.x, y: z.y, t: 0, shirt: z.shirt, heartT: 0 })
     game.stats.cures++
@@ -1650,7 +1784,7 @@
       const options = cardCandidates()
       if (!options.length) return false
       const r = pick(options)
-      game.known[r.id] = { effectKnown: false }
+      discoverRecipe(r)
       const needs = r.needs.map((n) => INGREDIENTS[n].name).join(' + ')
       floatText('📜 Recipe card!', it.x, it.y - 24, '#ffd23f', 20)
       burst(it.x, it.y - 8, '#fff3c4', 14)
@@ -1682,14 +1816,14 @@
 
     if (game.dying) {
       game.dying -= dt
-      if (game.dying <= 0) endGame(false)
+      if (game.dying <= 0) endGame()
       return
     }
 
     game.t -= dt
     if (!game.isNight && !game.duskWarned && game.t <= 10) {
       game.duskWarned = true
-      toast('🌅 Sunset in 10 seconds! Bake now if you need treats.')
+      toast('🌅 Sunset in 10 seconds! The oven shuts off at night, so bake now!')
       Sound.play('warn')
     }
     if (game.t <= 0) {
@@ -1729,6 +1863,11 @@
     if (keys.has('ArrowRight') || keys.has('KeyD')) ix += 1
     if (keys.has('ArrowUp') || keys.has('KeyW')) iy -= 1
     if (keys.has('ArrowDown') || keys.has('KeyS')) iy += 1
+    if (p.stunT > 0) {
+      p.stunT = Math.max(0, p.stunT - dt)
+      ix = 0
+      iy = 0
+    }
     p.moving = ix !== 0 || iy !== 0
     if (p.moving) {
       const l = Math.hypot(ix, iy)
@@ -1754,13 +1893,45 @@
       }
     }
     game.ovenNear = Math.hypot(p.x - OVEN.x, p.y - OVEN.y) < 90
+
+    for (const t of game.traps) {
+      const d = Math.hypot(t.x - p.x, t.y - p.y)
+      if (t.kind === 'pit' && d < t.r * 0.6) {
+        fallInPit(t)
+        return
+      }
+      if (t.kind === 'snare' && t.armed && d < t.r + PLAYER_R * 0.5) {
+        t.armed = false
+        p.stunT = SNARE_STUN
+        p.kx = 0
+        p.ky = 0
+        comic('SNAP!', p.x, p.y - 70, '#ff5c5c')
+        Sound.play('bonk')
+        game.shake = 8
+        tipOnce('snare', `🪤 Bear trap! You're stuck for ${SNARE_STUN} seconds.`)
+      }
+    }
+  }
+
+  function fallInPit(t) {
+    const p = game.player
+    p.hp = 0
+    p.x = t.x
+    p.y = t.y
+    game.deathCause = 'pit'
+    game.dying = 1.8
+    banner('AAAAH!', 'You fell into a pit…', true)
+    Sound.setMood(null)
+    Sound.play('lose')
   }
 
   function updateZombies(dt) {
     const p = game.player
     const night = game.isNight
-    const base = night ? 66 + 9 * game.phase : 44 + 4 * game.phase
+    const base = Math.min(ZOMBIE_SPEED_CAP, night ? 66 + 9 * game.phase : 44 + 4 * game.phase)
+    const hitDmg = zombieDamage(game.phase)
     for (const z of game.zombies) {
+      if (z.dead) continue
       z.anim += dt
       z.flash = Math.max(0, z.flash - dt)
       if (z.spawnT > 0) {
@@ -1844,7 +2015,7 @@
         ty = z.y + Math.sin(z.dir) * 60
         speed *= z.idle ? 0 : 0.5
       }
-      if (enraged) speed *= 1.65
+      if (enraged) speed = Math.min(ENRAGED_SPEED_CAP, speed * 1.65)
       if (z.slowT > 0) speed *= 0.4
 
       let ang = Math.atan2(ty - z.y, tx - z.x)
@@ -1873,7 +2044,15 @@
 
       if (dp < PLAYER_R + ZOMBIE_R + 6 && z.attackCd <= 0 && z.distractT <= 0) {
         z.attackCd = 1.1
-        hurtPlayer(enraged ? 18 : 10, z)
+        hurtPlayer(enraged ? Math.round(hitDmg * 1.8) : hitDmg, z)
+      }
+
+      const pit = game.traps.find(
+        (t) => t.kind === 'pit' && Math.hypot(t.x - z.x, t.y - z.y) < t.r * 0.6
+      )
+      if (pit) {
+        emojiFx('😱', z.x, z.y - 60, 22)
+        defeatZombie(z, 'FELL IN!')
       }
     }
 
@@ -2159,9 +2338,10 @@
       })
     if (game && game.ovenNear && !game.dying) {
       const by = y - 82 + Math.sin(game.time * 5) * 3
-      rr(x - 44, by - 16, 88, 30, 12)
-      fillStroke('#ffd23f')
-      comicText('E · BAKE', x, by, 20, '#fff', 4)
+      const closed = game.isNight
+      rr(x - 52, by - 16, 104, 30, 12)
+      fillStroke(closed ? '#6b6b80' : '#ffd23f')
+      comicText(closed ? '🌙 CLOSED' : 'E · BAKE', x, by, 20, '#fff', 4)
     }
   }
 
@@ -2238,6 +2418,29 @@
       ctx.lineWidth = 4
       path()
       ctx.stroke()
+    } else if (type === 'machete') {
+      const B = L * 1.15
+      ctx.beginPath()
+      ctx.moveTo(L * 0.28, -3)
+      ctx.lineTo(B * 0.8, -4)
+      ctx.quadraticCurveTo(B + 6, -5, B + 2, 2)
+      ctx.quadraticCurveTo(B * 0.7, 7, L * 0.28, 4)
+      ctx.closePath()
+      fillStroke('#dfe6ec', 2.5)
+      ctx.strokeStyle = 'rgba(255,255,255,0.85)'
+      ctx.lineWidth = 1.5
+      ctx.beginPath()
+      ctx.moveTo(L * 0.34, -1)
+      ctx.lineTo(B * 0.78, -1.5)
+      ctx.stroke()
+      ctx.strokeStyle = INK
+      rr(-2, -3.5, L * 0.32, 7, 3)
+      fillStroke('#2b2b33', 2.5)
+      ctx.fillStyle = '#c9a227'
+      circle(L * 0.08, 0, 1.6)
+      ctx.fill()
+      circle(L * 0.2, 0, 1.6)
+      ctx.fill()
     } else {
       ctx.lineWidth = 8
       ctx.beginPath()
@@ -2380,6 +2583,10 @@
     if (game.dying) {
       ctx.save()
       ctx.translate(p.x, p.y)
+      if (game.deathCause === 'pit') {
+        const s = Math.max(0, 1 - (1.8 - game.dying) * 1.2)
+        ctx.scale(s, s)
+      }
       ctx.rotate(Math.min(1, (1.8 - game.dying) * 2) * 1.4)
       drawPerson(0, 0, {
         face: Math.PI / 2,
@@ -2399,10 +2606,59 @@
         skin: '#f6c9a0',
         hat: true,
         weapon: p.weapon ? p.weapon.type : null,
-        swingP: p.swingT > 0 ? 1 - p.swingT / 0.22 : -1
+        swingP: p.swingT > 0 ? 1 - p.swingT / 0.19 : -1
       })
+      if (p.stunT > 0) {
+        const t = performance.now() / 1000
+        for (let i = 0; i < 3; i++) {
+          const a = t * 6 + (i * TAU) / 3
+          drawEmoji('⭐', p.x + Math.cos(a) * 14, p.y - 62 + Math.sin(a) * 5, 12, worldScale())
+        }
+      }
     }
     ctx.globalAlpha = 1
+  }
+
+  function drawTrap(t) {
+    if (t.kind === 'pit') {
+      const g = ctx.createRadialGradient(t.x, t.y, 4, t.x, t.y, t.r)
+      g.addColorStop(0, '#000')
+      g.addColorStop(0.7, '#120c08')
+      g.addColorStop(1, '#3a2a1c')
+      ctx.fillStyle = g
+      ellipse(t.x, t.y, t.r, t.r * 0.62)
+      ctx.fill()
+      ctx.strokeStyle = '#1a1208'
+      ctx.lineWidth = 4
+      ctx.stroke()
+      ctx.fillStyle = '#6b4d32'
+      for (let i = 0; i < 7; i++) {
+        const a = (i * TAU) / 7
+        ellipse(t.x + Math.cos(a) * t.r, t.y + Math.sin(a) * t.r * 0.62, 5, 3)
+        ctx.fill()
+      }
+      return
+    }
+    ctx.save()
+    ctx.globalAlpha = t.armed ? 1 : 0.45
+    ctx.strokeStyle = '#1b1b1b'
+    ctx.fillStyle = '#9aa0a6'
+    ctx.lineWidth = 3
+    ellipse(t.x, t.y, t.r, t.r * 0.55)
+    ctx.fill()
+    ctx.stroke()
+    ctx.fillStyle = '#d9dde0'
+    for (let i = -3; i <= 3; i++) {
+      const x = t.x + i * (t.r / 3.6)
+      ctx.beginPath()
+      ctx.moveTo(x - 3, t.y - (t.armed ? 1 : 3))
+      ctx.lineTo(x, t.y - (t.armed ? 9 : 4))
+      ctx.lineTo(x + 3, t.y - (t.armed ? 1 : 3))
+      ctx.closePath()
+      ctx.fill()
+      ctx.stroke()
+    }
+    ctx.restore()
   }
 
   function drawZombie(z) {
@@ -2550,6 +2806,14 @@
       }
     }
     if (slow && !coma) drawEmoji('🐌', z.x + 16, z.y - 64, 14, worldScale())
+    if (z.hp < z.maxHp) {
+      const w = 34
+      const y = z.y - 80
+      ctx.fillStyle = '#1b1b1b'
+      ctx.fillRect(z.x - w / 2 - 2, y - 2, w + 4, 8)
+      ctx.fillStyle = '#ff5c5c'
+      ctx.fillRect(z.x - w / 2, y, (w * Math.max(0, z.hp)) / z.maxHp, 4)
+    }
     if (z.distractT > 0 && !coma) comicText('?', z.x, z.y - 70, 22, '#fff', 4)
     if (rage) {
       ctx.strokeStyle = `rgba(255,70,70,${0.4 + Math.sin(t * 15) * 0.3})`
@@ -2690,6 +2954,7 @@
     const inView = (x, y, m = 160) =>
       x > camX - m && x < camX + vw + m && y > camY - m && y < camY + vh + m + 80
 
+    if (game) game.traps.forEach((t) => inView(t.x, t.y) && drawTrap(t))
     if (game) game.items.forEach((it) => inView(it.x, it.y) && drawItem(it))
 
     const list = []
@@ -2871,7 +3136,7 @@
     const night = game.isNight
     panel(cx - 110, 12, 220, 76, night ? 'rgba(40,24,90,0.92)' : 'rgba(255,170,60,0.92)')
     bodyText(
-      `PHASE ${game.phase}/${PHASES} · ${night ? '🌙 NIGHT' : '☀️ DAY'}`,
+      `PHASE ${game.phase} · ${night ? '🌙 NIGHT' : '☀️ DAY'}`,
       cx,
       30,
       13,
@@ -2918,7 +3183,17 @@
     const hbY = H - 92
     panel(hbX, hbY, hbW, 78)
     if (!game.treatOrder.length) {
-      bodyText('No treats yet. Bake at the 🔥 oven!', cx, hbY + 39, 14, '#cbbbe6', 'center', 800)
+      bodyText(
+        game.isNight
+          ? 'No treats! Bake again in the morning 🌅'
+          : 'No treats yet. Bake at the 🔥 oven!',
+        cx,
+        hbY + 39,
+        14,
+        '#cbbbe6',
+        'center',
+        800
+      )
     } else {
       for (let i = 0; i < slots; i++) {
         const id = game.treatOrder[i]
@@ -3013,7 +3288,7 @@
     ctx.stroke()
 
     // swap weapon prompt
-    if (game.swapItem && !game.ovenNear) {
+    if (game.swapItem && !(game.ovenNear && !game.isNight)) {
       const msg = `E: swap for ${WEAPONS[game.swapItem.key].name}`
       ctx.font = '900 15px Nunito, sans-serif'
       const tw = ctx.measureText(msg).width + 26
@@ -3086,8 +3361,8 @@
     const mode = lengthField().value
     const s = HALF_SECONDS[mode]
     $('#length-hint').textContent = two
-      ? `Two players take turns, one full run each. ${mode === 'short' ? 'Short keeps it around 15 minutes total.' : 'Full is about 30 minutes total. Try Short!'}`
-      : `5 phases. Each phase is a ${s} second day and a ${s} second night.`
+      ? `Two players take turns, one run each until they get caught. ${mode === 'short' ? 'Short phases keep turns quicker.' : 'Try Short for quicker turns!'}`
+      : `Endless phases. Each phase is a ${s} second day and a ${s} second night. How long can you last?`
     renderMiniBoard()
   }
   form.addEventListener('change', (e) => {
@@ -3248,8 +3523,7 @@
       if (game.ingredients[k] <= 0) delete game.ingredients[k]
     })
     const r = findRecipe(sel) || BURNT
-    const isNew = r !== BURNT && !game.known[r.id]
-    if (r !== BURNT && !game.known[r.id]) game.known[r.id] = { effectKnown: false }
+    const isNew = r !== BURNT && discoverRecipe(r)
     game.treats[r.id] = (game.treats[r.id] || 0) + r.makes
     if (!game.treatOrder.includes(r.id)) game.treatOrder.push(r.id)
     if (r === BURNT) {
@@ -3257,7 +3531,7 @@
       res.className = 'bake-result is-burnt'
       Sound.play('burnt')
     } else if (isNew) {
-      res.textContent = `✨ NEW RECIPE! ${r.icon} ${r.name} ×${r.makes}. Feed one to a zombie to see what it does!`
+      res.textContent = `✨ NEW RECIPE! +${POINTS.recipe} pts. ${r.icon} ${r.name} ×${r.makes}. Feed one to a zombie to see what it does!`
       res.className = 'bake-result is-new'
       Sound.play('newRecipe')
     } else {
@@ -3303,13 +3577,10 @@
   $('#book-close').addEventListener('click', closeBook)
 
   // end of a run
-  function endGame(victory) {
+  function endGame() {
     game.over = true
     Sound.setMood(null)
-    if (victory) Sound.play('win')
-    const reached = victory
-      ? 'Survived all 5!'
-      : `Phase ${game.phase} · ${game.isNight ? 'night' : 'day'}`
+    const reached = `Phase ${game.phase} · ${game.isNight ? 'night' : 'day'}`
     const result = {
       name: game.name,
       guest: game.guest,
@@ -3317,49 +3588,52 @@
       reached,
       cures: game.stats.cures,
       stuns: game.stats.stuns,
-      victory,
+      kills: game.stats.kills,
       classPoints: game.guest ? 0 : classPointsFor(game.score)
     }
     session.results.push(result)
 
     const entry = {
-      id: `${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
+      id: `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 7)}`,
       name: result.name,
       score: result.score,
       reached,
       cures: result.cures,
+      kills: result.kills,
       mode: session.mode,
-      date: new Date().toLocaleDateString()
+      date: todayISO()
     }
     const board = loadJSON(STORAGE.board, [])
     board.push(entry)
     board.sort((a, b) => b.score - a.score)
     saveJSON(STORAGE.board, board.slice(0, 200))
-    const modeBoard = board.filter((e) => e.mode === session.mode)
-    const rank = modeBoard.findIndex((e) => e.id === entry.id) + 1
+    const rank = topRuns(session.mode, 10).findIndex((e) => e.id === entry.id) + 1
     result.entryId = entry.id
 
     if (!result.guest) {
+      result.run = { ...entry, classPoints: result.classPoints }
       const un = loadJSON(STORAGE.unclaimed, [])
-      un.push({ name: result.name, delta: result.classPoints, note: CLASS_POINTS.note })
+      un.push(result.run)
       saveJSON(STORAGE.unclaimed, un)
     }
 
     $('#over-kicker').textContent = result.name
-    $('#over-title').textContent = victory ? 'You survived! 🎉' : 'Zombie snack… 🧟'
-    $('#over-msg').textContent = victory
-      ? 'Five days, five nights, and a whole lot of pastries. Legendary baker status.'
+    const pit = game.deathCause === 'pit'
+    $('#over-title').textContent = pit ? 'Down the pit… 🕳️' : 'Zombie snack… 🧟'
+    $('#over-msg').textContent = pit
+      ? `You made it to ${reached.toLowerCase()} before taking a wrong step. Watch the ground!`
       : `You made it to ${reached.toLowerCase()}. The zombies say thanks for the snacks.`
     $('#over-stats').innerHTML = [
       ['Score', result.score],
       ['Stuns', result.stuns],
+      ['KOs', result.kills],
       ['Cures', result.cures],
       ['Class pts', result.guest ? '—' : `+${result.classPoints}`]
     ]
       .map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`)
       .join('')
     $('#over-rank').textContent =
-      rank > 0 && rank <= 10 ? `🏆 #${rank} on this Chromebook's ${session.mode} leaderboard!` : ''
+      rank > 0 ? `🏆 #${rank} on the class ${session.mode} leaderboard!` : ''
     const more = session.idx < session.players.length - 1
     $('#over-next').textContent = more
       ? `Pass to ${session.players[session.idx + 1].name} ▶`
@@ -3375,15 +3649,16 @@
     } else showResults()
   })
 
-  function pointsJSON(rows) {
-    if (!rows.length) return ''
-    return (
-      '[\n' +
-      rows
-        .map((r) => '  ' + JSON.stringify({ name: r.name, delta: r.delta, note: r.note }))
-        .join(',\n') +
-      '\n]'
-    )
+  const RUN_KEYS = ['id', 'name', 'score', 'reached', 'cures', 'kills', 'mode', 'date']
+
+  function runsJSON(runs) {
+    if (!runs.length) return ''
+    const keys = [...RUN_KEYS, 'classPoints']
+    const line = (r) =>
+      JSON.stringify(
+        Object.fromEntries(keys.filter((k) => r[k] !== undefined).map((k) => [k, r[k]]))
+      )
+    return `{ "game": "Bake Before Dark", "runs": [\n${runs.map((r) => '  ' + line(r)).join(',\n')}\n] }`
   }
 
   function showResults() {
@@ -3402,10 +3677,8 @@
           `<tr class='${res.length > 1 && r.score === best ? 'is-new' : ''}'><td>${escapeHtml(r.name)}</td><td class='num'>${r.score}</td><td>${escapeHtml(r.reached)}</td><td class='num'>${r.cures}</td><td class='num'>${r.guest ? '—' : '+' + r.classPoints}</td></tr>`
       )
       .join('')
-    const rows = res
-      .filter((r) => !r.guest)
-      .map((r) => ({ name: r.name, delta: r.classPoints, note: CLASS_POINTS.note }))
-    $('#results-json').value = rows.length ? pointsJSON(rows) : 'Guests don’t earn class points.'
+    const rows = res.filter((r) => r.run).map((r) => r.run)
+    $('#results-json').value = rows.length ? runsJSON(rows) : 'Guests don’t earn class points.'
     $('#results-copy').disabled = !rows.length
     showScreen('results')
     focusSoon('#results-again')
@@ -3436,37 +3709,71 @@
 
   // leaderboard
   let boardMode = 'full'
+
+  function todayISO() {
+    const d = new Date()
+    const pad = (n) => String(n).padStart(2, '0')
+    return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`
+  }
+
+  function showDate(s) {
+    const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s || '')
+    return m ? new Date(+m[1], m[2] - 1, +m[3]).toLocaleDateString() : s || ''
+  }
+
+  function topRuns(mode, n) {
+    const local = loadJSON(STORAGE.board, [])
+      .filter((r) => !SHARED_IDS.has(r.id))
+      .map((r) => ({ ...r, local: true }))
+    const seen = new Set()
+    return [...SHARED_RUNS, ...local]
+      .filter((r) => r.mode === mode)
+      .sort((a, b) => b.score - a.score)
+      .filter((r) => !seen.has(r.name) && seen.add(r.name))
+      .slice(0, n)
+  }
+
+  function pendingRuns() {
+    const un = loadJSON(STORAGE.unclaimed, [])
+    const pending = un
+      .filter((r) => !SHARED_IDS.has(r.id))
+      .map((r, i) =>
+        r.id
+          ? r
+          : {
+              id: `old-${Date.now().toString(36)}-${i}`,
+              name: r.name,
+              classPoints: r.delta ?? r.classPoints
+            }
+      )
+    if (pending.length !== un.length || pending.some((r, i) => r !== un[i]))
+      saveJSON(STORAGE.unclaimed, pending)
+    return pending
+  }
+
   function renderBoard() {
-    const board = loadJSON(STORAGE.board, [])
-      .filter((e) => e.mode === boardMode)
-      .slice(0, 10)
+    const board = topRuns(boardMode, 10)
     const latest = new Set(session ? session.results.map((r) => r.entryId) : [])
     $('#board-body').innerHTML = board.length
       ? board
           .map(
             (e, i) =>
-              `<tr class='${latest.has(e.id) ? 'is-new' : ''}'><td class='num'>${i + 1}</td><td>${escapeHtml(e.name)}</td><td class='num'>${e.score}</td><td>${escapeHtml(e.reached)}</td><td class='num'>${e.cures}</td><td>${escapeHtml(e.date)}</td></tr>`
+              `<tr class='${latest.has(e.id) ? 'is-new' : ''}'><td class='num'>${i + 1}</td><td>${escapeHtml(e.name)}${e.local ? ` <span title='Only on this Chromebook until your teacher posts it'>⏳</span>` : ''}</td><td class='num'>${e.score}</td><td>${escapeHtml(e.reached)}</td><td class='num'>${e.cures}</td><td>${escapeHtml(showDate(e.date))}</td></tr>`
           )
           .join('')
       : `<tr><td colspan='6'>No scores yet. Be the first!</td></tr>`
     $$('[data-board]').forEach((b) => b.classList.toggle('is-on', b.dataset.board === boardMode))
 
-    const un = loadJSON(STORAGE.unclaimed, [])
-    const totals = new Map()
-    un.forEach((r) => totals.set(r.name, (totals.get(r.name) || 0) + r.delta))
-    const rows = [...totals].map(([name, delta]) => ({ name, delta, note: CLASS_POINTS.note }))
-    $('#teacher-count').textContent = rows.length
-      ? `${un.length} game${un.length === 1 ? '' : 's'} not added yet. Paste this into Cursor to add the points.`
-      : 'Nothing waiting. All class points from this Chromebook have been added.'
-    $('#teacher-json').value = pointsJSON(rows)
-    $('#teacher-copy').disabled = !rows.length
-    $('#teacher-clear').disabled = !rows.length
+    const pending = pendingRuns()
+    $('#teacher-count').textContent = pending.length
+      ? `${pending.length} game${pending.length === 1 ? '' : 's'} not posted yet. Paste this into Cursor to add the scores and class points.`
+      : 'Nothing waiting. Every game from this Chromebook has been posted.'
+    $('#teacher-json').value = runsJSON(pending)
+    $('#teacher-copy').disabled = !pending.length
   }
   function renderMiniBoard() {
     const mode = lengthField().value
-    const board = loadJSON(STORAGE.board, [])
-      .filter((e) => e.mode === mode)
-      .slice(0, 5)
+    const board = topRuns(mode, 5)
     $('#board-mini-mode').textContent = mode === 'full' ? 'Full games' : 'Short games'
     $('#board-mini').innerHTML = board.length
       ? board.map((e) => `<li>${escapeHtml(e.name)} <span>${e.score}</span></li>`).join('')
@@ -3479,15 +3786,12 @@
     })
   )
   $('#teacher-copy').addEventListener('click', (e) => copyFrom($('#teacher-json'), e.currentTarget))
-  $('#teacher-clear').addEventListener('click', () => {
-    if (
-      !confirm(
-        'Clear the class points list on this Chromebook? Only do this after the points are added.'
-      )
-    )
-      return
-    saveJSON(STORAGE.unclaimed, [])
-    renderBoard()
+  const teacherPanel = $('#teacher-panel')
+  teacherPanel.hidden = !new URLSearchParams(location.search).has('teacher')
+  teacherPanel.addEventListener('toggle', () => {
+    if (!teacherPanel.open || sessionStorage.getItem(STORAGE.teacher) === '1') return
+    if (prompt('Teacher PIN') === TEACHER_PIN) sessionStorage.setItem(STORAGE.teacher, '1')
+    else teacherPanel.open = false
   })
 
   function goTitle() {

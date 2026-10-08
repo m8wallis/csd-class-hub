@@ -40,10 +40,10 @@
 
               <h3>Game length</h3>
               <div class="seg" role="radiogroup" aria-label="Game length">
-                <label><input type="radio" name="gameLength" value="full" checked /><span>Full · ~15 min</span></label>
-                <label><input type="radio" name="gameLength" value="short" /><span>Short · ~8 min</span></label>
+                <label><input type="radio" name="gameLength" value="full" checked /><span>Full · 90s phases</span></label>
+                <label><input type="radio" name="gameLength" value="short" /><span>Short · 45s phases</span></label>
               </div>
-              <p class="hint" id="length-hint">5 phases. Each phase is a 90 second day and a 90 second night.</p>
+              <p class="hint" id="length-hint">Endless phases. Each phase is a 90 second day and a 90 second night. How long can you last?</p>
               <p class="form-error" id="setup-error" aria-live="polite"></p>
               <button class="btn btn-big" type="submit">Start baking ▶</button>
             </form>
@@ -52,13 +52,14 @@
               <h2>How to play</h2>
               <ol class="rules">
                 <li><b>☀️ Day:</b> explore town. Grab ingredients, weapons, and 🩹 first aid.</li>
-                <li><b>🔥 Oven:</b> bring ingredients to the bakery. Mix 2–3 to discover recipes. You start knowing 🍪 Sugar Cookie, and 📜 recipe scrolls hidden around town teach you more.</li>
+                <li><b>🔥 Oven:</b> bring ingredients to the bakery during the <b>day</b> (it's off at night). Mix 2–3 to discover recipes. You start knowing 🍪 Sugar Cookie, and 📜 recipe scrolls hidden around town teach you more.</li>
                 <li><b>🌙 Night:</b> zombies swarm. Throw treats for a food coma… but some treats make them <b>ANGRY</b>.</li>
-                <li><b>🏏 Weapons</b> stun zombies. You can't defeat them, only slow them down.</li>
+                <li><b>🏏 Weapons</b> stun zombies, and enough hits knock them out for good. Some treats hit hard too. From phase 6, hunt for the 🔪 Machete.</li>
                 <li><b>💖 The cure:</b> a legendary treat made from rare ingredients turns a zombie back into a person.</li>
+                <li><b>♾️ Endless:</b> every phase brings more zombies, faster and tougher. After phase 5, watch for 🪤 bear traps and deadly 🕳️ pits!</li>
               </ol>
               <p class="scoring">
-                <b>Points:</b> +1 per stun · +5, 10, 15, 20, 25 for surviving each phase · +20 per cure
+                <b>Points:</b> +1 per stun · +3 per knockout · +30 per cure · +5 per new recipe (+25 for finding them all) · +5, 10, 15… for surviving each phase
               </p>
               <h3>Controls</h3>
               <ul class="keys">
@@ -171,7 +172,7 @@
           </table>
           <div class="export">
             <h3>Class points</h3>
-            <p class="hint">Copy this and send it to your teacher so your class points get added.</p>
+            <p class="hint">Copy this and send it to your teacher so your score goes on the class leaderboard and your class points get added.</p>
             <textarea id="results-json" readonly rows="4"></textarea>
             <button class="btn btn-small" type="button" id="results-copy">Copy</button>
           </div>
@@ -197,14 +198,13 @@
             </thead>
             <tbody id="board-body"></tbody>
           </table>
-          <p class="hint">Scores are saved on this Chromebook.</p>
-          <details class="teacher">
-            <summary>Teacher: class points from this Chromebook</summary>
+          <p class="hint">Class scores update when your teacher posts them. ⏳ = only on this Chromebook so far.</p>
+          <details class="teacher" id="teacher-panel" hidden>
+            <summary>Teacher: scores and class points from this Chromebook</summary>
             <p class="hint" id="teacher-count"></p>
             <textarea id="teacher-json" readonly rows="5"></textarea>
             <div class="actions">
               <button class="btn btn-small" type="button" id="teacher-copy">Copy</button>
-              <button class="btn btn-small btn-ghost" type="button" id="teacher-clear">Mark as added (clear)</button>
             </div>
           </details>
           <div class="actions">
@@ -215,6 +215,7 @@
     </div>
 
     <script src="data.js"></script>
+    <script src="bakery-scores.js"></script>
     <script src="bakery.js"></script>
   </body>
 </html>

@@ -760,21 +760,61 @@ window.CSD_POINTS = {
     { id: '2026-09-29-bonus-5', name: 'Giselle A.', delta: 5, note: 'Game Presentation' },
     { id: '2026-09-29-bonus-6', name: 'Aisha C.', delta: 5, note: 'Game Presentation' },
     { id: '2026-09-30-axel-jackson-shot', name: 'Axel B.', delta: -5, note: 'Jackson making shot' },
-    { id: '2026-09-30-presentation-sophia', name: 'Sophia L.', delta: 1, note: 'Good Presentation/Good Questions' },
-    { id: '2026-09-30-presentation-zayan', name: 'Zayan I.', delta: 1, note: 'Good Presentation/Good Questions' },
-    { id: '2026-09-30-presentation-kiaraliz', name: 'Kiaraliz O.', delta: 1, note: 'Good Presentation/Good Questions' },
-    { id: '2026-09-30-presentation-trinity', name: 'Trinity T.', delta: 1, note: 'Good Presentation/Good Questions' },
-    { id: '2026-09-30-presentation-isaac', name: 'Isaac L.', delta: 1, note: 'Good Presentation/Good Questions' },
-    { id: '2026-09-30-presentation-aisha', name: 'Aisha C.', delta: 1, note: 'Good Presentation/Good Questions' },
+    {
+      id: '2026-09-30-presentation-sophia',
+      name: 'Sophia L.',
+      delta: 1,
+      note: 'Good Presentation/Good Questions'
+    },
+    {
+      id: '2026-09-30-presentation-zayan',
+      name: 'Zayan I.',
+      delta: 1,
+      note: 'Good Presentation/Good Questions'
+    },
+    {
+      id: '2026-09-30-presentation-kiaraliz',
+      name: 'Kiaraliz O.',
+      delta: 1,
+      note: 'Good Presentation/Good Questions'
+    },
+    {
+      id: '2026-09-30-presentation-trinity',
+      name: 'Trinity T.',
+      delta: 1,
+      note: 'Good Presentation/Good Questions'
+    },
+    {
+      id: '2026-09-30-presentation-isaac',
+      name: 'Isaac L.',
+      delta: 1,
+      note: 'Good Presentation/Good Questions'
+    },
+    {
+      id: '2026-09-30-presentation-aisha',
+      name: 'Aisha C.',
+      delta: 1,
+      note: 'Good Presentation/Good Questions'
+    },
     { id: '2026-10-06-redeem-oswa-squishie', name: 'Oswa N.', delta: -20, note: 'Squishie' },
     { id: '2026-10-06-redeem-iszael-squishie', name: 'Iszael M.', delta: -20, note: 'Squishie' },
     { id: '2026-10-06-redeem-alyviah-squishie', name: 'Alyviah C.', delta: -20, note: 'Squishie' },
     { id: '2026-10-06-redeem-trinity-squishie', name: 'Trinity T.', delta: -20, note: 'Squishie' },
-    { id: '2026-10-06-redeem-kiaraliz-squishie', name: 'Kiaraliz O.', delta: -20, note: 'Squishie' },
+    {
+      id: '2026-10-06-redeem-kiaraliz-squishie',
+      name: 'Kiaraliz O.',
+      delta: -20,
+      note: 'Squishie'
+    },
     { id: '2026-10-06-redeem-sophia-squishie', name: 'Sophia L.', delta: -20, note: 'Squishie' },
     { id: '2026-10-06-redeem-aisha-squishie', name: 'Aisha C.', delta: -20, note: 'Squishie' },
     { id: '2026-10-06-redeem-hadassa-squishie', name: 'Hadassa G.', delta: -20, note: 'Squishie' },
-    { id: '2026-10-06-redeem-victoria-squishie', name: 'Victoria R.', delta: -20, note: 'Squishie' },
+    {
+      id: '2026-10-06-redeem-victoria-squishie',
+      name: 'Victoria R.',
+      delta: -20,
+      note: 'Squishie'
+    },
     { id: '2026-10-06-redeem-jackson-gatorade', name: 'Jackson R.', delta: -5, note: 'Gatorade' },
     { id: '2026-10-06-redeem-javier-chips', name: 'Javier A.', delta: -10, note: 'Chips' },
     { id: '2026-10-06-redeem-angel-chips', name: 'Angel M.', delta: -5, note: 'Chips' },
@@ -788,16 +828,36 @@ window.CSD_POINTS = {
     { id: '2026-10-06-redeem-naia-gatorade', name: 'Naia B.', delta: -5, note: 'Gatorade' },
     { id: '2026-10-07-redeem-dana-snacks', name: 'Dana M.', delta: -5, note: 'Snacks' },
     { id: '2026-10-07-redeem-oswa-snacks', name: 'Oswa N.', delta: -5, note: 'Snacks' },
-    { id: '2026-10-07-redeem-savannah-gatorades', name: 'Savannah A.', delta: -10, note: 'Gatorades' },
+    {
+      id: '2026-10-07-redeem-savannah-gatorades',
+      name: 'Savannah A.',
+      delta: -10,
+      note: 'Gatorades'
+    },
     { id: '2026-10-07-redeem-charlize-chips', name: 'Charlize P.', delta: -10, note: 'Chips' },
-    { id: '2026-10-07-good-question-haddy', name: 'Hadassa G.', delta: 2, note: 'Asking good questions' },
-    { id: '2026-10-07-good-question-isaac', name: 'Isaac L.', delta: 2, note: 'Asking good questions' },
+    {
+      id: '2026-10-07-good-question-haddy',
+      name: 'Hadassa G.',
+      delta: 2,
+      note: 'Asking good questions'
+    },
+    {
+      id: '2026-10-07-good-question-isaac',
+      name: 'Isaac L.',
+      delta: 2,
+      note: 'Asking good questions'
+    },
     { id: '2026-10-07-redeem-zayan-chips', name: 'Zayan I.', delta: -5, note: 'Chips' },
     { id: '2026-10-07-redeem-thanh-chips', name: 'Thanh B.', delta: -5, note: 'Chips' },
     { id: '2026-10-07-helping-oswa', name: 'Oswa N.', delta: 5, note: 'Helping classmates' },
     { id: '2026-10-07-redeem-kiaraliz-chips', name: 'Kiaraliz O.', delta: -5, note: 'Chips' },
     { id: '2026-10-08-good-question-sophia', name: 'Sophia L.', delta: 2, note: 'Good Questions' },
-    { id: '2026-10-08-good-question-trinity', name: 'Trinity T.', delta: 2, note: 'Good Questions' },
+    {
+      id: '2026-10-08-good-question-trinity',
+      name: 'Trinity T.',
+      delta: 2,
+      note: 'Good Questions'
+    },
     { id: '2026-10-08-good-question-isaac', name: 'Isaac L.', delta: 2, note: 'Good Questions' },
     { id: '2026-10-08-good-question-thanh', name: 'Thanh B.', delta: 2, note: 'Good Questions' },
     { id: '2026-10-08-redeem-sophia-chips', name: 'Sophia L.', delta: -5, note: 'Chips' },
@@ -811,41 +871,3 @@ window.CSD_POINTS = {
     { id: '2026-10-08-redeem-naia-chips', name: 'Naia B.', delta: -5, note: 'Chips' }
   ]
 }
-
-///// WEB PROJECTS: angel, javier
-///// Dana project! For homework. Check on Lucas too
-
-// t1: 111111111
-// t2: 111111111
-// t3: 1
-// t4: 11111
-// t5:
-// t6: 111
-// t7: 11111111
-// t8: 111111111
-
-// good questions points: savanahh, isaac
-
-// web content vs web structure
-// browser vs server
-// website languages (html, css, js)
-// tags vs elements
-
-// attributes vs properties
-// inline vs block
-
-// website project peeps: javier, angel, jeff, alyviah, juhno
-
-// candy: reeses, nerds, gummy clusters, gatorade, orange juice, vitamin water
-// toys: smooshers, butter squishers, butter squishers, apple squisies
-
-// adults: know it all, arrogant, not able to admit they are wrong
-// why are on your phone? tiktok
-// when adults downplan their feelings or stress etc
-// when they tell you to google stuff, don't google it, ask them
-// parents have bad day but don't ask about the kids
-// dont ask like thy have real probs as kids
-
-
-//// Good Questions
-// sophia, trinity, kiara, yana
