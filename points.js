@@ -794,7 +794,20 @@ window.CSD_POINTS = {
     { id: '2026-10-07-good-question-isaac', name: 'Isaac L.', delta: 2, note: 'Asking good questions' },
     { id: '2026-10-07-redeem-zayan-chips', name: 'Zayan I.', delta: -5, note: 'Chips' },
     { id: '2026-10-07-redeem-thanh-chips', name: 'Thanh B.', delta: -5, note: 'Chips' },
-    { id: '2026-10-07-helping-oswa', name: 'Oswa N.', delta: 5, note: 'Helping classmates' }
+    { id: '2026-10-07-helping-oswa', name: 'Oswa N.', delta: 5, note: 'Helping classmates' },
+    { id: '2026-10-07-redeem-kiaraliz-chips', name: 'Kiaraliz O.', delta: -5, note: 'Chips' },
+    { id: '2026-10-08-good-question-sophia', name: 'Sophia L.', delta: 2, note: 'Good Questions' },
+    { id: '2026-10-08-good-question-trinity', name: 'Trinity T.', delta: 2, note: 'Good Questions' },
+    { id: '2026-10-08-good-question-isaac', name: 'Isaac L.', delta: 2, note: 'Good Questions' },
+    { id: '2026-10-08-good-question-thanh', name: 'Thanh B.', delta: 2, note: 'Good Questions' },
+    { id: '2026-10-08-redeem-sophia-chips', name: 'Sophia L.', delta: -5, note: 'Chips' },
+    { id: '2026-10-08-redeem-logan-chips', name: 'Logan M.', delta: -5, note: 'Chips' },
+    { id: '2026-10-08-redeem-charlize-chips', name: 'Charlize P.', delta: -5, note: 'Chips' },
+    { id: '2026-10-08-redeem-emma-chips', name: 'Emma C.', delta: -5, note: 'Chips' },
+    { id: '2026-10-08-redeem-jackson-chips', name: 'Jackson R.', delta: -5, note: 'Chips' },
+    { id: '2026-10-08-redeem-oswa-chips', name: 'Oswa N.', delta: -5, note: 'Chips' },
+    { id: '2026-10-08-redeem-nghia-gatorade', name: 'Nghia T.', delta: -10, note: 'Gatorade' },
+    { id: '2026-10-08-redeem-victoria-chips', name: 'Victoria R.', delta: -10, note: 'Chips' }
   ]
 }
 
