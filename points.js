@@ -869,6 +869,7 @@ window.CSD_POINTS = {
     { id: '2026-10-08-redeem-nghia-gatorade', name: 'Nghia T.', delta: -10, note: 'Gatorade' },
     { id: '2026-10-08-redeem-victoria-chips', name: 'Victoria R.', delta: -10, note: 'Chips' },
     { id: '2026-10-08-redeem-naia-chips', name: 'Naia B.', delta: -5, note: 'Chips' },
-    { id: '2026-10-09-bday-oswa', name: 'Oswa N.', delta: 10, note: 'Happy Bday!' }
+    { id: '2026-10-09-bday-oswa', name: 'Oswa N.', delta: 10, note: 'Happy Bday!' },
+    { id: '2026-10-09-redeem-thanh-chips', name: 'Thanh B.', delta: -5, note: 'Chips' }
   ]
 }
