@@ -870,6 +870,10 @@ window.CSD_POINTS = {
     { id: '2026-10-08-redeem-victoria-chips', name: 'Victoria R.', delta: -10, note: 'Chips' },
     { id: '2026-10-08-redeem-naia-chips', name: 'Naia B.', delta: -5, note: 'Chips' },
     { id: '2026-10-09-bday-oswa', name: 'Oswa N.', delta: 10, note: 'Happy Bday!' },
-    { id: '2026-10-09-redeem-thanh-chips', name: 'Thanh B.', delta: -5, note: 'Chips' }
+    { id: '2026-10-09-redeem-thanh-chips', name: 'Thanh B.', delta: -5, note: 'Chips' },
+    { id: '2026-10-09-bbd-mv16acy6-ogiou', name: 'Sofia J.', delta: 10, note: 'Bake Before Dark' },
+    { id: '2026-10-09-bbd-mv16na9p-msjsv', name: 'Oswa N.', delta: 2, note: 'Bake Before Dark' },
+    { id: '2026-10-09-bbd-mv16wprg-gaid0', name: 'Iszael M.', delta: 10, note: 'Bake Before Dark' },
+    { id: '2026-10-09-bbd-mv18eoys-pc6yb', name: 'Hadassa G.', delta: 1, note: 'Bake Before Dark' }
   ]
 }
