@@ -882,6 +882,14 @@ window.CSD_POINTS = {
     { id: '2026-10-13-sharing-hadassa', name: 'Hadassa G.', delta: 1, note: 'Good sharing' },
     { id: '2026-10-13-sharing-iszael', name: 'Iszael M.', delta: 1, note: 'Good sharing' },
     { id: '2026-10-13-redeem-giselle-spooky-candy', name: 'Giselle A.', delta: -5, note: 'Spooky candy' },
-    { id: 'bbd-mv6x4cfv-28yim', name: 'Sofia J.', delta: 10, note: 'Bake Before Dark' }
+    { id: 'bbd-mv6x4cfv-28yim', name: 'Sofia J.', delta: 10, note: 'Bake Before Dark' },
+    { id: '2026-10-13-helper-charlize', name: 'Charlize P.', delta: 2, note: 'Helper bonus' },
+    { id: '2026-10-13-helper-isaac', name: 'Isaac L.', delta: 2, note: 'Helper bonus' },
+    { id: '2026-10-13-helper-kiaraliz', name: 'Kiaraliz O.', delta: 2, note: 'Helper bonus' },
+    { id: '2026-10-13-helper-logan', name: 'Logan M.', delta: 2, note: 'Helper bonus' },
+    { id: '2026-10-13-helper-iszael', name: 'Iszael M.', delta: 2, note: 'Helper bonus' },
+    { id: '2026-10-13-helper-danyela', name: 'Danyela C.', delta: 2, note: 'Helper bonus' },
+    { id: '2026-10-13-helper-sofia', name: 'Sofia J.', delta: 2, note: 'Helper bonus' },
+    { id: '2026-10-13-helper-emma', name: 'Emma C.', delta: 5, note: 'Helper bonus' }
   ]
 }
