@@ -75,6 +75,7 @@ window.BBD_SCORES = {
       mode: 'full',
       date: '2026-10-13',
       classPoints: 8
-    }
+    },
+    { id: 'mv8cwl4k-y5vtd', name: 'Oswa N.', score: 110, reached: 'Phase 5 · day', cures: 0, kills: 0, mode: 'full', date: '2026-10-14', classPoints: 2 }
   ]
 }
