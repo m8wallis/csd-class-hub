@@ -903,6 +903,7 @@ window.CSD_POINTS = {
     { id: '2026-10-13-helper-emma', name: 'Emma C.', delta: 5, note: 'Helper bonus' },
     { id: '2026-10-13-helper-dan', name: 'Dania C.', delta: -15, note: 'Snacks' },
     { id: '2026-10-13-helper-dan1', name: 'Savannah A.', delta: -5, note: 'Drink' },
-    { id: '2026-10-13-helper-emma2', name: 'Emma C.', delta: -5, note: 'Drink' }
+    { id: '2026-10-13-helper-emma2', name: 'Emma C.', delta: -5, note: 'Drink' },
+    { id: '2026-10-13-helper-djav', name: 'Javier A.', delta: -5, note: 'Snacks' }
   ]
 }
