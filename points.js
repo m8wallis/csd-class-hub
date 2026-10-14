@@ -875,13 +875,23 @@ window.CSD_POINTS = {
     { id: '2026-10-09-bbd-mv16na9p-msjsv', name: 'Oswa N.', delta: 2, note: 'Bake Before Dark' },
     { id: '2026-10-09-bbd-mv16wprg-gaid0', name: 'Iszael M.', delta: 10, note: 'Bake Before Dark' },
     { id: '2026-10-09-bbd-mv18eoys-pc6yb', name: 'Hadassa G.', delta: 1, note: 'Bake Before Dark' },
-    { id: '2026-10-12-bbd-mv5llrfn-chus9', name: 'Savannah A.', delta: 10, note: 'Bake Before Dark' },
+    {
+      id: '2026-10-12-bbd-mv5llrfn-chus9',
+      name: 'Savannah A.',
+      delta: 10,
+      note: 'Bake Before Dark'
+    },
     { id: '2026-10-13-redeem-thanh-chips', name: 'Thanh B.', delta: -5, note: 'Chips' },
     { id: '2026-10-13-sharing-charlize', name: 'Charlize P.', delta: 1, note: 'Good sharing' },
     { id: '2026-10-13-sharing-savannah', name: 'Savannah A.', delta: 1, note: 'Good sharing' },
     { id: '2026-10-13-sharing-hadassa', name: 'Hadassa G.', delta: 1, note: 'Good sharing' },
     { id: '2026-10-13-sharing-iszael', name: 'Iszael M.', delta: 1, note: 'Good sharing' },
-    { id: '2026-10-13-redeem-giselle-spooky-candy', name: 'Giselle A.', delta: -5, note: 'Spooky candy' },
+    {
+      id: '2026-10-13-redeem-giselle-spooky-candy',
+      name: 'Giselle A.',
+      delta: -5,
+      note: 'Spooky candy'
+    },
     { id: 'bbd-mv6x4cfv-28yim', name: 'Sofia J.', delta: 10, note: 'Bake Before Dark' },
     { id: '2026-10-13-helper-charlize', name: 'Charlize P.', delta: 2, note: 'Helper bonus' },
     { id: '2026-10-13-helper-isaac', name: 'Isaac L.', delta: 2, note: 'Helper bonus' },
@@ -890,6 +900,9 @@ window.CSD_POINTS = {
     { id: '2026-10-13-helper-iszael', name: 'Iszael M.', delta: 2, note: 'Helper bonus' },
     { id: '2026-10-13-helper-danyela', name: 'Danyela C.', delta: 2, note: 'Helper bonus' },
     { id: '2026-10-13-helper-sofia', name: 'Sofia J.', delta: 2, note: 'Helper bonus' },
-    { id: '2026-10-13-helper-emma', name: 'Emma C.', delta: 5, note: 'Helper bonus' }
+    { id: '2026-10-13-helper-emma', name: 'Emma C.', delta: 5, note: 'Helper bonus' },
+    { id: '2026-10-13-helper-dan', name: 'Dania C.', delta: -15, note: 'Snacks' },
+    { id: '2026-10-13-helper-dan1', name: 'Savannah A.', delta: -5, note: 'Drink' },
+    { id: '2026-10-13-helper-emma2', name: 'Emma C.', delta: -5, note: 'Drink' }
   ]
 }
