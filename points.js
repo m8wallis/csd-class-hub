@@ -914,7 +914,9 @@ window.CSD_POINTS = {
     },
     { id: '2026-10-15-redeem-alyssia-granola', name: 'Alyssia R.', delta: -5, note: 'Granola bar' },
     { id: '2026-10-15-redeem-jackson-drink', name: 'Jackson R.', delta: -5, note: 'Drink' },
+    { id: '2026-10-15-redeem-jackson-drink-os', name: 'Oswa N.', delta: -5, note: 'Snacks' },
     { id: '2026-10-15-redeem-kiaraliz-snack', name: 'Kiaraliz O.', delta: -3, note: 'Snack' },
+    { id: '2026-10-15-redeem-kiaraliz-snackdx', name: 'Dana M.', delta: -5, note: 'Drinks' },
     {
       id: '2026-10-15-redeem-kiaraliz-snackj',
       name: 'Sofia J.',
