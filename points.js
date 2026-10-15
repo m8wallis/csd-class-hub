@@ -905,6 +905,8 @@ window.CSD_POINTS = {
     { id: '2026-10-13-helper-dan1', name: 'Savannah A.', delta: -5, note: 'Drink' },
     { id: '2026-10-13-helper-emma2', name: 'Emma C.', delta: -5, note: 'Drink' },
     { id: '2026-10-13-helper-djav', name: 'Javier A.', delta: -5, note: 'Snacks' },
-    { id: 'bbd-mv8cwl4k-y5vtd', name: 'Oswa N.', delta: 2, note: 'Bake Before Dark' }
+    { id: 'bbd-mv8cwl4k-y5vtd', name: 'Oswa N.', delta: 2, note: 'Bake Before Dark' },
+    { id: '2026-10-15-redeem-isaac-starbucks', name: 'Isaac L.', delta: -50, note: 'Starbucks giftcard' },
+    { id: '2026-10-15-redeem-alyssia-granola', name: 'Alyssia R.', delta: -5, note: 'Granola bar' }
   ]
 }
