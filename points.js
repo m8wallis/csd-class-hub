@@ -922,6 +922,12 @@ window.CSD_POINTS = {
       name: 'Sofia J.',
       delta: -10,
       note: 'drinks & snacks'
-    }
+    },
+    { id: '2026-10-15-redeem-kiaraliz-snackdxja', name: 'Jackson R.', delta: -5, note: 'Drinks' },
+    { id: '2026-10-15-redeem-kiaraliz-jac', name: 'Jackson R.', delta: -2, note: 'Bully Justice' },
+    { id: '2026-10-15-redeem-kiaraliz-jacs', name: 'Savannah A.', delta: 2, note: 'Justice Served' },
+    { id: '2026-10-15-redeem-kiaraliz-cha', name: 'Charlize P.', delta: 2, note: 'Helping out' },
+    { id: '2026-10-15-redeem-kiaraliz-sop', name: 'Sophia L.', delta: 2, note: 'Helping out' }
+    { id: '2026-10-15-redeem-kiaraliz-chia', name: 'Isaac L.', delta: 2, note: 'Helping out' }
   ]
 }
