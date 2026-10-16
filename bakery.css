@@ -593,6 +593,9 @@ kbd {
 .fx-cure {
   color: #b0237a;
 }
+.fx-heal {
+  color: #2a7d4f;
+}
 
 /* ---------- Tables ---------- */
 .results-card,

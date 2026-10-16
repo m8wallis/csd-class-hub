@@ -76,6 +76,8 @@ window.BBD_SCORES = {
       date: '2026-10-13',
       classPoints: 8
     },
-    { id: 'mv8cwl4k-y5vtd', name: 'Oswa N.', score: 110, reached: 'Phase 5 · day', cures: 0, kills: 0, mode: 'full', date: '2026-10-14', classPoints: 2 }
+    { id: 'mv8cwl4k-y5vtd', name: 'Oswa N.', score: 110, reached: 'Phase 5 · day', cures: 0, kills: 0, mode: 'full', date: '2026-10-14', classPoints: 2 },
+    { id: '2026-10-16-oswa-1068', name: 'Oswa N.', score: 1068, reached: '', cures: '', kills: '', mode: 'full', date: '2026-10-16' },
+    { id: '2026-10-16-savannah-1681', name: 'Savannah A.', score: 1681, reached: '', cures: '', kills: '', mode: 'full', date: '2026-10-16' }
   ]
 }

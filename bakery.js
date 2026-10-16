@@ -153,6 +153,15 @@
       hint: 'Eggs and milk plus something sour. Hmm.'
     },
     {
+      id: 'berryMuffin',
+      name: 'Berry Muffin',
+      icon: '🍓',
+      needs: ['flour', 'milk', 'berries'],
+      makes: 2,
+      effect: { type: 'heal', amount: 25 },
+      hint: 'A soft muffin. Eat it yourself instead of throwing it.'
+    },
+    {
       id: 'honeyCake',
       name: 'Golden Honey Cake',
       icon: '🎂',
@@ -288,6 +297,8 @@
         return `💤 Food coma for EVERY zombie nearby (${e.secs}s)`
       case 'cure':
         return `💖 CURES a zombie! +${POINTS.cure}`
+      case 'heal':
+        return `🍓 Eat it to restore ${e.amount} health`
       case 'distract':
         return '🤔 They sniff it… a short distraction'
       default:
@@ -1562,6 +1573,10 @@
       return
     }
     const recipe = recipeById(id)
+    if (recipe.effect.type === 'heal') {
+      eatTreat(recipe)
+      return
+    }
     let ang = p.face
     if (aimX != null) {
       ang = Math.atan2(aimY + 22 - p.y, aimX - p.x)
@@ -1600,6 +1615,29 @@
       spin: 0
     })
     Sound.play('throw')
+  }
+
+  function eatTreat(recipe) {
+    const p = game.player
+    const amount = recipe.effect.amount
+    if (p.hp >= MAX_HEALTH) {
+      toast('You are already at full health.')
+      Sound.play('error')
+      return
+    }
+    game.treats[recipe.id]--
+    if (game.treats[recipe.id] <= 0) {
+      delete game.treats[recipe.id]
+      game.treatOrder.splice(game.selected, 1)
+      game.selected = clamp(game.selected, 0, Math.max(0, game.treatOrder.length - 1))
+    }
+    const gained = Math.min(amount, MAX_HEALTH - p.hp)
+    p.hp += gained
+    revealEffect(recipe)
+    floatText(`+${gained} health`, p.x, p.y - 56, '#7dff9b', 22)
+    comic('YUM!', p.x, p.y - 78, '#7dff9b')
+    emojiFx('💗', p.x, p.y - 86)
+    Sound.play('heal')
   }
 
   function cycleTreat(dir) {
@@ -3553,7 +3591,7 @@
       const needs = r.needs.map((n) => `${INGREDIENTS[n].icon} ${INGREDIENTS[n].name}`).join(' + ')
       const fx = k.effectKnown
         ? `<p class='r-effect fx-${r.effect.type}'>${effectLabel(r.effect)}</p>`
-        : `<p class='r-effect'>❓ Feed one to a zombie to find out</p>`
+        : `<p class='r-effect'>❓ ${r.effect.type === 'heal' ? 'Eat one to find out' : 'Feed one to a zombie to find out'}</p>`
       const btn = withButtons
         ? `<button type='button' class='btn btn-small' data-bake='${r.id}' ${can ? '' : 'disabled'}>Bake</button>`
         : ''
