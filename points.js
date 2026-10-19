@@ -925,7 +925,12 @@ window.CSD_POINTS = {
     },
     { id: '2026-10-15-redeem-kiaraliz-snackdxja', name: 'Jackson R.', delta: -5, note: 'Drinks' },
     { id: '2026-10-15-redeem-kiaraliz-jac', name: 'Jackson R.', delta: -2, note: 'Bully Justice' },
-    { id: '2026-10-15-redeem-kiaraliz-jacs', name: 'Savannah A.', delta: 2, note: 'Justice Served' },
+    {
+      id: '2026-10-15-redeem-kiaraliz-jacs',
+      name: 'Savannah A.',
+      delta: 2,
+      note: 'Justice Served'
+    },
     { id: '2026-10-15-redeem-kiaraliz-cha', name: 'Charlize P.', delta: 2, note: 'Helping out' },
     { id: '2026-10-15-redeem-kiaraliz-sop', name: 'Sophia L.', delta: 2, note: 'Helping out' },
     { id: '2026-10-15-redeem-kiaraliz-chia', name: 'Isaac L.', delta: 2, note: 'Helping out' },
@@ -934,6 +939,7 @@ window.CSD_POINTS = {
     { id: '2026-10-16-game-bonus-kiaraliz', name: 'Kiaraliz O.', delta: 2, note: 'Game Bonus' },
     { id: '2026-10-16-game-bonus-sophia', name: 'Sophia L.', delta: 2, note: 'Game Bonus' },
     { id: '2026-10-16-game-bonus-emma', name: 'Emma C.', delta: 2, note: 'Game Bonus' },
-    { id: '2026-10-16-game-bonus-dana', name: 'Dana M.', delta: 2, note: 'Game Bonus' }
+    { id: '2026-10-16-game-bonus-dana', name: 'Dana M.', delta: 2, note: 'Game Bonus' },
+    { id: '2026-10-16-game-bonus-sofia', name: 'Sofia J.', delta: 5, note: 'Video Game Bonus' }
   ]
 }
