@@ -178,6 +178,16 @@
       makes: 3,
       effect: { type: 'cure' },
       hint: 'Legend says rainbow + moon + something sweet turns a zombie back into a person.'
+    },
+    {
+      id: 'cureBomb',
+      name: 'Ultimate Iszael Macaron',
+      icon: '💖💥',
+      needs: ['sprinkles', 'moonberry', 'chocolate'],
+      makes: 2,
+      effect: { type: 'areaCure', radius: 230 },
+      hint: 'Rainbow + moon + something sweet + something chocolate turns a zombie pack back into a person.',
+      fromPhase: 7
     }
   ]
   const BURNT = {
@@ -295,6 +305,8 @@
         return `🧱 Hard as a brick! Hits for ${e.amount} damage (can knock them out)`
       case 'areaComa':
         return `💤 Food coma for EVERY zombie nearby (${e.secs}s)`
+      case 'areaCure':
+        return `💖 CURES every zombie nearby! +${POINTS.cure}`
       case 'cure':
         return `💖 CURES a zombie! +${POINTS.cure}`
       case 'heal':
@@ -1297,6 +1309,7 @@
   function cardCandidates() {
     return RECIPES.filter((r) => {
       if (game.known[r.id]) return false
+      if (r.fromPhase && game.phase < r.fromPhase) return false
       if (r.id === 'cure') return game.phase >= 3
       return r.needs.every((n) => !INGREDIENTS[n].rare || game.phase >= INGREDIENTS[n].fromPhase)
     })
@@ -1737,6 +1750,9 @@
       case 'areaComa':
         areaComa(x ?? z.x, y ?? z.y, e)
         break
+      case 'areaCure':
+        areaCure(x ?? z.x, y ?? z.y, e)
+        break
       case 'cure':
         cureZombie(z)
         break
@@ -1757,6 +1773,16 @@
       if (z.spawnT <= 0 && Math.hypot(z.x - x, z.y - y) <= e.radius) feed(z, e.secs, true)
     }
     comic('FOOD COMA!', x, y - 70, '#ffd23f')
+  }
+
+  function areaCure(x, y, e) {
+    ring(x, y, e.radius, '#ff5fa2')
+    confetti(x, y)
+    Sound.play('munch')
+    for (const z of game.zombies) {
+      if (z.spawnT <= 0 && Math.hypot(z.x - x, z.y - y) <= e.radius) cureZombie(z)
+    }
+    comic('CURED!', x, y - 70, '#ff5fa2')
   }
 
   function cureZombie(z) {
@@ -3550,6 +3576,13 @@
       Sound.play('error')
       return
     }
+    const locked = findRecipe(sel)
+    if (locked && locked.fromPhase && game.phase < locked.fromPhase) {
+      res.textContent = `${locked.icon} ${locked.name} isn't ready until phase ${locked.fromPhase}.`
+      res.className = 'bake-result'
+      Sound.play('error')
+      return
+    }
     if (!sel.every((k) => (game.ingredients[k] || 0) > 0)) {
       res.textContent = "You don't have enough of those ingredients."
       res.className = 'bake-result'
@@ -3582,7 +3615,7 @@
   }
 
   function renderBook(el, withButtons) {
-    el.innerHTML = RECIPES.map((r) => {
+    el.innerHTML = RECIPES.filter((r) => !r.fromPhase || game.phase >= r.fromPhase).map((r) => {
       const k = game.known[r.id]
       if (!k) {
         return `<li class='recipe is-locked'><span class='r-icon'>❔</span><div><strong>???</strong><span class='r-count'>${r.needs.length} ingredients</span><p class='r-hint'>${escapeHtml(r.hint)}</p></div></li>`
