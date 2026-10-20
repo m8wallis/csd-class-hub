@@ -940,6 +940,11 @@ window.CSD_POINTS = {
     { id: '2026-10-16-game-bonus-sophia', name: 'Sophia L.', delta: 2, note: 'Game Bonus' },
     { id: '2026-10-16-game-bonus-emma', name: 'Emma C.', delta: 2, note: 'Game Bonus' },
     { id: '2026-10-16-game-bonus-dana', name: 'Dana M.', delta: 2, note: 'Game Bonus' },
-    { id: '2026-10-16-game-bonus-sofia', name: 'Sofia J.', delta: 5, note: 'Video Game Bonus' }
+    { id: '2026-10-16-game-bonus-sofia', name: 'Sofia J.', delta: 5, note: 'Video Game Bonus' },
+    { id: '2026-10-20-drinks', name: 'Jackson R.', delta: -5, note: 'Drink' },
+    { id: '2026-10-20-bonus1', name: 'Naia B.', delta: 5, note: 'Extra Credit Bonus' },
+    { id: '2026-10-20-bonus2', name: 'Isaac L.', delta: 5, note: 'Extra Credit Bonus' },
+    { id: '2026-10-20-bonus3', name: 'Charlize P.', delta: 5, note: 'Extra Credit Bonus' },
+    { id: '2026-10-20-bonus4', name: 'Oswa N.', delta: 5, note: 'Extra Credit Bonus' }
   ]
 }
