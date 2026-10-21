@@ -950,6 +950,7 @@ window.CSD_POINTS = {
     { id: '2026-10-20-game-naia', name: 'Naia B.', delta: 2, note: 'Bonus game points' },
     { id: '2026-10-20-game-savannah', name: 'Savannah A.', delta: 2, note: 'Bonus game points' },
     { id: '2026-10-20-game-charlize', name: 'Charlize P.', delta: 2, note: 'Bonus game points' },
-    { id: '2026-10-20-game-isaac', name: 'Isaac L.', delta: 2, note: 'Bonus game points' }
+    { id: '2026-10-20-game-isaac', name: 'Isaac L.', delta: 2, note: 'Bonus game points' },
+    { id: '2026-10-21-bonus', name: 'Jackson R.', delta: 2, note: 'Bonus helper' }
   ]
 }
