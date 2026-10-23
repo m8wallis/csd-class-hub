@@ -5,6 +5,7 @@ window.CSD_CLASS_GOAL = {
     { id: '2026-09-30-trivia', delta: 5, note: 'Trivia' },
     { id: '2026-10-07-talking', delta: -5, note: 'Talking' },
     { id: '2026-10-13-trivia', delta: 5, note: 'Trivia' },
-    { id: '2026-10-14-trash', delta: -5, note: 'Trash on floor' }
+    { id: '2026-10-14-trash', delta: -5, note: 'Trash on floor' },
+    { id: '2026-10-23-talking', delta: -4, note: 'Talking' }
   ]
 }

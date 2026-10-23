@@ -957,6 +957,8 @@ window.CSD_POINTS = {
     { id: 'bbd-mvidbo8z-y1lkt', name: 'Oswa N.', delta: 2, note: 'Bake Before Dark' },
     { id: 'bbd-mvkfmunw-kebk5', name: 'Iszael M.', delta: 10, note: 'Bake Before Dark' },
     { id: 'bbd-mvkfmunw-asd1', name: 'Sofia J.', delta: -5, note: 'Drink/Snacks' },
-    { id: 'bbd-mvkfmunw-kqwe5', name: 'Alyssia R.', delta: -5, note: 'Drink/Snacks' }
+    { id: 'bbd-mvkfmunw-kqwe5', name: 'Alyssia R.', delta: -5, note: 'Drink/Snacks' },
+    { id: 'bbd-mvkfmunw-kqwe51', name: 'Jackson R.', delta: -3, note: 'Drink/Snacks' },
+    { id: 'bbd-mvkfmunw-kqwe53', name: 'Axel B.', delta: -2, note: 'Drink/Snacks' }
   ]
 }
