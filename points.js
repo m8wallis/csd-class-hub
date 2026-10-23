@@ -964,6 +964,7 @@ window.CSD_POINTS = {
     { id: 'bbd-mvasdunw-k12ew3', name: 'Oswa N.', delta: -5, note: 'Candy' },
     { id: 'bbd-mvasd7nw-k12ew3', name: 'Savannah A.', delta: -5, note: 'Candy' },
     { id: 'bbd-mvasd7nw-kasw3', name: 'Emma C.', delta: -5, note: 'Candy' },
-    { id: 'bbd-as1asd7nw-kasw3', name: 'Isaac L.', delta: -5, note: 'Vitamin Water' }
+    { id: 'bbd-as1asd7nw-kasw3', name: 'Isaac L.', delta: -5, note: 'Vitamin Water' },
+    { id: 'bbd-as1asd7nw-kai', name: 'Kiaraliz O.', delta: -5, note: 'Snack Bar' }
   ]
 }
