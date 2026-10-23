@@ -118,6 +118,7 @@ window.BBD_SCORES = {
       date: '2026-10-16',
       classPoints: 10
     },
-    { id: 'mvidbo8z-y1lkt', name: 'Oswa N.', score: 173, reached: 'Phase 4 · night', cures: 0, kills: 9, mode: 'full', date: '2026-10-21', classPoints: 2 }
+    { id: 'mvidbo8z-y1lkt', name: 'Oswa N.', score: 173, reached: 'Phase 4 · night', cures: 0, kills: 9, mode: 'full', date: '2026-10-21', classPoints: 2 },
+    { id: 'mvkfmunw-kebk5', name: 'Iszael M.', score: 6339, reached: 'Phase 12 · day', cures: 187, kills: 60, mode: 'full', date: '2026-10-22', classPoints: 10 }
   ]
 }

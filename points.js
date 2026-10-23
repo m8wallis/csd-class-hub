@@ -954,6 +954,7 @@ window.CSD_POINTS = {
     { id: '2026-10-21-bonus', name: 'Jackson R.', delta: 2, note: 'Bonus helper' },
     { id: '2026-10-21-bonus1', name: 'Lucas D.', delta: 2, note: 'Great project' },
     { id: '2026-10-21-bonus2', name: 'Sofia J.', delta: 2, note: 'Great project' },
-    { id: 'bbd-mvidbo8z-y1lkt', name: 'Oswa N.', delta: 2, note: 'Bake Before Dark' }
+    { id: 'bbd-mvidbo8z-y1lkt', name: 'Oswa N.', delta: 2, note: 'Bake Before Dark' },
+    { id: 'bbd-mvkfmunw-kebk5', name: 'Iszael M.', delta: 10, note: 'Bake Before Dark' }
   ]
 }
