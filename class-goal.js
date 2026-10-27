@@ -9,5 +9,6 @@ window.CSD_CLASS_GOAL = {
     { id: '2026-10-23-talking', delta: -4, note: 'Talking' },
     { id: '2026-10-26-class', delta: -5, note: 'Classroom points' },
     { id: '2026-10-27-class', delta: -3, note: 'Classroom points' }
+    { id: '2026-10-27-class2', delta: 3, note: 'Classroom points' }
   ]
 }

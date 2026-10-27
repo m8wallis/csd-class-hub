@@ -810,7 +810,7 @@ function onClick(event) {
 }
 
 const CLASS_GOALS = [
-  { min: 91, range: '91+', reward: 'Pizza party / free day' },
+  { min: 91, range: '91+', reward: 'Breakfast party / free day' },
   { min: 76, range: '76–90', reward: 'Snack party / half free day' },
   { min: 61, range: '61–75', reward: 'Smaller snack party / quarter free day' },
   { min: 50, range: '50–60', reward: 'No reward' },
@@ -832,17 +832,36 @@ function renderClassGoal() {
   $('#goal-reward').textContent = current.reward
   if (current.min === -Infinity) {
     const need = 50 - score
-    $('#goal-note').textContent = 'This score means an extra test. ' + need + ' more point' + (need === 1 ? '' : 's') + ' gets the class back to 50.'
+    $('#goal-note').textContent =
+      'This score means an extra test. ' +
+      need +
+      ' more point' +
+      (need === 1 ? '' : 's') +
+      ' gets the class back to 50.'
   } else if (!higher) {
-    $('#goal-note').textContent = 'The class is in the top band. Stay at 91 or above to keep the pizza party and free day.'
+    $('#goal-note').textContent =
+      'The class is in the top band. Stay at 91 or above to keep the breakfast party and free day.'
   } else {
     const need = higher.min - score
-    $('#goal-note').textContent = need + ' more point' + (need === 1 ? '' : 's') + ' reaches ' + higher.reward.toLowerCase() + '.'
+    $('#goal-note').textContent =
+      need +
+      ' more point' +
+      (need === 1 ? '' : 's') +
+      ' reaches ' +
+      higher.reward.toLowerCase() +
+      '.'
   }
   const fill = $('#goal-meter-fill')
   const width = Math.max(0, Math.min(100, score))
   fill.style.width = width + '%'
-  fill.style.background = score >= 91 ? 'var(--teal)' : score >= 61 ? 'var(--gold)' : score >= 50 ? 'var(--ink-soft)' : 'var(--coral)'
+  fill.style.background =
+    score >= 91
+      ? 'var(--teal)'
+      : score >= 61
+        ? 'var(--gold)'
+        : score >= 50
+          ? 'var(--ink-soft)'
+          : 'var(--coral)'
   $('#goal-ladder').innerHTML = CLASS_GOALS.map((row) => {
     const on = row.reward === current.reward ? ' class="is-on"' : ''
     return '<li' + on + '><span>' + row.range + '</span><span>' + row.reward + '</span></li>'
