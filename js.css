@@ -101,6 +101,7 @@
 
 .js-try .try-browser {
   min-height: 220px;
+  display: none;
 }
 
 .js-try .try-frame {

@@ -965,6 +965,15 @@ window.CSD_POINTS = {
     { id: 'bbd-mvasd7nw-k12ew3', name: 'Savannah A.', delta: -5, note: 'Candy' },
     { id: 'bbd-mvasd7nw-kasw3', name: 'Emma C.', delta: -5, note: 'Candy' },
     { id: 'bbd-as1asd7nw-kasw3', name: 'Isaac L.', delta: -5, note: 'Vitamin Water' },
-    { id: 'bbd-as1asd7nw-kai', name: 'Kiaraliz O.', delta: -5, note: 'Snack Bar' }
+    { id: 'bbd-as1asd7nw-kai', name: 'Kiaraliz O.', delta: -5, note: 'Snack Bar' },
+    { id: '2026-10-29-bonus-emma', name: 'Emma C.', delta: 2, note: 'Bonus' },
+    { id: '2026-11-09-helper-savannah', name: 'Savannah A.', delta: 5, note: 'Class helper' },
+    { id: '2026-11-09-helper-oswa', name: 'Oswa N.', delta: 5, note: 'Class helper' },
+    { id: '2026-11-09-helper-jackson', name: 'Jackson R.', delta: 5, note: 'Class helper' },
+    { id: '2026-11-09-helper-nghia', name: 'Nghia T.', delta: 5, note: 'Class helper' },
+    { id: '2026-11-09-helper-thanh', name: 'Thanh B.', delta: 5, note: 'Class helper' },
+    { id: '2026-11-09-helper-naia', name: 'Naia B.', delta: 5, note: 'Class helper' },
+    { id: '2026-11-09-helper-axel', name: 'Axel B.', delta: 5, note: 'Class helper' },
+    { id: '2026-11-09-helper-alyviah', name: 'Alyviah C.', delta: 5, note: 'Class helper' }
   ]
 }
