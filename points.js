@@ -974,6 +974,19 @@ window.CSD_POINTS = {
     { id: '2026-11-09-helper-thanh', name: 'Thanh B.', delta: 5, note: 'Class helper' },
     { id: '2026-11-09-helper-naia', name: 'Naia B.', delta: 5, note: 'Class helper' },
     { id: '2026-11-09-helper-axel', name: 'Axel B.', delta: 5, note: 'Class helper' },
-    { id: '2026-11-09-helper-alyviah', name: 'Alyviah C.', delta: 5, note: 'Class helper' }
+    { id: '2026-11-09-helper-alyviah', name: 'Alyviah C.', delta: 5, note: 'Class helper' },
+    { id: 'bbd-mw9k4gaj-ch7wt', name: 'Oswa N.', delta: 9, note: 'Bake Before Dark' },
+    { id: '2026-11-10-bonus-naia', name: 'Naia B.', delta: 3, note: 'Good Answers' },
+    { id: '2026-11-16-puzzles-aisha', name: 'Aisha C.', delta: 5, note: 'Puzzles' },
+    { id: '2026-11-16-puzzles-savannah', name: 'Savannah A.', delta: 5, note: 'Puzzles' },
+    { id: '2026-11-16-puzzles-lucas', name: 'Lucas D.', delta: 5, note: 'Puzzles' },
+    { id: '2026-11-16-puzzles-hadassa', name: 'Hadassa G.', delta: 5, note: 'Puzzles' },
+    { id: '2026-11-16-puzzles-alyviah', name: 'Alyviah C.', delta: 5, note: 'Puzzles' },
+    { id: '2026-11-16-puzzles-kiaraliz', name: 'Kiaraliz O.', delta: 5, note: 'Puzzles' },
+    { id: '2026-11-16-puzzles-emma', name: 'Emma C.', delta: 5, note: 'Puzzles' },
+    { id: '2026-11-16-puzzles-sophia', name: 'Sophia L.', delta: 5, note: 'Puzzles' },
+    { id: '2026-11-16-puzzles-logan', name: 'Logan M.', delta: 5, note: 'Puzzles' },
+    { id: '2026-11-16-puzzles-thanh', name: 'Thanh B.', delta: 5, note: 'Puzzles' },
+    { id: '2026-11-16-puzzles-tyran', name: 'Tyran C.', delta: 5, note: 'Puzzles' }
   ]
 }
