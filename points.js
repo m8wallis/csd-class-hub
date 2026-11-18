@@ -987,6 +987,25 @@ window.CSD_POINTS = {
     { id: '2026-11-16-puzzles-sophia', name: 'Sophia L.', delta: 5, note: 'Puzzles' },
     { id: '2026-11-16-puzzles-logan', name: 'Logan M.', delta: 5, note: 'Puzzles' },
     { id: '2026-11-16-puzzles-thanh', name: 'Thanh B.', delta: 5, note: 'Puzzles' },
-    { id: '2026-11-16-puzzles-tyran', name: 'Tyran C.', delta: 5, note: 'Puzzles' }
+    { id: '2026-11-16-puzzles-tyran', name: 'Tyran C.', delta: 5, note: 'Puzzles' },
+    { id: '2026-11-18-bonus5-naia', name: 'Naia B.', delta: 5, note: 'Bonus' },
+    { id: '2026-11-18-bonus5-trinity', name: 'Trinity T.', delta: 5, note: 'Bonus' },
+    { id: '2026-11-18-bonus5-axel', name: 'Axel B.', delta: 5, note: 'Bonus' },
+    { id: '2026-11-18-bonus5-oswa', name: 'Oswa N.', delta: 5, note: 'Bonus' },
+    { id: '2026-11-18-bonus5-kiaraliz', name: 'Kiaraliz O.', delta: 5, note: 'Bonus' },
+    { id: '2026-11-18-bonus5-sophia', name: 'Sophia L.', delta: 5, note: 'Bonus' },
+    { id: '2026-11-18-bonus3-dana', name: 'Dana M.', delta: 3, note: 'Bonus' },
+    { id: '2026-11-18-bonus3-savannah', name: 'Savannah A.', delta: 3, note: 'Bonus' },
+    { id: '2026-11-18-bonus3-charlize', name: 'Charlize P.', delta: 3, note: 'Bonus' },
+    { id: '2026-11-18-bonus3-emma', name: 'Emma C.', delta: 3, note: 'Bonus' },
+    { id: '2026-11-18-bonus3-alyviah', name: 'Alyviah C.', delta: 3, note: 'Bonus' },
+    { id: '2026-11-18-bonus3-iszael', name: 'Iszael M.', delta: 3, note: 'Bonus' },
+    { id: '2026-11-18-bonus3-hadassa', name: 'Hadassa G.', delta: 3, note: 'Bonus' },
+    { id: '2026-11-18-bonus1-thanh', name: 'Thanh B.', delta: 1, note: 'Bonus' },
+    { id: '2026-11-18-bonus1-nghia', name: 'Nghia T.', delta: 1, note: 'Bonus' },
+    { id: '2026-11-18-bonus1-danyela', name: 'Danyela C.', delta: 1, note: 'Bonus' },
+    { id: '2026-11-18-bonus1-sofia', name: 'Sofia J.', delta: 1, note: 'Bonus' },
+    { id: '2026-11-18-bonus1-tyran', name: 'Tyran C.', delta: 1, note: 'Bonus' },
+    { id: '2026-11-18-bonus1-zayan', name: 'Zayan I.', delta: 1, note: 'Bonus' }
   ]
 }
