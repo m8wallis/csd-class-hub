@@ -1022,6 +1022,12 @@ window.CSD_POINTS = {
       name: 'Alyviah C.',
       delta: 5,
       note: 'Solved the Kindness Conundrum!'
-    }
+    },
+    { id: '2026-11-20-kindness-dup-oswa', name: 'Oswa N.', delta: -5, note: 'Duplicate Kindness Conundrum bonus removed' },
+    { id: '2026-11-20-kindness-dup-thanh', name: 'Thanh B.', delta: -5, note: 'Duplicate Kindness Conundrum bonus removed' },
+    { id: '2026-11-20-kindness-dup-savannah', name: 'Savannah A.', delta: -5, note: 'Duplicate Kindness Conundrum bonus removed' },
+    { id: '2026-11-20-kindness-dup-naia', name: 'Naia B.', delta: -5, note: 'Duplicate Kindness Conundrum bonus removed' },
+    { id: '2026-11-20-kindness-dup-alyviah', name: 'Alyviah C.', delta: -5, note: 'Duplicate Kindness Conundrum bonus removed' },
+    { id: '2026-11-20-kindness-dup-sofia', name: 'Sofia J.', delta: -5, note: 'Duplicate Kindness Conundrum bonus removed' }
   ]
 }
