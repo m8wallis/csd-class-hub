@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kindness Conundrum · CSD Class Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="kindness.css" />
+  </head>
+  <body class="kindness-page">
+    <div class="paper-grain" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">CSD</span>
+        <span class="brand-text">Class Hub</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html">Hub</a>
+        <a href="#rules">Rules</a>
+        <a href="#cast">Suspects</a>
+        <a href="#evidence">Evidence</a>
+        <a href="#board">Case board</a>
+      </nav>
+      <p class="kc-timer" id="timer" aria-live="off">00:00</p>
+      <button class="btn btn-tiny btn-ghost" type="button" id="hint-btn">Stuck?</button>
+      <button class="btn btn-tiny btn-ghost" type="button" id="reset-btn">Start over</button>
+      <a class="btn btn-tiny" href="index.html">Back to hub</a>
+    </header>
+
+    <main class="kc-shell">
+      <p class="kc-hint" id="hint-banner" hidden></p>
+
+      <section class="kc-hero">
+        <div>
+          <p class="kicker">A Thanksgiving case file</p>
+          <h1>The Kindness Conundrum</h1>
+          <p class="lede">
+            Someone did something kind for Mr. Ray, our night custodian, and signed it only
+            <strong>“A Grateful Turkey.”</strong> Read the evidence, crack the locks, and figure out
+            <strong>who</strong> did it, <strong>what</strong> they did, <strong>where</strong>,
+            <strong>when</strong>, and <strong>why</strong>.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#evidence">Open the evidence</a>
+            <button class="btn btn-ghost" type="button" id="story-btn">Reread the story</button>
+          </div>
+        </div>
+        <div class="kc-progress panel" aria-live="polite">
+          <p class="kicker">Case status</p>
+          <p class="kc-progress-big">
+            <span id="stat-unlocked">0</span> / <span id="stat-locks">8</span>
+          </p>
+          <p class="kc-progress-label">locks cracked</p>
+          <p class="kc-progress-big">
+            <span id="stat-read">0</span> / <span id="stat-total">17</span>
+          </p>
+          <p class="kc-progress-label">pieces of evidence read</p>
+          <p class="kc-progress-big" id="stat-accuse">0</p>
+          <p class="kc-progress-label">accusations made</p>
+        </div>
+      </section>
+
+      <section class="kc-section" id="rules">
+        <div class="section-head">
+          <p class="kicker">How to play</p>
+          <h2>One class. One case. Six rules.</h2>
+        </div>
+        <ol class="kc-rules">
+          <li>
+            <strong>Solve it together.</strong> Anyone can call out a clue, but the class decides
+            together what to cross off the case board.
+          </li>
+          <li>
+            <strong>Every answer has five parts:</strong> Who, What (the act of kindness), Where,
+            When, and Why.
+          </li>
+          <li>
+            <strong>🔒 Evidence is locked.</strong> Solve the riddle, math, code, or Thanksgiving
+            trivia to open it. Every lock has a hint button.
+          </li>
+          <li>
+            <strong>People can be wrong, or modest.</strong> Trust data like logs, schedules, and
+            receipts over rumors and what people say about themselves.
+          </li>
+          <li>
+            <strong>Accusations are on the record.</strong> The case board tells you how many of
+            your five parts are right, but not which ones. Be sure before you accuse.
+          </li>
+          <li>
+            <strong>Only one answer fits every clue.</strong> If something doesn’t fit, keep
+            digging.
+          </li>
+        </ol>
+      </section>
+
+      <section class="kc-section" id="cast">
+        <div class="section-head">
+          <p class="kicker">The people</p>
+          <h2>Mr. Ray and the six suspects</h2>
+        </div>
+        <div class="kc-cast" id="cast-grid"></div>
+      </section>
+
+      <div class="kc-layout">
+        <section class="kc-section" id="evidence">
+          <div class="section-head">
+            <p class="kicker">The evidence</p>
+            <h2>Seventeen pieces. Some are locked.</h2>
+            <p>Click a card to open it. Gold cards haven’t been read yet.</p>
+          </div>
+          <div class="kc-evidence" id="evidence-grid"></div>
+        </section>
+
+        <aside class="kc-side" id="board">
+          <article class="panel kc-board">
+            <p class="kicker">Case board</p>
+            <h2>Cross it off</h2>
+            <p class="kc-board-help">
+              Tap once for ✗ (ruled out), twice for ★ (our pick), three times to clear.
+            </p>
+            <div id="board-grid"></div>
+          </article>
+
+          <article class="panel kc-accuse">
+            <p class="kicker">Make an accusation</p>
+            <h2>We think it was…</h2>
+            <form id="accuse-form">
+              <div id="accuse-fields"></div>
+              <button class="btn btn-primary" type="submit">Accuse</button>
+            </form>
+            <p class="kc-feedback" id="accuse-feedback" aria-live="polite"></p>
+            <ol class="kc-history" id="accuse-history"></ol>
+          </article>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>CSD Class Hub · Kindness Conundrum · All characters are fictional</p>
+    </footer>
+
+    <dialog class="modal kc-modal" id="evidence-modal">
+      <div class="modal-inner">
+        <button class="modal-close" type="button" id="modal-close" aria-label="Close">×</button>
+        <div id="modal-body"></div>
+      </div>
+    </dialog>
+
+    <div class="kc-overlay is-open" id="intro" role="dialog" aria-labelledby="intro-title">
+      <div class="overlay-card">
+        <p class="kicker">Case file · The Tuesday before Thanksgiving</p>
+        <h2 id="intro-title">Someone did something kind. Nobody signed it.</h2>
+        <p>
+          Mr. Ray Okafor has been our school’s night custodian for 27 years. He works while everyone
+          else is home: mopping, fixing, locking up.
+        </p>
+        <p>
+          On the last day before Thanksgiving break, someone left Mr. Ray a gift and a note signed
+          only <strong>“A Grateful Turkey 🦃.”</strong> That night Ray left a voicemail at the front
+          office to say thank you, but he has no idea who to thank.
+        </p>
+        <p>
+          Principal Hayes wants to thank the Grateful Turkey at the Thanksgiving assembly. She has
+          handed the case to the best detectives in the building: <strong>this class.</strong>
+        </p>
+        <ul class="overlay-steps">
+          <li>Read the evidence. Solve challenges to open the 🔒 locked pieces.</li>
+          <li>Rule things out on the case board as a class.</li>
+          <li>Accuse: who, what, where, when, and why.</li>
+        </ul>
+        <p class="overlay-time">About 20–30 minutes if everyone talks it out.</p>
+        <button class="btn btn-primary" type="button" id="start-btn">Open the case file</button>
+      </div>
+    </div>
+
+    <div class="kc-overlay" id="win" role="dialog" aria-labelledby="win-title">
+      <div class="overlay-card overlay-win">
+        <p class="kicker">Case closed 🦃</p>
+        <h2 id="win-title">The Grateful Turkey was Theo Brooks.</h2>
+        <p id="win-time"></p>
+        <ol class="win-recap">
+          <li>
+            <strong>Who: Theo Brooks.</strong> The door log puts only Theo and Rosie in the library
+            at lunch. Rosie saw a football hoodie, and the receipt and work order both say Theo.
+          </li>
+          <li>
+            <strong>What: Ray’s broken radio, repaired.</strong> “Not working in silence,” a radio
+            that broke a month ago and then went missing, a flip phone (so no website), and a new
+            speaker on the receipt.
+          </li>
+          <li>
+            <strong>Where: the library.</strong> Ray found it “where I always sit,” and his shift
+            card says he takes his break at the library’s back table.
+          </li>
+          <li>
+            <strong>When: Tuesday at 12:10 PM.</strong> The back table was clear through 11:35, the
+            library was locked from 2:28, and Monday night was empty.
+          </li>
+          <li>
+            <strong>Why: Ray found and returned something precious.</strong> In October, Ray dug
+            through the bleacher trash for an hour to find Theo’s grandpa’s watch.
+          </li>
+        </ol>
+        <p class="win-moral">
+          Theo said, “I barely know him.” But Ray had done something for him that he never forgot.
+          Kindness doesn’t need a signature, but noticing it matters.
+        </p>
+        <p class="win-talk">
+          <strong>Talk about it:</strong> Who at school does quiet work that makes your day better?
+          How could you thank them before break?
+        </p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" type="button" id="close-win-btn">Back to the case</button>
+          <a class="btn btn-ghost" href="index.html">Back to hub</a>
+        </div>
+      </div>
+    </div>
+
+    <script src="kindness.js"></script>
+  </body>
+</html>
