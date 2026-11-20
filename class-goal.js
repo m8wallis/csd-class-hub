@@ -14,6 +14,7 @@ window.CSD_CLASS_GOAL = {
     { id: '2026-10-29-class', delta: 5, note: 'Classroom points' },
     { id: '2026-11-09-good', delta: 5, note: 'Being good' },
     { id: '2026-11-20-good', delta: -3, note: 'Too much talking' },
-    { id: '2026-11-21-good', delta: -5, note: 'Too much talking' }
+    { id: '2026-11-21-good', delta: -5, note: 'Too much talking' },
+    { id: '2026-11-20-tday', delta: 5, note: 'Solved the Kindness Conundrum!' }
   ]
 }
