@@ -1008,15 +1008,20 @@ window.CSD_POINTS = {
     { id: '2026-11-18-bonus1-tyran', name: 'Tyran C.', delta: 1, note: 'Bonus' },
     { id: '2026-11-18-bonus1-zayan', name: 'Zayan I.', delta: 1, note: 'Bonus' },
     { id: '2026-11-20-bonus', name: 'Sofia J.', delta: 5, note: 'Solved the Kindness Conundrum!' },
-    { id: '2026-11-20-bonus', name: 'Oswa N.', delta: 5, note: 'Solved the Kindness Conundrum!' },
-    { id: '2026-11-20-bonus', name: 'Thanh B.', delta: 5, note: 'Solved the Kindness Conundrum!' },
+    { id: '2026-11-20-bonus1', name: 'Oswa N.', delta: 5, note: 'Solved the Kindness Conundrum!' },
+    { id: '2026-11-20-bonus2', name: 'Thanh B.', delta: 5, note: 'Solved the Kindness Conundrum!' },
     {
-      id: '2026-11-20-bonus',
+      id: '2026-11-20-bonus3',
       name: 'Savannah A.',
       delta: 5,
       note: 'Solved the Kindness Conundrum!'
     },
-    { id: '2026-11-20-bonus', name: 'Naia B.', delta: 5, note: 'Solved the Kindness Conundrum!' },
-    { id: '2026-11-20-bonus', name: 'Alyviah C.', delta: 5, note: 'Solved the Kindness Conundrum!' }
+    { id: '2026-11-20-bonus4', name: 'Naia B.', delta: 5, note: 'Solved the Kindness Conundrum!' },
+    {
+      id: '2026-11-20-bonus5',
+      name: 'Alyviah C.',
+      delta: 5,
+      note: 'Solved the Kindness Conundrum!'
+    }
   ]
 }
